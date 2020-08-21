@@ -1,0 +1,37 @@
+.navbar {
+  border-bottom: solid 1px #EBEBEB;
+  background-color: #fff;
+}
+.bottom-tab-nav {
+  border-top: solid 1px #EBEBEB;
+}
+.nav-link,
+.bottom-nav-link {
+  color: #bf5700;
+}
+.bottom-nav-link.active {
+  color: #000000;
+}
+.bottom-tab-label {
+  font-size: 12px;
+}
+
+.navbar-brand{
+  color: #bf5700 !important;
+}
+
+
+.dropdown{
+  color: #bf5700 !important;
+}
+
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}

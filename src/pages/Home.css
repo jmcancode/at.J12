@@ -1,0 +1,7 @@
+.jumbotron{
+    background-image: url(/public/images/sports031020.jpg);
+    background-repeat: no-repeat, repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
