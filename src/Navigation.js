@@ -16,7 +16,6 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-
 const tabs = [
   {
     route: "/home",
@@ -36,7 +35,7 @@ const tabs = [
   {
     route: "/Message",
     icon: faEnvelope,
-    label: "Message",
+    label: "Messages",
   },
   {
     route: "/login",
@@ -53,7 +52,7 @@ const Navigation = (props) => {
     <div>
       {/* Top Bar*/}
       <nav
-        className="navbar navbar-expand-md navbar-light d-none d-lg-block sticky-top clear-fix "
+        className="navbar navbar-expand-md navbar-light d-none d-lg-block sticky-top"
         role="navigation"
       >
         <div className="container-fluid">
@@ -62,35 +61,17 @@ const Navigation = (props) => {
           </a>
           <Nav className="ml-auto">
             <NavItem>
-              <NavLink to="/home" className="nav-link">
-                Home
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/home" className="nav-link">
-                About
-              </NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink to="/Plans" className="nav-link">
-                Plans
-              </NavLink>
-            </NavItem>
-            <NavItem className="clearfix" style={{ padding: ".4rem" }}>
               <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                <DropdownToggle
-                  className="btn float-right"
-                  size="sm"
-                  color="link"
-                >
-                  Profile
+                <DropdownToggle className="btn" size="md" color="link">
+                  Sign-up
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem header>Athlete Talk</DropdownItem>
-                  <DropdownItem>Clients</DropdownItem>
-                  <DropdownItem>FAQ </DropdownItem>
+                  <DropdownItem as="button">Clients</DropdownItem>
+                  <DropdownItem as="button">FAQ </DropdownItem>
                   <DropdownItem divider />
-                  <DropdownItem tag="a" href="/src/pages/Login.jsx" >Sign-in</DropdownItem>
+                  <DropdownItem as="button" tag="a" href="/src/pages/Login.jsx">
+                    Sign-in
+                  </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
             </NavItem>
