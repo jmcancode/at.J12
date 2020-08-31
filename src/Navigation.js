@@ -63,14 +63,14 @@ const Navigation = (props) => {
             <NavItem>
               <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                 <DropdownToggle className="btn" size="md" color="link">
-                  Sign-up
+                  Sign In
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem as="button">Clients</DropdownItem>
-                  <DropdownItem as="button">FAQ </DropdownItem>
+                  <DropdownItem as="button">Director</DropdownItem>
+                  <DropdownItem as="button">Athlete</DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem as="button" tag="a" href="/src/pages/Login.jsx">
-                    Sign-in
+                    Sign-up
                   </DropdownItem>
                 </DropdownMenu>
               </Dropdown>
