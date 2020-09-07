@@ -55,25 +55,52 @@ const Navigation = (props) => {
         className="navbar navbar-expand-md navbar-light d-none d-lg-block sticky-top"
         role="navigation"
       >
-        <div className="container-fluid">
+        <div className="container-fluid justify-content-between ">
           <a className="navbar-brand" href="/home">
             <h3>Athlete Talk</h3>
           </a>
-          <Nav className="ml-auto">
-            <NavItem>
-              <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                <DropdownToggle className="btn" size="md" color="link">
-                  Sign In
-                </DropdownToggle>
-                <DropdownMenu right>
-                  <DropdownItem as="button">Administrator</DropdownItem>
-                  <DropdownItem as="button">Athlete</DropdownItem>
-                  <DropdownItem divider />
-                  <DropdownItem as="button" tag="a" href="/src/pages/Login.jsx">
-                    Sign-up
-                  </DropdownItem>
-                </DropdownMenu>
-              </Dropdown>
+          <Nav className="w-35 .d-sm-none .d-md-block">
+            <NavItem className="d-flex d-inline">
+            <div className="pt-2">
+              <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} route />
+              <FontAwesomeIcon
+                className="mx-2"
+                size="2x"
+                icon={faFolder}
+                route
+              />
+              <FontAwesomeIcon
+                className="mx-2"
+                size="2x"
+                icon={faEnvelope}
+                route
+              />
+              <FontAwesomeIcon
+                className="mx-2"
+                size="2x"
+                icon={faUserCircle}
+                route
+              />
+              </div>
+              <div>
+                <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                  <DropdownToggle className="btn" size="md" color="link">
+                    
+                  </DropdownToggle>
+                  <DropdownMenu right>
+                    <DropdownItem as="button">Administrator</DropdownItem>
+                    <DropdownItem as="button">Athlete</DropdownItem>
+                    <DropdownItem divider />
+                    <DropdownItem
+                      as="button"
+                      tag="a"
+                      href="/src/pages/Login.jsx"
+                    >
+                      Sign-up
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
             </NavItem>
           </Nav>
         </div>
