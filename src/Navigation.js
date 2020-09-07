@@ -57,7 +57,7 @@ const Navigation = (props) => {
       >
         <div className="container-fluid">
           <a className="navbar-brand" href="/home">
-            Athlete Talk
+            <h3>Athlete Talk</h3>
           </a>
           <Nav className="ml-auto">
             <NavItem>
@@ -66,7 +66,7 @@ const Navigation = (props) => {
                   Sign In
                 </DropdownToggle>
                 <DropdownMenu right>
-                  <DropdownItem as="button">Director</DropdownItem>
+                  <DropdownItem as="button">Administrator</DropdownItem>
                   <DropdownItem as="button">Athlete</DropdownItem>
                   <DropdownItem divider />
                   <DropdownItem as="button" tag="a" href="/src/pages/Login.jsx">
