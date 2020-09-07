@@ -7,6 +7,7 @@ import Profile from "./pages/Profile";
 import AddPost from "./pages/AddPost";
 import Plans from "./pages/Plans";
 import About from "./pages/About";
+import Settings from "./pages/Settings";
 
 
 
@@ -21,6 +22,7 @@ function App() {
           <Route path="/profile" component={Profile} />
           <Route path="/plans" component={Plans} />
           <Route path="/about" component={About} />
+          <Route path="/settings" component={Settings} />
         </Switch>
       </BrowserRouter>
     </div>
