@@ -13,6 +13,17 @@ import Avatar from "react-avatar";
 const Home = (props) => {
   return (
     <>
+      <div className="container">
+        <Card className="bg-dark text-white">
+          <Card.Img src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")} alt="Card image" />
+          <Card.ImgOverlay className="text-center">
+            <Card.Title>James Lewis</Card.Title>
+            <Card.Text>
+              BasketBall Team
+            </Card.Text>
+          </Card.ImgOverlay>
+        </Card>
+      </div>
       <div className="container d-flex justify-content-between">
         <div className="d-flex flex-row p-4 bd-highlight">
           <div>

@@ -1,7 +1,13 @@
 import React, { useState } from "react";
-import { Nav, NavItem } from "reactstrap";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+import Button from "react-bootstrap/Button";
+import Navbar from "react-bootstrap/Navbar";
+import  Form from "react-bootstrap/Form";
+import FormControl from 'react-bootstrap/FormControl';
+import Nav from "react-bootstrap/Nav";
+
 import {
   faHome,
   faUserCircle,
@@ -9,6 +15,7 @@ import {
   faFolder,
   faPlusSquare,
 } from "@fortawesome/free-solid-svg-icons";
+
 import {
   Dropdown,
   DropdownToggle,
@@ -51,7 +58,7 @@ const Navigation = (props) => {
   return (
     <div>
       {/* Top Bar*/}
-      <nav
+      <Navbar
         className="navbar navbar-expand-md navbar-light d-none d-lg-block sticky-top"
         role="navigation"
       >
@@ -59,34 +66,53 @@ const Navigation = (props) => {
           <a className="navbar-brand" href="/home">
             <h3>Athlete Talk</h3>
           </a>
+          <div>
+            <Form inline>
+              <FormControl
+                type="text"
+                placeholder="Search"
+                aria-label="Search"
+                aria-describedby="basic-addon1"
+                className="mr-sm-2"
+              />
+              <Button variant="outline-info">Search</Button>
+            </Form>
+          </div>
           <Nav className="w-35 .d-sm-none .d-md-block">
-            <NavItem className="d-flex d-inline">
-            <div className="pt-2">
-              <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} route />
-              <FontAwesomeIcon
-                className="mx-2"
-                size="2x"
-                icon={faFolder}
-                route
-              />
-              <FontAwesomeIcon
-                className="mx-2"
-                size="2x"
-                icon={faEnvelope}
-                route
-              />
-              <FontAwesomeIcon
-                className="mx-2"
-                size="2x"
-                icon={faUserCircle}
-                route
-              />
+            <Nav.Item className="d-flex d-inline">
+              <div className="pt-2">
+                <FontAwesomeIcon
+                  className="mx-2"
+                  size="2x"
+                  icon={faHome}
+                  route
+                />
+                <FontAwesomeIcon
+                  className="mx-2"
+                  size="2x"
+                  icon={faFolder}
+                  route
+                />
+                <FontAwesomeIcon
+                  className="mx-2"
+                  size="2x"
+                  icon={faEnvelope}
+                  route
+                />
+                <FontAwesomeIcon
+                  className="mx-2"
+                  size="2x"
+                  icon={faUserCircle}
+                  route
+                />
               </div>
               <div>
                 <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                  <DropdownToggle className="btn" size="md" color="link">
-                    
-                  </DropdownToggle>
+                  <DropdownToggle
+                    className="btn"
+                    size="md"
+                    color="link"
+                  ></DropdownToggle>
                   <DropdownMenu right>
                     <DropdownItem as="button">Administrator</DropdownItem>
                     <DropdownItem as="button">Athlete</DropdownItem>
@@ -101,20 +127,20 @@ const Navigation = (props) => {
                   </DropdownMenu>
                 </Dropdown>
               </div>
-            </NavItem>
+            </Nav.Item>
           </Nav>
         </div>
-      </nav>
+      </Navbar>
 
       {/* Bottom Tab Navigator*/}
-      <nav
+      <Nav
         className="navbar fixed-bottom navbar-light d-block d-lg-none bottom-tab-nav"
         role="navigation"
       >
         <Nav className="w-100">
           <div className=" d-flex flex-row justify-content-around w-100">
             {tabs.map((tab, index) => (
-              <NavItem key={`tab-${index}`}>
+              <Nav.Item key={`tab-${index}`}>
                 <NavLink
                   to={tab.route}
                   className="nav-link bottom-nav-link"
@@ -125,11 +151,11 @@ const Navigation = (props) => {
                     <div>{tab.label}</div>
                   </div>
                 </NavLink>
-              </NavItem>
+              </Nav.Item>
             ))}
           </div>
         </Nav>
-      </nav>
+      </Nav>
     </div>
   );
 };
