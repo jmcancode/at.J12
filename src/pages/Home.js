@@ -49,6 +49,7 @@ const Home = (props) => {
             </Card.Header>
             <Card.Img
               variant="top"
+              fluid
               src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
             />
             <Card.Footer>
