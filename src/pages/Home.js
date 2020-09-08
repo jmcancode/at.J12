@@ -1,26 +1,45 @@
 import React from "react";
 import "./Home.css";
 import Card from "react-bootstrap/Card";
-import CardDeck from "react-bootstrap/CardGroup";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShare,
   faCommentDots,
   faThumbsUp,
+  faStar,
 } from "@fortawesome/free-solid-svg-icons";
-import { Container } from "reactstrap";
+import Avatar from "react-avatar";
 
 const Home = (props) => {
   return (
     <>
-      <Container className="pt-5 mx-auto">
-        <CardDeck>
-          <Card>
-            <Card.Header>Header</Card.Header>
+      <div className="container d-flex justify-content-between">
+        <div className="d-flex flex-row p-4 bd-highlight">
+          <div>
+            <FontAwesomeIcon icon={faStar} />
+          </div>
+          <div className="pl-2">DAY STREAK</div>
+        </div>
+        <div className="d-flex flex-row-reverse bd-highlight p-4">
+          <p>NEWS FEED: </p>
+        </div>
+      </div>
+      <div className="container pt-2 d-flex">
+        <div className="card-columns">
+          <div className="card">
+            <Card.Header>
+              <Avatar
+                title="Michael Jackson"
+                size="50"
+                round={true}
+                facebook-id="invalidfacebookusername"
+                src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3"
+              />
+            </Card.Header>
             <Card.Img
               variant="top"
-              // src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
               fluid
+              src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
             />
             <Card.Footer>
               <div className=" d-flex justify-content-between text-center">
@@ -29,21 +48,20 @@ const Home = (props) => {
                 <FontAwesomeIcon icon={faThumbsUp} size="lg" />
               </div>
             </Card.Footer>
-          </Card>
+          </div>
           <Card>
-            <Card.Header>Header</Card.Header>
+            <Card.Header>
+              <Avatar
+                size="50"
+                round={true}
+                facebook-id="invalidfacebookusername"
+                src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3"
+              />
+            </Card.Header>
             <Card.Img
               variant="top"
               src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
-              fluid
             />
-            <Card.Body>
-              <Card.Title>Card title</Card.Title>
-              <Card.Text>
-                This card has supporting text below as a natural lead-in to
-                additional content.{" "}
-              </Card.Text>
-            </Card.Body>
             <Card.Footer>
               <div className=" d-flex justify-content-between text-center">
                 <FontAwesomeIcon icon={faShare} size="lg" />
@@ -53,14 +71,18 @@ const Home = (props) => {
             </Card.Footer>
           </Card>
           <Card>
-            <Card.Header>Header</Card.Header>
+            <Card.Header>
+              <Avatar
+                size="50"
+                round={true}
+                facebook-id="invalidfacebookusername"
+                src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3"
+              />
+            </Card.Header>
             <Card.Img
               variant="top"
               src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
-              fluid
             />
-            <Card.Body>
-            </Card.Body>
             <Card.Footer>
               <div className=" d-flex justify-content-between text-center">
                 <FontAwesomeIcon icon={faShare} size="lg" />
@@ -69,8 +91,8 @@ const Home = (props) => {
               </div>
             </Card.Footer>
           </Card>
-        </CardDeck>
-      </Container>
+        </div>
+      </div>
     </>
   );
 };
