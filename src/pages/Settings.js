@@ -20,17 +20,16 @@ const Settings = () => {
               />
             </Form>
           </ListGroup.Item>
+          <ListGroup.Item>
+            <a href="/edit-profile">
+              Edit Profile
+          </a>
+          </ListGroup.Item>
           <Accordion defaultActiveKey="0">
             <Accordion.Toggle as={ListGroup.Item} eventKey="1">
-              Edit Profile
-          </Accordion.Toggle>
-            <Accordion.Collapse eventKey="1">
-              <Card.Body>Hello! I'm your profile</Card.Body>
-            </Accordion.Collapse>
-            <Accordion.Toggle as={ListGroup.Item} eventKey="2">
               Privacy Policy
           </Accordion.Toggle>
-            <Accordion.Collapse eventKey="2">
+            <Accordion.Collapse eventKey="1">
               <Card.Body>Hello! I'm the Privacy Policy</Card.Body>
             </Accordion.Collapse>
           </Accordion>

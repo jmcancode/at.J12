@@ -19,14 +19,14 @@ const Home = (props) => {
             <Card.Header>Header</Card.Header>
             <Card.Img
               variant="top"
-              src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
+              // src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
               fluid
             />
             <Card.Footer>
-            <div className=" d-flex justify-content-between text-center">
-              <FontAwesomeIcon icon={faShare} size="lg" />
-              <FontAwesomeIcon icon={faCommentDots} size="lg" />
-              <FontAwesomeIcon icon={faThumbsUp} size="lg" />
+              <div className=" d-flex justify-content-between text-center">
+                <FontAwesomeIcon icon={faShare} size="lg" />
+                <FontAwesomeIcon icon={faCommentDots} size="lg" />
+                <FontAwesomeIcon icon={faThumbsUp} size="lg" />
               </div>
             </Card.Footer>
           </Card>
@@ -45,10 +45,10 @@ const Home = (props) => {
               </Card.Text>
             </Card.Body>
             <Card.Footer>
-            <div className=" d-flex justify-content-between text-center">
-              <FontAwesomeIcon icon={faShare} size="lg" />
-              <FontAwesomeIcon icon={faCommentDots} size="lg" />
-              <FontAwesomeIcon icon={faThumbsUp} size="lg" />
+              <div className=" d-flex justify-content-between text-center">
+                <FontAwesomeIcon icon={faShare} size="lg" />
+                <FontAwesomeIcon icon={faCommentDots} size="lg" />
+                <FontAwesomeIcon icon={faThumbsUp} size="lg" />
               </div>
             </Card.Footer>
           </Card>
@@ -62,10 +62,10 @@ const Home = (props) => {
             <Card.Body>
             </Card.Body>
             <Card.Footer>
-            <div className=" d-flex justify-content-between text-center">
-              <FontAwesomeIcon icon={faShare} size="lg" />
-              <FontAwesomeIcon icon={faCommentDots} size="lg" />
-              <FontAwesomeIcon icon={faThumbsUp} size="lg" />
+              <div className=" d-flex justify-content-between text-center">
+                <FontAwesomeIcon icon={faShare} size="lg" />
+                <FontAwesomeIcon icon={faCommentDots} size="lg" />
+                <FontAwesomeIcon icon={faThumbsUp} size="lg" />
               </div>
             </Card.Footer>
           </Card>

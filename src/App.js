@@ -8,6 +8,7 @@ import AddPost from "./pages/AddPost";
 import Plans from "./pages/Plans";
 import About from "./pages/About";
 import Settings from "./pages/Settings";
+import EditProfile from "./pages/EditProfile";
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route path="/plans" component={Plans} />
           <Route path="/about" component={About} />
           <Route path="/settings" component={Settings} />
+          <Route path="/edit-profile" component={EditProfile} />
         </Switch>
       </BrowserRouter>
     </div>
