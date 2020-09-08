@@ -21,7 +21,7 @@ const EditProfile = () => {
             </Form.Group>
             <Form.Group controlId="formGroupEmail">
               <Form.Label>Email address</Form.Label>
-              <Form.Control type="email" placeholder="Enter email" />
+              <Form.Control type="email" placeholder="jsmith@university.edu" />
             </Form.Group>
             <Form.Group controlId="formGroupPhone">
               <Form.Label>Phone</Form.Label>

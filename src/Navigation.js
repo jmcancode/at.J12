@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
-import  Form from "react-bootstrap/Form";
+import Form from "react-bootstrap/Form";
 import FormControl from 'react-bootstrap/FormControl';
 import Nav from "react-bootstrap/Nav";
 
@@ -75,7 +75,7 @@ const Navigation = (props) => {
                 aria-describedby="basic-addon1"
                 className="mr-sm-2"
               />
-              <Button variant="outline-info">Search</Button>
+              <Button variant="outline-secondary">Search</Button>
             </Form>
           </div>
           <Nav className="w-35 .d-sm-none .d-md-block">

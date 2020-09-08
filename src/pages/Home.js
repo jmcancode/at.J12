@@ -9,65 +9,73 @@ import {
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
 import Avatar from "react-avatar";
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
+import Image from "react-bootstrap/Image";
 
 const Home = (props) => {
   return (
     <>
-      <div className="container">
-        <Card className="bg-dark text-white">
-          <Card.Img src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")} alt="Card image" />
+      <Container>
+        <Card className="text-white">
+          <Card.Img
+            src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
+            alt="Card image"
+
+          />
           <Card.ImgOverlay className="text-center">
             <Card.Title>James Lewis</Card.Title>
-            <Card.Text>
-              BasketBall Team
-            </Card.Text>
+            <Card.Text>BasketBall Team</Card.Text>
           </Card.ImgOverlay>
         </Card>
+      </Container>
+      <div className="container">
+        <Row>
+          <Col>
+            <Image
+              style={{ position: "absolute", zIndex: "1", width:"111px", height: "105px" }}
+              roundedCircle={true}
+              src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
+            />
+          </Col>
+        </Row>
       </div>
       <div className="container d-flex justify-content-between">
-        <div className="d-flex flex-row p-4 bd-highlight">
+        <div className="d-flex flex-row p-4 ">
           <div>
             <FontAwesomeIcon icon={faStar} />
           </div>
           <div className="pl-2">DAY STREAK</div>
         </div>
-        <div className="d-flex flex-row-reverse bd-highlight p-4">
+        <div className="d-flex flex-row-reverse p-4">
           <p>NEWS FEED: </p>
         </div>
       </div>
-      <div className="container pt-2 d-flex">
-        <div className="card-columns">
-          <div className="card">
-            <Card.Header>
-              <Avatar
-                title="Michael Jackson"
-                size="50"
-                round={true}
-                facebook-id="invalidfacebookusername"
-                src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3"
+      <div className="container-flex d-flex">
+        <div className="card-deck">
+          <Row>
+            <Card>
+              <Card.Header>
+                <Avatar round={true} size="50" name="Will Binns-Smith" />
+              </Card.Header>
+              <Card.Img
+                variant="top"
+                fluid
+                src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
               />
-            </Card.Header>
-            <Card.Img
-              variant="top"
-              fluid
-              src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
-            />
-            <Card.Footer>
-              <div className=" d-flex justify-content-between text-center">
-                <FontAwesomeIcon icon={faShare} size="lg" />
-                <FontAwesomeIcon icon={faCommentDots} size="lg" />
-                <FontAwesomeIcon icon={faThumbsUp} size="lg" />
-              </div>
-            </Card.Footer>
-          </div>
+              <Card.Footer>
+                <div className=" d-flex justify-content-between text-center">
+                  <FontAwesomeIcon icon={faShare} size="lg" />
+                  <FontAwesomeIcon icon={faCommentDots} size="lg" />
+                  <FontAwesomeIcon icon={faThumbsUp} size="lg" />
+                </div>
+              </Card.Footer>
+              </Card>
+          </Row>
           <Card>
             <Card.Header>
-              <Avatar
-                size="50"
-                round={true}
-                facebook-id="invalidfacebookusername"
-                src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3"
-              />
+              <Avatar round={true} size="50" name="James Lewis" />
             </Card.Header>
             <Card.Img
               variant="top"
@@ -83,12 +91,7 @@ const Home = (props) => {
           </Card>
           <Card>
             <Card.Header>
-              <Avatar
-                size="50"
-                round={true}
-                facebook-id="invalidfacebookusername"
-                src="http://www.gravatar.com/avatar/a16a38cdfe8b2cbd38e8a56ab93238d3"
-              />
+              <Avatar round={true} size="50" name="Michael Jordan" />
             </Card.Header>
             <Card.Img
               variant="top"
