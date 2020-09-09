@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faShare,
   faCommentDots,
-  faThumbsUp,
   faStar,
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import Avatar from "react-avatar";
 import Container from "react-bootstrap/Container";
@@ -14,25 +14,40 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 
-const Home = (props) => {
+class Home extends React.Component {
+  constructor(props) {
+    super(props);
+
+
+    const today = new Date(),
+    date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
+
+    this.state = {
+      currentDate: date
+    };
+  }
+
+
+  render(){
   return (
     <>
-      <Container>
+    <Container className="m-5 pt-5 mx-auto">
+      <div style={{}}>
         <Card className="text-white">
           <Card.Img
             src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
             alt="Card image"
-
           />
           <Card.ImgOverlay className="text-center">
-            <Card.Title>James Lewis</Card.Title>
+            <Card.Title><h1>James Lewis</h1></Card.Title>
             <Card.Text>BasketBall Team</Card.Text>
           </Card.ImgOverlay>
         </Card>
-      </Container>
+        </div>
+
       <div className="container">
         <Row>
-          <Col>
+          <Col >
             <Image
               style={{ position: "absolute", zIndex: "1", width:"111px", height: "105px" }}
               roundedCircle={true}
@@ -49,30 +64,38 @@ const Home = (props) => {
           <div className="pl-2">DAY STREAK</div>
         </div>
         <div className="d-flex flex-row-reverse p-4">
-          <p>NEWS FEED: </p>
+          <p>NEWS FEED: {this.state.currentDate} </p>
         </div>
       </div>
-      <div className="container-flex d-flex">
-        <div className="card-deck">
-          <Row>
+
+      <div className="container d-flex">
+        <div className="card">
             <Card>
               <Card.Header>
-                <Avatar round={true} size="50" name="Will Binns-Smith" />
+                <Avatar
+                 round={true}
+                  size="50"
+                   name="Will Binns-Smith" />
               </Card.Header>
               <Card.Img
                 variant="top"
                 fluid
                 src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
               />
+              <Card.Body
+              style={{backgroudColor: '#ededed', height: 'px' }}
+              >
+              </Card.Body>
+
               <Card.Footer>
                 <div className=" d-flex justify-content-between text-center">
                   <FontAwesomeIcon icon={faShare} size="lg" />
                   <FontAwesomeIcon icon={faCommentDots} size="lg" />
-                  <FontAwesomeIcon icon={faThumbsUp} size="lg" />
+                  <FontAwesomeIcon icon={faHeart} size="lg" />
                 </div>
               </Card.Footer>
               </Card>
-          </Row>
+  
           <Card>
             <Card.Header>
               <Avatar round={true} size="50" name="James Lewis" />
@@ -85,7 +108,7 @@ const Home = (props) => {
               <div className=" d-flex justify-content-between text-center">
                 <FontAwesomeIcon icon={faShare} size="lg" />
                 <FontAwesomeIcon icon={faCommentDots} size="lg" />
-                <FontAwesomeIcon icon={faThumbsUp} size="lg" />
+                <FontAwesomeIcon icon={faHeart} size="lg" />
               </div>
             </Card.Footer>
           </Card>
@@ -101,14 +124,17 @@ const Home = (props) => {
               <div className=" d-flex justify-content-between text-center">
                 <FontAwesomeIcon icon={faShare} size="lg" />
                 <FontAwesomeIcon icon={faCommentDots} size="lg" />
-                <FontAwesomeIcon icon={faThumbsUp} size="lg" />
+                <FontAwesomeIcon icon={faHeart} size="lg" />
               </div>
             </Card.Footer>
           </Card>
         </div>
       </div>
-    </>
+      </Container>
+      </>
+    
   );
+  };
 };
 
 export default Home;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Button from "react-bootstrap/Button";
+
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import FormControl from 'react-bootstrap/FormControl';
@@ -30,7 +30,7 @@ const tabs = [
     label: "Home",
   },
   {
-    route: "/search",
+    route: "/plans",
     icon: faFolder,
     label: "Plans",
   },
@@ -40,12 +40,12 @@ const tabs = [
     label: "Add Post",
   },
   {
-    route: "/Message",
+    route: "/message",
     icon: faEnvelope,
     label: "Messages",
   },
   {
-    route: "/login",
+    route: "/profile",
     icon: faUserCircle,
     label: "Profile",
   },
@@ -53,13 +53,13 @@ const tabs = [
 
 const Navigation = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+
   return (
     <div>
       {/* Top Bar*/}
       <Navbar
-        className="navbar navbar-expand-md navbar-light d-none d-lg-block sticky-top"
+        className="navbar navbar-expand-md navbar-light d-none d-lg-block fixed-top header-img"
         role="navigation"
       >
         <div className="container-fluid justify-content-between ">
@@ -75,7 +75,6 @@ const Navigation = (props) => {
                 aria-describedby="basic-addon1"
                 className="mr-sm-2"
               />
-              <Button variant="outline-secondary">Search</Button>
             </Form>
           </div>
           <Nav className="w-35 .d-sm-none .d-md-block">
@@ -86,6 +85,7 @@ const Navigation = (props) => {
                   size="2x"
                   icon={faHome}
                   route
+                  
                 />
                 <FontAwesomeIcon
                   className="mx-2"

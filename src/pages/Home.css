@@ -1,4 +1,7 @@
 h1{
-    color: red;
-    font: bold;
+    color: #BF5700;
+    padding-bottom: 5px;
+}
+.card{
+    margin: 0;
 }

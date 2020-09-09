@@ -3,9 +3,9 @@ import React from 'react';
 
 const Profile = (props) => {
 return (
-    <div>
+    <h1>
       Profile Page
-    </div>
+    </h1>
   )
 };
 export default Profile;
