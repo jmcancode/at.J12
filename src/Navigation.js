@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
-import FormControl from 'react-bootstrap/FormControl';
+import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
-
 
 import {
   faHome,
@@ -53,8 +51,11 @@ const tabs = [
 ];
 
 const Navigation = (props) => {
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
+
+  
 
   return (
     <div>
@@ -81,31 +82,31 @@ const Navigation = (props) => {
           <Nav className="w-35 .d-sm-none .d-md-block">
             <Nav.Item className="d-flex d-inline">
               <div className="pt-2">
-              <i>
-                <FontAwesomeIcon
-                  className="mx-2"
-                  size="2x"
-                  icon={faHome}
-                  
-                />
+                <i>
+                  <FontAwesomeIcon
+                    className="mx-2"
+                    size="2x"
+                    icon={faHome}
+                   
+                  />
                 </i>
                 <FontAwesomeIcon
                   className="mx-2"
                   size="2x"
                   icon={faFolder}
-                  route
+                  
                 />
                 <FontAwesomeIcon
                   className="mx-2"
                   size="2x"
                   icon={faEnvelope}
-                  route
+                  
                 />
                 <FontAwesomeIcon
                   className="mx-2"
                   size="2x"
                   icon={faUserCircle}
-                  route
+                  
                 />
               </div>
               <div>

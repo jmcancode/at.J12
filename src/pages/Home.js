@@ -11,108 +11,146 @@ import {
 import Avatar from "react-avatar";
 import Container from "react-bootstrap/Container";
 
-import UserHeader from '../components/UserHeader';
-
+import UserHeader from "../components/UserHeader";
+import { Button } from "reactstrap";
 
 class Home extends React.Component {
   constructor(props) {
     super(props);
-
-
-    const today = new Date(),
-    date = (today.getMonth() + 1) + '/' + today.getDate() + '/' + today.getFullYear();
-
     this.state = {
-      currentDate: date
+      count: 0,
+    };
+
+    // NEWS FEED
+    const today = new Date(),
+      date =
+        today.getMonth() +
+        1 +
+        "/" +
+        today.getDate() +
+        "/" +
+        today.getFullYear();
+    this.state = {
+      currentDate: date,
     };
   }
 
-
-  render(){
-  return (
-    <>
-    <UserHeader/>
-    <Container className="m-5 pt-5 mx-auto">
-      
-      <div className="container d-flex justify-content-between">
-        <div className="d-flex flex-row p-4 ">
-          <div>
-            <FontAwesomeIcon icon={faStar} />
+  render() {
+    return (
+      <React.Fragment>
+        <UserHeader />
+        <Container className="m-5 pt-5 mx-auto">
+          <div className="container d-flex justify-content-between">
+            <div className="d-flex flex-row p-4 ">
+              <div>
+                <FontAwesomeIcon icon={faStar} />
+              </div>
+              <div className="pl-2">DAY STREAK</div>
+            </div>
+            <div className="d-flex flex-row-reverse p-4">
+              <p>NEWS FEED: {this.state.currentDate} </p>
+            </div>
           </div>
-          <div className="pl-2">DAY STREAK</div>
-        </div>
-        <div className="d-flex flex-row-reverse p-4">
-          <p>NEWS FEED: {this.state.currentDate} </p>
-        </div>
-      </div>
 
-      <div className="container d-flex">
-        <div className="card">
-            <Card>
-              <Card.Header>
-                <Avatar
-                 round={true}
-                  size="50"
-                   name="Will Binns-Smith" />
-              </Card.Header>
-              <Card.Img
-                variant="top"
-                fluid
-                src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
-              />
-              <Card.Body
-              style={{backgroudColor: '#ededed', height: 'px' }}
-              >
-              </Card.Body>
+          <div className="container d-flex">
+            <div className="card">
+              <Card>
+                <Card.Header>
+                  <Avatar round={true} size="50" name="Will Binns-Smith" />
+                </Card.Header>
+                <Card.Img
+                  variant="top"
+                  fluid
+                  src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
+                />
+                <Card.Body
+                  style={{ backgroudColor: "#ededed", height: "px" }}
+                ></Card.Body>
 
-              <Card.Footer>
-                <div className=" d-flex justify-content-between text-center">
-                  <FontAwesomeIcon icon={faShare} size="lg" />
-                  <FontAwesomeIcon icon={faCommentDots} size="lg" />
-                  <FontAwesomeIcon icon={faHeart} size="lg" />
-                </div>
-              </Card.Footer>
+                <Card.Footer>
+                  <div className=" d-flex justify-content-between text-center">
+                    <Button>
+                      <FontAwesomeIcon icon={faShare} size="lg" /> 10
+                    </Button>
+                    <Button>
+                      <FontAwesomeIcon icon={faCommentDots} size="lg" /> 12
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        this.setState({ count: this.state.count + 1 })
+                      }
+                    >
+                      <FontAwesomeIcon icon={faHeart} size="lg" /> 1.5k
+                    </Button>
+                  </div>
+                </Card.Footer>
               </Card>
-  
-          <Card>
-            <Card.Header>
-              <Avatar round={true} size="50" name="James Lewis" />
-            </Card.Header>
-            <Card.Img
-              variant="top"
-              src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
-            />
-            <Card.Footer>
-              <div className=" d-flex justify-content-between text-center">
-                <FontAwesomeIcon icon={faShare} size="lg" />
-                <FontAwesomeIcon icon={faCommentDots} size="lg" />
-                <FontAwesomeIcon icon={faHeart} size="lg" />
-              </div>
-            </Card.Footer>
-          </Card>
-          <Card>
-            <Card.Header>
-              <Avatar round={true} size="50" name="Michael Jordan" />
-            </Card.Header>
-            <Card.Img
-              variant="top"
-              src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
-            />
-            <Card.Footer>
-              <div className=" d-flex justify-content-between text-center">
-                <FontAwesomeIcon icon={faShare} size="lg" />
-                <FontAwesomeIcon icon={faCommentDots} size="lg" />
-                <FontAwesomeIcon icon={faHeart} size="lg" />
-              </div>
-            </Card.Footer>
-          </Card>
-        </div>
-      </div>
-      </Container>
-      </>
-    
-  );
-  };
-};
+
+              <Card>
+                <Card.Header>
+                  <Avatar round={true} size="50" name="James Lewis" />
+                </Card.Header>
+                <Card.Img
+                  variant="top"
+                  src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
+                />
+                <Card.Footer>
+                  <div className=" d-flex justify-content-between text-center">
+                    <Button>
+                      <FontAwesomeIcon icon={faShare} size="lg" /> 10
+                    </Button>
+                    <Button>
+                      <FontAwesomeIcon icon={faCommentDots} size="lg" /> 12
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        this.setState({ count: this.state.count + 1 })
+                      }
+                    >
+                      <FontAwesomeIcon icon={faHeart} size="lg" /> 1.5k
+                    </Button>
+                  </div>
+                </Card.Footer>
+              </Card>
+              <Card>
+                <Card.Header>
+                  <Avatar round={true} size="50" name="Michael Jordan" />
+                </Card.Header>
+                <Card.Img
+                  variant="top"
+                  src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
+                />
+                <Card.Footer>
+                  <div className=" d-flex justify-content-between text-center">
+                    <Button>
+                      <FontAwesomeIcon
+                        onClick={() =>
+                          this.setState({ count: this.state.count + 1 })
+                        }
+                        icon={faShare}
+                        size="lg"
+                      />{" "}
+                      10
+                    </Button>
+                    <Button>
+                      <FontAwesomeIcon icon={faCommentDots} size="lg" /> 12
+                    </Button>
+                    <Button
+                      onClick={() =>
+                        this.setState({ count: this.state.count + 1 })
+                      }
+                    >
+                      <FontAwesomeIcon icon={faHeart} size="lg" /> 1.5k
+                    </Button>
+                  </div>
+                </Card.Footer>
+              </Card>
+            </div>
+          </div>
+        </Container>
+      </React.Fragment>
+    );
+  }
+}
 
 export default Home;

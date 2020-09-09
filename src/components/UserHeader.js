@@ -8,7 +8,16 @@ import Image from "react-bootstrap/Image";
 
 
 
-const UserHeader = (props) => {
+
+class UserHeader extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state= {
+            count: 0
+        }
+    }
+
+    render() {
   return (
     <Container className="pt-5">
       <div className="card">
@@ -44,6 +53,7 @@ const UserHeader = (props) => {
       </div>
     </Container>
   );
+}
 };
 
 export default UserHeader;
