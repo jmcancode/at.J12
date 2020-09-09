@@ -8,6 +8,7 @@ import Form from "react-bootstrap/Form";
 import FormControl from 'react-bootstrap/FormControl';
 import Nav from "react-bootstrap/Nav";
 
+
 import {
   faHome,
   faUserCircle,
@@ -63,7 +64,7 @@ const Navigation = (props) => {
         role="navigation"
       >
         <div className="container-fluid justify-content-between ">
-          <a className="navbar-brand" href="/home">
+          <a className="navbar-brand" href="/">
             <h3>Athlete Talk</h3>
           </a>
           <div>
@@ -80,13 +81,14 @@ const Navigation = (props) => {
           <Nav className="w-35 .d-sm-none .d-md-block">
             <Nav.Item className="d-flex d-inline">
               <div className="pt-2">
+              <i>
                 <FontAwesomeIcon
                   className="mx-2"
                   size="2x"
                   icon={faHome}
-                  route
                   
                 />
+                </i>
                 <FontAwesomeIcon
                   className="mx-2"
                   size="2x"

@@ -10,9 +10,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Avatar from "react-avatar";
 import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Image from "react-bootstrap/Image";
+
+import UserHeader from '../components/UserHeader';
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -31,31 +31,9 @@ class Home extends React.Component {
   render(){
   return (
     <>
+    <UserHeader/>
     <Container className="m-5 pt-5 mx-auto">
-      <div style={{}}>
-        <Card className="text-white">
-          <Card.Img
-            src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
-            alt="Card image"
-          />
-          <Card.ImgOverlay className="text-center">
-            <Card.Title><h1>James Lewis</h1></Card.Title>
-            <Card.Text>BasketBall Team</Card.Text>
-          </Card.ImgOverlay>
-        </Card>
-        </div>
-
-      <div className="container">
-        <Row>
-          <Col >
-            <Image
-              style={{ position: "absolute", zIndex: "1", width:"111px", height: "105px" }}
-              roundedCircle={true}
-              src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
-            />
-          </Col>
-        </Row>
-      </div>
+      
       <div className="container d-flex justify-content-between">
         <div className="d-flex flex-row p-4 ">
           <div>
