@@ -22,40 +22,42 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-const tabs = [
-  {
-    route: "/home",
-    icon: faHome,
-    label: "Home",
-  },
-  {
-    route: "/plans",
-    icon: faFolder,
-    label: "Plans",
-  },
-  {
-    route: "/addpost",
-    icon: faPlusSquare,
-    label: "Add Post",
-  },
-  {
-    route: "/message",
-    icon: faEnvelope,
-    label: "Messages",
-  },
-  {
-    route: "/profile",
-    icon: faUserCircle,
-    label: "Profile",
-  },
-];
+
 
 const Navigation = (props) => {
 
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
-
   
+  const tabs = [
+    {
+      route: "/home",
+      icon: faHome,
+      label: "Home",
+    },
+    {
+      route: "/plans",
+      icon: faFolder,
+      label: "Plans",
+    },
+    {
+      route: "/addpost",
+      icon: faPlusSquare,
+      label: "Add Post",
+    },
+    {
+      route: "/message",
+      icon: faEnvelope,
+      label: "Messages",
+    },
+    {
+      route: "/profile",
+      icon: faUserCircle,
+      label: "Profile",
+    },
+  ];
+
+
 
   return (
     <div>

@@ -9,7 +9,7 @@ import {
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import Avatar from "react-avatar";
-import Container from "react-bootstrap/Container";
+
 
 import UserHeader from "../components/UserHeader";
 import { Button } from "reactstrap";
@@ -39,8 +39,8 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <UserHeader />
-        <Container className="m-5 pt-5 mx-auto">
-          <div className="container d-flex justify-content-between">
+        <div className="m-5 pt-5 mx-auto ">
+          <div className="container d-flex justify-content-between text-center">
             <div className="d-flex flex-row p-4 ">
               <div>
                 <FontAwesomeIcon icon={faStar} />
@@ -53,34 +53,41 @@ class Home extends React.Component {
           </div>
 
           <div className="container d-flex">
-            <div className="card">
-              <Card>
+            <div className="card-columns">
+              <Card >
                 <Card.Header>
+                <div>
                   <Avatar round={true} size="50" name="Will Binns-Smith" />
+                  </div>
+                  <div>
+                  <p
+                  className="pt-1"
+                  >
+                Wow, what an article! I never thought I would need... 
+                
+                </p>
+                </div>
                 </Card.Header>
                 <Card.Img
                   variant="top"
                   fluid
-                  src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
+                  src={require("../assets/images/image (2).png")}
                 />
-                <Card.Body
-                  style={{ backgroudColor: "#ededed", height: "px" }}
-                ></Card.Body>
-
+                
                 <Card.Footer>
                   <div className=" d-flex justify-content-between text-center">
                     <Button>
-                      <FontAwesomeIcon icon={faShare} size="lg" /> 10
+                      <FontAwesomeIcon icon={faShare} size="sm" /> 10
                     </Button>
                     <Button>
-                      <FontAwesomeIcon icon={faCommentDots} size="lg" /> 12
+                      <FontAwesomeIcon icon={faCommentDots} size="sm" /> 12
                     </Button>
                     <Button
                       onClick={() =>
                         this.setState({ count: this.state.count + 1 })
                       }
                     >
-                      <FontAwesomeIcon icon={faHeart} size="lg" /> 1.5k
+                      <FontAwesomeIcon icon={faHeart} size="sm" /> 1.5k
                     </Button>
                   </div>
                 </Card.Footer>
@@ -89,25 +96,32 @@ class Home extends React.Component {
               <Card>
                 <Card.Header>
                   <Avatar round={true} size="50" name="James Lewis" />
+  
+                  <p
+                  className="pt-1"
+                  >
+                Wow, what an article! I never thought I would need... 
+                
+                </p>
                 </Card.Header>
                 <Card.Img
                   variant="top"
-                  src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
+                  src={require("../assets/images/image (2).png")}
                 />
                 <Card.Footer>
                   <div className=" d-flex justify-content-between text-center">
                     <Button>
-                      <FontAwesomeIcon icon={faShare} size="lg" /> 10
+                      <FontAwesomeIcon icon={faShare} size="sm" /> 10
                     </Button>
                     <Button>
-                      <FontAwesomeIcon icon={faCommentDots} size="lg" /> 12
+                      <FontAwesomeIcon icon={faCommentDots} size="sm" /> 12
                     </Button>
                     <Button
                       onClick={() =>
                         this.setState({ count: this.state.count + 1 })
                       }
                     >
-                      <FontAwesomeIcon icon={faHeart} size="lg" /> 1.5k
+                      <FontAwesomeIcon icon={faHeart} size="sm" /> 1.5k
                     </Button>
                   </div>
                 </Card.Footer>
@@ -115,10 +129,17 @@ class Home extends React.Component {
               <Card>
                 <Card.Header>
                   <Avatar round={true} size="50" name="Michael Jordan" />
+                  <p
+                  className="pt-1"
+                  >
+                Wow, what an article! I never thought I would need... 
+                
+                </p>
                 </Card.Header>
+
                 <Card.Img
                   variant="top"
-                  src={require("/Users/jon-michaelnarvaez/test-app/src/assets/images/sports031020.jpg")}
+                  src={require("../assets/images/image (2).png")}
                 />
                 <Card.Footer>
                   <div className=" d-flex justify-content-between text-center">
@@ -128,26 +149,26 @@ class Home extends React.Component {
                           this.setState({ count: this.state.count + 1 })
                         }
                         icon={faShare}
-                        size="lg"
-                      />{" "}
+                        size="sm"
+                      />
                       10
                     </Button>
                     <Button>
-                      <FontAwesomeIcon icon={faCommentDots} size="lg" /> 12
+                      <FontAwesomeIcon icon={faCommentDots} size="sm" /> 12
                     </Button>
                     <Button
                       onClick={() =>
                         this.setState({ count: this.state.count + 1 })
                       }
                     >
-                      <FontAwesomeIcon icon={faHeart} size="lg" /> 1.5k
+                      <FontAwesomeIcon icon={faHeart} size="sm" /> 1.5k
                     </Button>
                   </div>
                 </Card.Footer>
               </Card>
             </div>
           </div>
-        </Container>
+        </div>
       </React.Fragment>
     );
   }

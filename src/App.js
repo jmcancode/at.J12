@@ -9,6 +9,7 @@ import Plans from "./pages/Plans";
 import About from "./pages/About";
 import Settings from "./pages/Settings";
 import EditProfile from "./pages/EditProfile";
+import Messages from "./pages/Messages";
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/about" component={About} />
           <Route path="/settings" component={Settings} />
           <Route path="/edit-profile" component={EditProfile} />
+          <Route path="/message" component={Messages} />
         </Switch>
       </BrowserRouter>
     </div>
