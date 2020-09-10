@@ -1,11 +1,50 @@
-import React from 'react';
-
+import React from "react";
+import UserHeader from "../components/UserHeader";
+import Card from "react-bootstrap/Card";
+import Form from "react-bootstrap/Form";
+import Container from "react-bootstrap/Container";
 
 const Profile = (props) => {
-return (
-    <h1>
-      Profile Page
-    </h1>
-  )
+  return (
+    <React.Fragment>
+    <Container>
+      <Card className="border-bottom-0">
+        <Card.Header className="text-center">PROFILE</Card.Header>
+        <UserHeader />
+        <Container>
+          <Card.Body>
+            <Form>
+              <Form.Group controlId="formGroupName">
+                <Form.Label>Name</Form.Label>
+                <Form.Control type="text" placeholder="James Lewis" />
+              </Form.Group>
+              <Form.Group controlId="exampleForm.ControlSelect1">
+                <Form.Label>Choose your sport</Form.Label>
+                <Form.Control as="select">
+                  <option>Football</option>
+                  <option>Basketball</option>
+                  <option>Track & Field</option>
+                  <option>Cross Country</option>
+                  <option>Rugby</option>
+                </Form.Control>
+              </Form.Group>
+              <Form.Group controlId="formGroupEmail">
+                <Form.Label>Email address</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="jsmith@university.edu"
+                />
+              </Form.Group>
+              <Form.Group controlId="formGroupPhone">
+                <Form.Label>Phone</Form.Label>
+                <Form.Control type="tel" placeholder="210-987-4530" />
+              </Form.Group>
+            </Form>
+          </Card.Body>
+        </Container>
+      </Card>
+      </Container>
+    </React.Fragment>
+  );
 };
 export default Profile;

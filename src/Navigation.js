@@ -22,13 +22,10 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-
-
 const Navigation = (props) => {
-
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
-  
+
   const tabs = [
     {
       route: "/home",
@@ -57,8 +54,6 @@ const Navigation = (props) => {
     },
   ];
 
-
-
   return (
     <div>
       {/* Top Bar*/}
@@ -85,30 +80,14 @@ const Navigation = (props) => {
             <Nav.Item className="d-flex d-inline">
               <div className="pt-2">
                 <i>
-                  <FontAwesomeIcon
-                    className="mx-2"
-                    size="2x"
-                    icon={faHome}
-                   
-                  />
+                  <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
                 </i>
-                <FontAwesomeIcon
-                  className="mx-2"
-                  size="2x"
-                  icon={faFolder}
-                  
-                />
-                <FontAwesomeIcon
-                  className="mx-2"
-                  size="2x"
-                  icon={faEnvelope}
-                  
-                />
+                <FontAwesomeIcon className="mx-2" size="2x" icon={faFolder} />
+                <FontAwesomeIcon className="mx-2" size="2x" icon={faEnvelope} />
                 <FontAwesomeIcon
                   className="mx-2"
                   size="2x"
                   icon={faUserCircle}
-                  
                 />
               </div>
               <div>

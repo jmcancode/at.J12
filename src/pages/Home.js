@@ -10,9 +10,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import Avatar from "react-avatar";
 
-
 import UserHeader from "../components/UserHeader";
-import { Button } from "reactstrap";
+import { Button, Container } from "reactstrap";
 
 class Home extends React.Component {
   constructor(props) {
@@ -38,8 +37,9 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
+      <Container>
         <UserHeader />
-        <div className="m-5 pt-5 mx-auto ">
+        <div className="m-5 pt-5 mx-auto">
           <div className="container d-flex justify-content-between text-center">
             <div className="d-flex flex-row p-4 ">
               <div>
@@ -52,28 +52,25 @@ class Home extends React.Component {
             </div>
           </div>
 
-          <div className="container d-flex">
-            <div className="card-columns">
-              <Card >
+          <div className="d-flex">
+            <div className="card-deck">
+              <Card>
                 <Card.Header>
-                <div>
-                  <Avatar round={true} size="50" name="Will Binns-Smith" />
+                  <div>
+                    <Avatar round={true} size="50" name="Will Binns-Smith" />
                   </div>
                   <div>
-                  <p
-                  className="pt-1"
-                  >
-                Wow, what an article! I never thought I would need... 
-                
-                </p>
-                </div>
+                    <p className="pt-1">
+                      Wow, what an article! I never thought I would need...
+                    </p>
+                  </div>
                 </Card.Header>
                 <Card.Img
                   variant="top"
                   fluid
                   src={require("../assets/images/image (2).png")}
                 />
-                
+
                 <Card.Footer>
                   <div className=" d-flex justify-content-between text-center">
                     <Button>
@@ -96,13 +93,10 @@ class Home extends React.Component {
               <Card>
                 <Card.Header>
                   <Avatar round={true} size="50" name="James Lewis" />
-  
-                  <p
-                  className="pt-1"
-                  >
-                Wow, what an article! I never thought I would need... 
-                
-                </p>
+
+                  <p className="pt-1">
+                    Wow, what an article! I never thought I would need...
+                  </p>
                 </Card.Header>
                 <Card.Img
                   variant="top"
@@ -129,12 +123,9 @@ class Home extends React.Component {
               <Card>
                 <Card.Header>
                   <Avatar round={true} size="50" name="Michael Jordan" />
-                  <p
-                  className="pt-1"
-                  >
-                Wow, what an article! I never thought I would need... 
-                
-                </p>
+                  <p className="pt-1">
+                    Wow, what an article! I never thought I would need...
+                  </p>
                 </Card.Header>
 
                 <Card.Img
@@ -169,6 +160,7 @@ class Home extends React.Component {
             </div>
           </div>
         </div>
+        </Container>
       </React.Fragment>
     );
   }
