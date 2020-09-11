@@ -13,6 +13,10 @@ import Avatar from "react-avatar";
 import UserHeader from "../components/UserHeader";
 import { Button, Container } from "reactstrap";
 
+import ToolBar from '../components/ToolBar.js/ToolBar';
+
+
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -37,6 +41,7 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
+       
       <Container>
         <UserHeader />
         <div className="m-5 pt-5 mx-auto">

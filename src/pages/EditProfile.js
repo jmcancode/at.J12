@@ -5,6 +5,7 @@ import Container from 'react-bootstrap/Container';
 
 const EditProfile = () => {
   return (
+    <Container className="mt-5 pt-5">
     <Card className="border-bottom-0">
       <Card.Header className="text-center">EDIT PROFILE</Card.Header>
       <Container>
@@ -31,6 +32,7 @@ const EditProfile = () => {
         </Card.Body>
       </Container>
     </Card>
+    </Container>
   )
 }
 

@@ -12,9 +12,9 @@ import {
 
 const AddPost = (props) => {
   return (
-    <Container className="mt-5">
-    <Card className="border-bottom-0">
-      <Card.Header>
+    <Container>
+    <Card className="border-0">
+      <Card.Header >
         <div className="container-flex d-flex">
           <FontAwesomeIcon
           className="mt-2"

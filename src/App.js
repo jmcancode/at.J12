@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Home from "./pages/Home";
@@ -11,12 +11,40 @@ import Settings from "./pages/Settings";
 import EditProfile from "./pages/EditProfile";
 import Messages from "./pages/Messages";
 import Login from "./pages/Login";
+import ToolBar from "./components/ToolBar.js/ToolBar";
+import SideDrawer from "./components/SideDrawer/SideDrawer";
+import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
+import sideDrawer from "./components/SideDrawer/SideDrawer";
 
-function App() {
+class App extends Component {
+  state = {
+    sideDrawerOpen: false
+  };
+
+  drawerToggleClickHandler =() => {
+    this.setState((prevState) => {
+      return{sideDrawerOpen: !prevState.sideDrawerOpen};
+    });
+  };
+
+
+
+
+  render(){
+    let SideDrawer;
+    let BackDrop;
+
+    if (this.state.sideDrawerOpen){
+      sideDrawer = <SideDrawer/>;
+      BackDrop = <BackDrop/>;
+    }
   return (
-    <div>
+    <div style={{ height: '100%'}}>
       <BrowserRouter>
         <Navigation />
+        <ToolBar/>
+        {sideDrawer}
+        {BackDrop}
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/home" component={Home} />
@@ -31,6 +59,7 @@ function App() {
       </BrowserRouter>
     </div>
   );
+  }
 }
 
 export default App;
