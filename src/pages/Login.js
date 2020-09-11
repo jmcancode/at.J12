@@ -11,7 +11,10 @@ class Login extends React.Component {
     return (
       <React.Fragment>
         <div className="container-flex mb-5 pb-5">
-          <Card className="text-white text-center" style={{ height: "170px" }}>
+          <Card
+            className="text-white text-center"
+            style={{ height: "170px", borderColor: "transparent", }}
+          >
             <Card.Img
               src={require("../assets/images/Rectangle 46.png")}
               alt="Card image"
@@ -19,11 +22,12 @@ class Login extends React.Component {
             <Card.ImgOverlay className="text-center">
               <Image
                 thumbnail
-                className="mt-5 "
+                className="mt-5"
                 style={{
                   backgroundColor: "transparent",
                   borderColor: "transparent",
                   height: "98px",
+          
                 }}
                 src={require("../assets/AT Logos/at-orange.png")}
               />
@@ -58,7 +62,7 @@ class Login extends React.Component {
               >
                 Log In
               </Button>
-              <Form.Text>Dont have an account? Sign up</Form.Text>
+              <Form.Text>Dont have an account? </Form.Text>
               <h5 className="mt-3 mb-3"> OR </h5>
               <Button
                 style={{ background: "#3B5998" }}

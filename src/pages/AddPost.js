@@ -12,6 +12,7 @@ import {
 
 const AddPost = (props) => {
   return (
+    <Container className="mt-5">
     <Card className="border-bottom-0">
       <Card.Header>
         <div className="container-flex d-flex">
@@ -24,7 +25,7 @@ const AddPost = (props) => {
         </div>
       </Card.Header>
 
-      <Container>
+      <Container >
         <Card.Body>
           <Form>
             <Form.Group controlId="formGroupDescription">
@@ -46,6 +47,7 @@ const AddPost = (props) => {
         </Card.Body>
       </Container>
     </Card>
+    </Container>
   );
 };
 
