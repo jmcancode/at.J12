@@ -6,7 +6,7 @@ import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
-const Profile = (props) => {
+const Profile = props => {
   return (
     <React.Fragment>
       <Container className="mt-5 pt-3">

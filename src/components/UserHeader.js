@@ -2,7 +2,6 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 
-
 import "./UserHeader.css";
 
 class UserHeader extends React.Component {
@@ -16,7 +15,10 @@ class UserHeader extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <container className="text-white text-center" style={{ height: "170px" }}>
+        <container
+          className="text-white text-center"
+          style={{ height: "170px" }}
+        >
           <Card>
             <Card.Img
               src={require("../assets/images/AdobeStock_214628027.jpeg")}
@@ -37,8 +39,8 @@ class UserHeader extends React.Component {
               left: "35%",
               top: "20%",
               zIndex: "1",
-              width: "128px",
-              height: "128px",
+              width: "120px",
+              height: "120px",
             }}
             roundedCircle={true}
             src={require("../assets/images/image (1).png")}

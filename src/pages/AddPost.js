@@ -34,7 +34,6 @@ const AddPost = (props) => {
                   as="textarea"
                   placeholder="Whats on your mind?"
                   aria-label="Whats on your mind?"
-                  aria-describedby="basic-addon2"
                 />
                 <InputGroup.Append>
                   <Button
