@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Navigation />
         <Switch>
-          <Route path="/" component={Login} />
+          <Route path="/login" component={Login} />
           <Route path="/home" component={Home} />
           <Route path="/addpost" component={AddPost} />
           <Route path="/profile" component={Profile} />
