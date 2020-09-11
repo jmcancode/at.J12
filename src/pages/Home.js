@@ -41,15 +41,15 @@ class Home extends React.Component {
         <UserHeader />
         </div>
         <container>
-          <div className="m-5 pt-5 mx-auto">
+          <div className=" container">
             <div className="container d-flex justify-content-between text-center">
-              <div className="d-flex flex-row p-4 ">
+              <div className="container-flex d-flex pt-5">
                 <div>
-                  <FontAwesomeIcon icon={faStar} />
+                  <FontAwesomeIcon icon={faStar} size="sm" />
                 </div>
-                <div className="pl-2">DAY STREAK</div>
+                <div className="pl-2 pt-1 day_streak"> {this.setState} 34 DAY STREAK</div>
               </div>
-              <div className="d-flex flex-row-reverse p-4">
+              <div className=" mt-5 pt-1 new_feed">
                 <p>NEWS FEED: {this.state.currentDate} </p>
               </div>
             </div>
