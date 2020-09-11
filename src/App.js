@@ -10,8 +10,7 @@ import About from "./pages/About";
 import Settings from "./pages/Settings";
 import EditProfile from "./pages/EditProfile";
 import Messages from "./pages/Messages";
-
-
+import Login from "./pages/Login";
 
 function App() {
   return (
@@ -19,6 +18,7 @@ function App() {
       <BrowserRouter>
         <Navigation />
         <Switch>
+          <Route path="/" component={Login} />
           <Route path="/home" component={Home} />
           <Route path="/addpost" component={AddPost} />
           <Route path="/profile" component={Profile} />
