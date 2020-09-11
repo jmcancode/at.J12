@@ -7,12 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faImages,
   faCamera,
-  faArrowLeft,
+  faArrowLeft, 
+  faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
 
 const AddPost = (props) => {
   return (
-    <Container>
+    <Container className="mt-5 pt-3">
     <Card className="border-0">
       <Card.Header >
         <div className="container-flex d-flex">
@@ -21,15 +22,17 @@ const AddPost = (props) => {
            icon={faArrowLeft} 
            size="lg"
            />
-          <h6 className="pl-3 mt-2">ADD POST</h6>
+          <h6 className="pl-3 mt-2" style={{color: '#BF5700'}}>ADD POST</h6>
         </div>
       </Card.Header>
 
       <Container >
         <Card.Body>
           <Form>
-            <Form.Group controlId="formGroupDescription">
+            <Form.Group controlId="formGroupDescription" className="container-flex d-flex" style={{justifyContent: 'center'}}>
               <Form.Control type="text" placeholder="Want to say something?" />
+              <div style={{color: "#BF5700"}}>Send</div>
+              <FontAwesomeIcon icon={faCaretRight} size="lg" style={{color: "#BF5700"}}/>
             </Form.Group>
           </Form>
           <div className="container-flex d-flex justify-content-between">

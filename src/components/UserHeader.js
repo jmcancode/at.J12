@@ -3,6 +3,8 @@ import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 
 
+import "./UserHeader.css";
+
 class UserHeader extends React.Component {
   constructor(props) {
     super(props);
@@ -14,29 +16,20 @@ class UserHeader extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div>
-          <Card className="text-white text-center" style={{ height: "170px" }}>
+        <container className="text-white text-center" style={{ height: "170px" }}>
+          <Card>
             <Card.Img
               src={require("../assets/images/AdobeStock_214628027.jpeg")}
               alt="Card image"
             />
-            <Card.ImgOverlay className="text-center">
+            <Card.ImgOverlay>
               <Card.Title>
-                <h1
-                  style={{
-                    fontSize: "25px",
-                    position: "absolute",
-                    top: "7%",
-                    left: "32.5%",
-                  }}
-                >
-                  James Lewis
-                </h1>
+                <h1>James Lewis</h1>
               </Card.Title>
               <Card.Text>Football Team</Card.Text>
             </Card.ImgOverlay>
           </Card>
-        </div>
+        </container>
         <div className="container">
           <Image
             style={{

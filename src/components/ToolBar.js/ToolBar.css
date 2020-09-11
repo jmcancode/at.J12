@@ -3,7 +3,7 @@
     width: 100%;
     top: 0;
     left: 0;
-    background: #BF5700;
+    background: #ffffff;
     height: 56px;
 }
 
@@ -19,7 +19,7 @@
 }
 
 .toolbar_logo a {
-    color: #ffffff;
+    color: #BF5700;
     text-decoration: none;
     font-size: 1.1rem;
 
@@ -41,7 +41,7 @@
 }
 
 .toolbar_navigation_items a {
-    color: #ffffff;
+    color: #000;
     text-decoration: none;
     list-style: none;
 }

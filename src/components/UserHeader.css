@@ -1,9 +1,8 @@
-h1{
+h1 {
     color: #BF5700;
-    padding-bottom: 5px;
+    font-size: 25px;
 }
-
-Image{
+Image {
     border-color: #ffffff;
     border: solid !important;
 }
