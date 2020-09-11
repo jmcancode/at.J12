@@ -16,11 +16,22 @@ class Login extends React.Component {
               src={require("../assets/images/Rectangle 46.png")}
               alt="Card image"
             />
-            <Card.ImgOverlay className="text-center"></Card.ImgOverlay>
+            <Card.ImgOverlay className="text-center">
+              <Image
+                thumbnail
+                className="mt-5 "
+                style={{
+                  backgroundColor: "transparent",
+                  borderColor: "transparent",
+                  height: "98px",
+                }}
+                src={require("../assets/AT Logos/at-orange.png")}
+              />
+            </Card.ImgOverlay>
           </Card>
         </div>
         <Container className="mb-5">
-          <div className="card">
+          <div className="card" style={{ borderColor: "transparent" }}>
             <Form className="text-center">
               <Form.Group controlId="formBasicEmail">
                 <Form.Control
