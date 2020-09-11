@@ -14,7 +14,6 @@ import Login from "./pages/Login";
 import ToolBar from "./components/ToolBar.js/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
-import sideDrawer from "./components/SideDrawer/SideDrawer";
 
 class App extends Component {
   state = {
@@ -27,24 +26,28 @@ class App extends Component {
     });
   };
 
+  backdropClickHandler = () => {
+    this.setState({sideDrawerOpen: false})
+
+  };
 
 
 
-  render(){
-    let SideDrawer;
-    let BackDrop;
+
+  render() {
+    
+    let backdrop;
 
     if (this.state.sideDrawerOpen){
-      sideDrawer = <SideDrawer/>;
-      BackDrop = <BackDrop/>;
+      backdrop = <BackDrop click={this.drawerToggleClickHandler}/>;
     }
   return (
     <div style={{ height: '100%'}}>
       <BrowserRouter>
         <Navigation />
-        <ToolBar/>
-        {sideDrawer}
-        {BackDrop}
+        <ToolBar drawerClickHandler={this.drawerToggleClickHandler}/>
+        <SideDrawer show={this.state.sideDrawerOpen}/>
+        {backdrop}
         <Switch>
           <Route path="/login" component={Login} />
           <Route path="/home" component={Home} />
