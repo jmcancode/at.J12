@@ -5,6 +5,10 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 
+import './login.css';
+
+
+
 class Login extends React.Component {
   state = {};
   render() {
@@ -22,14 +26,14 @@ class Login extends React.Component {
             <Card.ImgOverlay className="text-center">
               <Image
                 thumbnail
-                className="mt-5"
+                className="login-logo"
                 style={{
                   backgroundColor: "transparent",
                   borderColor: "transparent",
                   height: "98px",
           
                 }}
-                src={require("../assets/AT Logos/at-orange.png")}
+                src={require("../assets/images/whitelogo.png")}
               />
             </Card.ImgOverlay>
           </Card>
@@ -50,7 +54,7 @@ class Login extends React.Component {
                   type="password"
                   placeholder="Password"
                 />
-                <Form.Text className="text-muted float-right pr-1 mb-3">
+                <Form.Text className="text-muted text-center">
                   Forgot Password?
                 </Form.Text>
               </Form.Group>
@@ -62,7 +66,7 @@ class Login extends React.Component {
               >
                 Log In
               </Button>
-              <Form.Text>Dont have an account? </Form.Text>
+              <Form.Text>Dont have an account? Sign up </Form.Text>
               <h5 className="mt-3 mb-3"> OR </h5>
               <Button
                 style={{ background: "#3B5998" }}

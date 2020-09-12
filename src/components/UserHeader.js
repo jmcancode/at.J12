@@ -25,10 +25,10 @@ class UserHeader extends React.Component {
               alt="Card image"
             />
             <Card.ImgOverlay>
-              <Card.Title>
-                <h1>James Lewis</h1>
+              <Card.Title >
+                <h1 className="p-0 m-0">James Lewis</h1>
               </Card.Title>
-              <Card.Text>Football Team</Card.Text>
+              <Card.Text >Football Team</Card.Text>
             </Card.ImgOverlay>
           </Card>
         </container>

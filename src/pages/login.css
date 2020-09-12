@@ -8,3 +8,13 @@
     max-width: 320px;
   }
 }
+
+.btn {
+  border-color: transparent !important;
+}
+
+.login-logo{
+  position: absolute;
+  left: 27%;
+  top: 88%;
+}
