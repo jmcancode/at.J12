@@ -1,5 +1,6 @@
 .toolbar {
     position: fixed;
+    z-index: 4;
     width: 100%;
     top: 0;
     left: 0;
@@ -19,6 +20,11 @@
 }
 
 .toolbar_logo a {
+    color: #BF5700;
+    text-decoration: none;
+
+}
+.toolbar_logo a:hover {
     color: #BF5700;
     text-decoration: none;
 

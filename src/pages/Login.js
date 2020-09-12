@@ -66,7 +66,7 @@ class Login extends React.Component {
               >
                 Log In
               </Button>
-              <Form.Text>Dont have an account? Sign up </Form.Text>
+              <Form.Text className="text-muted">Dont have an account? Sign up </Form.Text>
               <h5 className="mt-3 mb-3"> OR </h5>
               <Button
                 style={{ background: "#3B5998" }}
