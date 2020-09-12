@@ -37,8 +37,8 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-      <div className="container-flex pt-5">
-        <UserHeader />
+        <div className="container-flex pt-5">
+          <UserHeader />
         </div>
         <container>
           <div className=" container">

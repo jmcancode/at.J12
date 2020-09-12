@@ -19,7 +19,7 @@ class UserHeader extends React.Component {
           className="text-white text-center"
           style={{ height: "170px" }}
         >
-          <Card>
+          <Card className="border-0">
             <Card.Img
               src={require("../assets/images/AdobeStock_214628027.jpeg")}
               alt="Card image"

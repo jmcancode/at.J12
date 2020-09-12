@@ -1,6 +1,6 @@
 import React from "react";
-
 import "./SideDrawer.css";
+import CampusContacts from "../CampusContacts"
 
 const sideDrawer = (props) => {
   let drawerClasses = 'side-drawer';
@@ -28,6 +28,11 @@ const sideDrawer = (props) => {
         </li>
         <li>
           <a href="/profile">Profile</a>
+        </li>
+
+        {/* bottom contacts */}
+        <li>
+          <CampusContacts />
         </li>
       </ul>
     </nav>
