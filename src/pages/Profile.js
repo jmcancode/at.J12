@@ -6,6 +6,8 @@ import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
+import '../../src/assets/css/Profile.css';
+
 const Profile = (props) => {
   return (
     <React.Fragment>
@@ -20,7 +22,7 @@ const Profile = (props) => {
             </div>
           </Card.Header>
           <UserHeader />
-          <Container>
+          <div className="container-flex edit_profile-container">
             <Card.Body>
               <Form>
                 <Form.Group controlId="formGroupName">
@@ -28,7 +30,7 @@ const Profile = (props) => {
                   <Form.Control type="text" placeholder="James Lewis" />
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                  <Form.Label>Choose your sport</Form.Label>
+                  <Form.Label>Team</Form.Label>
                   <Form.Control as="select">
                     <option>Football</option>
                     <option>Basketball</option>
@@ -50,7 +52,7 @@ const Profile = (props) => {
                 </Form.Group>
               </Form>
             </Card.Body>
-          </Container>
+          </div>
         </Card>
       </Container>
     </React.Fragment>

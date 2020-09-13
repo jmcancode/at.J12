@@ -9,7 +9,6 @@ const EditProfile = () => {
     <Card className="border-bottom-0">
       <Card.Header className="text-center">EDIT PROFILE</Card.Header>
       <Container>
-
         <Card.Body>
           <Form>
             <Form.Group controlId="formGroupName">

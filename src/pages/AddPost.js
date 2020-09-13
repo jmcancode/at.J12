@@ -13,6 +13,8 @@ import {
   faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
 
+import "../assets/css/AddPost.css";
+
 const AddPost = (props) => {
   return (
     <Container className="mt-5 pt-3">
@@ -42,7 +44,7 @@ const AddPost = (props) => {
                       borderColor: "transparent",
                     }}
                   >
-                    Send <FontAwesomeIcon icon={faCaretRight} />
+                    Send <FontAwesomeIcon icon={faCaretRight} size="lg" />
                   </Button>
                 </InputGroup.Append>
               </InputGroup>
