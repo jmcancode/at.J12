@@ -59,12 +59,13 @@ class Login extends React.Component {
                 </Form.Text>
               </Form.Group>
               <Button
+                
                 style={{ background: "#BF5700" }}
                 className="btn btn-block"
                 variant="primary"
                 type="submit"
               >
-                Log In
+               {''} Log In {''}
               </Button>
               <Form.Text className="text-muted">Dont have an account? Sign up </Form.Text>
               <h5 className="mt-3 mb-3"> OR </h5>

@@ -3,9 +3,11 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Accordion from 'react-bootstrap/Accordion';
 import Form from 'react-bootstrap/Form';
+import Container from 'react-bootstrap/Container';
 
 const Settings = () => {
   return (
+    <Container>
     <div className="d-flex justify-content-center mt-5">
       <Card style={{ width: '50rem' }}>
         <Card.Header className="text-center">SETTINGS</Card.Header>
@@ -36,6 +38,7 @@ const Settings = () => {
         </ListGroup>
       </Card>
     </div>
+    </Container>
   );
 };
 
