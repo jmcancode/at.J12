@@ -1,8 +1,8 @@
 h1 {
     font-size: 20px;
 }
-Image {
-    border-color: #ffffff;
-    border: solid !important;
+.rounded-circle{
+    border-color: #fff;
+    border-style: solid;
 }
 

@@ -11,7 +11,7 @@ const toolbar = (props) => (
         <DrawerToggleButton click={props.drawerClickHandler} />
       </div>
       <div className="toolbar_logo text-center">
-        <a href="/login"><h3 className="mb-0">ATHLETE TALK</h3></a>
+        <a href="/login"><img style={{size: '1px'}} src={require("../../assets/AT Logos/at-long-orange.png")}/></a>
       </div>
       <div className="toolbar_navigation_items">
         <a href="/src/pages/Home.js" className>

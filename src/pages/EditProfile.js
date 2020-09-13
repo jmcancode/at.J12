@@ -2,12 +2,17 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 const EditProfile = () => {
   return (
     <Container className="mt-5 pt-3">
     <Card className="border-bottom-0">
-      <Card.Header className="text-center">EDIT PROFILE</Card.Header>
+      <Card.Header className="d-flex justify-content-between">{''}EDIT PROFILE{''}
+      <FontAwesomeIcon className="mt-1" icon={faCog}/>
+      
+      </Card.Header>
       <Container>
         <Card.Body>
           <Form>

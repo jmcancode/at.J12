@@ -1,10 +1,15 @@
 import React from 'react';
-
+// import Twilil from 'twilio...'
+import '../assets/css/AddPost.css'
 
 const Message = (props) => {
     return(
-        <h5>Message page requires a Twilio account...</h5>
-    );
+        <div className="container" style={{marginTop: "25%" }}>
+        <div className="card-container">
+        <h5>Message feature requires a Twilio account...</h5>
+        </div>
+        </div>
+        );
 
 }
 

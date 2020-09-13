@@ -18,6 +18,7 @@ import "../assets/css/AddPost.css";
 const AddPost = (props) => {
   return (
     <Container className="mt-5 pt-3">
+    <div className="container card-container">
       <Card className="border-0">
         <Card.Header>
           <div className="container-flex d-flex">
@@ -64,6 +65,7 @@ const AddPost = (props) => {
           </Card.Body>
         </Container>
       </Card>
+      </div>
     </Container>
   );
 };

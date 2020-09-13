@@ -17,6 +17,10 @@
   padding: 0 1rem;
 }
 
+.toolbar_logo{
+  size: 1rem;
+}
+
 .toolbar_logo a,
 .toolbar_logo a:hover {
   color: #bf5700;
@@ -32,4 +36,9 @@
 .toolbar_navigation_items a:hover,
 .toolbar_navigation_items a:active {
   color: #bf5700;
+}
+
+img{
+  margin-top: 1%;
+  width: 55%;
 }
