@@ -1,34 +1,35 @@
 .toolbar {
-    position: fixed;
-    z-index: 4;
-    width: 100%;
-    top: 0;
-    left: 0;
-    background: #ffffff;
-    height: 56px;
+  display: block;
+  position: fixed;
+  z-index: 4;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  height: 56px;
 }
 
 .toolbar_navigation {
-    display: flex;
-    height: 100%;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
-.toolbar_logo a, 
+.toolbar_logo a,
 .toolbar_logo a:hover {
-    color: #BF5700;
-    text-decoration: none;
+  color: #bf5700;
+  text-decoration: none;
 }
 
 .toolbar_navigation_items a {
-    color: #000;
-    text-decoration: none;
-    list-style: none;
+  color: #000;
+  text-decoration: none;
+  list-style: none;
 }
 
 .toolbar_navigation_items a:hover,
 .toolbar_navigation_items a:active {
-    color: #BF5700;
+  color: #bf5700;
 }
