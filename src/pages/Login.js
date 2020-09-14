@@ -5,8 +5,7 @@ import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
 
-import './login.css';
-
+import "./login.css";
 
 class Login extends React.Component {
   state = {};
@@ -16,7 +15,7 @@ class Login extends React.Component {
         <div className="container-flex mb-5 pb-5">
           <Card
             className="text-white text-center"
-            style={{ height: "170px", borderColor: "transparent", }}
+            style={{ height: "170px", borderColor: "transparent" }}
           >
             <Card.Img
               src={require("../assets/images/Rectangle 46.png")}
@@ -30,7 +29,6 @@ class Login extends React.Component {
                   backgroundColor: "transparent",
                   borderColor: "transparent",
                   height: "98px",
-          
                 }}
                 src={require("../assets/images/whitelogo.png")}
               />
@@ -58,15 +56,16 @@ class Login extends React.Component {
                 </Form.Text>
               </Form.Group>
               <Button
-                
                 style={{ background: "#BF5700" }}
                 className="btn btn-block"
                 variant="primary"
                 type="submit"
               >
-               {''} Log In {''}
+                {""} Log In {""}
               </Button>
-              <Form.Text className="text-muted">Dont have an account? Sign up </Form.Text>
+              <Form.Text className="text-muted">
+                Dont have an account? Sign up{" "}
+              </Form.Text>
 
               <Form.Text className="mt-5">
                 {" "}

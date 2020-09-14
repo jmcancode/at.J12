@@ -19,7 +19,7 @@ const AddPost = (props) => {
   return (
     <Container className="mt-5 pt-3">
       <div className="container card-container">
-        <Card className="border-0">
+        <Card className="border" style={{height: '100vh'}}>
           <Card.Header>
             <div className="container-flex d-flex">
               <FontAwesomeIcon className="mt-2" icon={faArrowLeft} size="lg" />
