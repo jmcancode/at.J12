@@ -8,7 +8,6 @@ import Image from "react-bootstrap/Image";
 import './login.css';
 
 
-
 class Login extends React.Component {
   state = {};
   render() {
@@ -68,31 +67,7 @@ class Login extends React.Component {
                {''} Log In {''}
               </Button>
               <Form.Text className="text-muted">Dont have an account? Sign up </Form.Text>
-              <h5 className="mt-3 mb-3"> OR </h5>
-              <Button
-                style={{ background: "#3B5998" }}
-                className="btn btn-block"
-                variant="primary"
-                type="submit"
-              >
-                Log In with Facebook
-              </Button>
-              <Button
-                style={{ background: "#DD2A7B" }}
-                className="btn btn-block"
-                variant="primary"
-                type="submit"
-              >
-                Log In with Instagram
-              </Button>
-              <Button
-                style={{ background: "#00ACEE" }}
-                className="btn btn-block"
-                variant="primary"
-                type="submit"
-              >
-                Log In with Twittter
-              </Button>
+
               <Form.Text className="mt-5">
                 {" "}
                 &copy; Where Athletes Talk{" "}

@@ -1,0 +1,11 @@
+.custom-control-label::before {
+    background: #BF5700 !important;
+}
+
+.custom-switch::after {
+    background: #bf5700 !important;
+}
+
+.list-group-item a {
+    color: #000 !important;
+}
