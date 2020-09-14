@@ -1,11 +1,24 @@
-.custom-control-label::before {
-    background: #BF5700 !important;
-}
-
-.custom-switch::after {
-    background: #bf5700 !important;
+.list-group-item {
+    color: #000000 ;
+    text-decoration: none;
 }
 
 .list-group-item a {
-    color: #000 !important;
+    color: #000000 !important;
+    text-decoration: none;
+}
+
+.list-group-item a {
+    color: #b5700b;
+}
+
+.list-group-item:hover {
+    color: #b57000 !important;
+}
+
+
+
+a:hover {
+    color: #b57000;
+    text-decoration: none;
 }

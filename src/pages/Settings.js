@@ -5,8 +5,11 @@ import Accordion from "react-bootstrap/Accordion";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 
+import '../assets/css/Settings.css';
+
 const Settings = () => {
   return (
+    <div className="container-sm-flex mt-2 pt-1" >
     <Container>
       <div className="d-flex justify-content-center mt-5">
         <Card style={{ width: "50rem" }}>
@@ -19,7 +22,7 @@ const Settings = () => {
               </Form>
             </ListGroup.Item>
             <ListGroup.Item>
-              <a href="/edit-profile">Edit Profile</a>
+              <a  href="/edit-profile">Edit Profile</a>
             </ListGroup.Item>
             <Accordion defaultActiveKey="0">
               <Accordion.Toggle as={ListGroup.Item} eventKey="1">
@@ -133,6 +136,7 @@ const Settings = () => {
         </Card>
       </div>
     </Container>
+    </div>
   );
 };
 
