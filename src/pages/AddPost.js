@@ -29,9 +29,9 @@ const AddPost = (props) => {
             </div>
           </Card.Header>
 
-          <Container>
+          <div className="container-flex">
             <Card.Body>
-              <Form>
+              <Form className="form">
                 <InputGroup className="mb-3">
                   <Form.Control
                     as="textarea"
@@ -63,7 +63,7 @@ const AddPost = (props) => {
                 </div>
               </div>
             </Card.Body>
-          </Container>
+          </div>
         </Card>
       </div>
     </Container>

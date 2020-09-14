@@ -78,7 +78,7 @@ class Home extends React.Component {
                       </div>
                     </div>
                     <div>
-                      <p className="pt-1">
+                      <p className="user-copy">
                         Wow, what an article! I never thought I would need...
                       </p>
                     </div>
