@@ -127,11 +127,11 @@ class Home extends React.Component {
                   <Card.Header>
                     <Avatar round={true} size="50" name="James Lewis" />
                     <div className="container-row">
-                        <p className="user-title">
-                          {""}James Lewis{""}
-                        </p>
-                        <p className="user-subtitle ">Basketball Team</p>
-                      </div>
+                      <p className="user-title">
+                        {""}James Lewis{""}
+                      </p>
+                      <p className="user-subtitle ">Basketball Team</p>
+                    </div>
 
                     <p className="pt-1">
                       Wow, what an article! I never thought I would need...
@@ -163,11 +163,11 @@ class Home extends React.Component {
                   <Card.Header>
                     <Avatar round={true} size="50" name="Michael Jordan" />
                     <div className="container-row">
-                        <p className="user-title">
-                          {""}Michael Jordan{""}
-                        </p>
-                        <p className="user-subtitle ">Baseball Team</p>
-                      </div>
+                      <p className="user-title">
+                        {""}Michael Jordan{""}
+                      </p>
+                      <p className="user-subtitle ">Baseball Team</p>
+                    </div>
                     <p className="pt-1">
                       Wow, what an article! I never thought I would need...
                     </p>

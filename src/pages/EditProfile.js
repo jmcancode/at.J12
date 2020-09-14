@@ -5,6 +5,10 @@ import Container from 'react-bootstrap/Container';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCog } from '@fortawesome/free-solid-svg-icons';
 
+import Button from 'react-bootstrap/Button';
+
+import '../assets/css/EditProfile.css';
+
 const EditProfile = () => {
   return (
     <Container className="mt-5 pt-3">
@@ -30,8 +34,9 @@ const EditProfile = () => {
             </Form.Group>
             <Form.Group controlId="formGroupPhone">
               <Form.Label>Phone</Form.Label>
-              <Form.Control type="tel" placeholder="210-987-4530" />
+              <Form.Control type="tel" placeholder="210-454-4340" />
             </Form.Group>
+            <Button variant="secondary" as="button" size="md" type="submit" block> Update </Button>
           </Form>
         </Card.Body>
       </Container>
