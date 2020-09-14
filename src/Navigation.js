@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
@@ -27,7 +26,7 @@ import './assets/css/Navigation.css';
 const Navigation = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
-  
+
 
   const tabs = [
     {
@@ -66,7 +65,7 @@ const Navigation = (props) => {
       >
         <div className="container-fluid justify-content-between ">
           <a className="navbar-brand" href="/">
-            <img alt="Athlete Talk" src={require('./assets/AT Logos/at-long-orange.png')} style={{width: '25%', paddingBottom: '15px'}}/>
+            <img alt="Athlete Talk" src={require('./assets/AT Logos/at-long-orange.png')} style={{ width: '25%', paddingBottom: '15px' }} />
           </a>
           <div>
             <Form inline>
@@ -83,7 +82,7 @@ const Navigation = (props) => {
             <Nav.Item className="d-flex d-inline">
               <div className="pt-2">
                 <i>
-                  <FontAwesomeIcon  className="mx-2" size="2x" icon={faHome} />
+                  <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
                 </i>
                 <FontAwesomeIcon className="mx-2" size="2x" icon={faFolder} />
                 <FontAwesomeIcon className="mx-2" size="2x" icon={faEnvelope} />

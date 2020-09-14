@@ -1,16 +1,18 @@
 import React from 'react';
-import Container from 'react-bootstrap/Container';
 import '../pages/Home.css';
 import PlanCategory from '../components/Plans/PlanCategory';
 import PlanHeader from '../components/Plans/PlanHeader';
 
 const Plans = (props) => {
   return (
-    <Container className="shadow rounded">
+    <div className="shadow rounded mx-3 mb-3 p-3">
       <PlanHeader />
-      {/* <h1>Plans Page</h1> */}
       <PlanCategory />
-    </Container>
+      <PlanCategory />
+      <PlanCategory />
+      <PlanCategory />
+
+    </div>
   );
 };
 

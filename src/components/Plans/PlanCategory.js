@@ -34,6 +34,7 @@ class PlanCategory extends React.Component {
   render() {
 
     const settings = {
+      arrows: false,
       dots: false,
       infinite: true,
       centerPadding: "60px",

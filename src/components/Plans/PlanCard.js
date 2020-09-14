@@ -3,16 +3,12 @@ import { render } from '@testing-library/react';
 import Card from 'react-bootstrap/Card';
 
 class PlanCard extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   this.state.titleName = props.title
-  // }
-
-
   render() {
     return (
-      <Card>
-        <Card.Img variant="top" src={this.props.image} />
+      <Card className="mx-1 border-0">
+        <Card.Img variant="top"
+          className="border-0 rounded"
+          src={this.props.image} />
         <Card.Body>
           <Card.Title>
             {this.props.title}
