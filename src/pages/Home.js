@@ -16,6 +16,7 @@ import { Button } from "reactstrap";
 class Home extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       count: 0,
     };
@@ -44,10 +45,13 @@ class Home extends React.Component {
           <div className=" container">
             <div className="container d-flex justify-content-between text-center">
               <div className="container-flex d-flex pt-5">
-                <div>
-                  <FontAwesomeIcon icon={faStar} size="sm" />
+                <div className="pb-1">
+                  <FontAwesomeIcon color="gold" icon={faStar} size="lg" />
                 </div>
-                <div className="pl-2 pt-1 day_streak"> {this.setState} 34 DAY STREAK</div>
+                <div className="pl-2 pt-1 day_streak">
+                  {" "}
+                  {this.setState} 34 DAY STREAK
+                </div>
               </div>
               <div className=" mt-5 pt-1 new_feed">
                 <p>NEWS FEED: {this.state.currentDate} </p>
@@ -59,7 +63,13 @@ class Home extends React.Component {
                 <Card>
                   <Card.Header>
                     <div>
-                      <Avatar round={true} size="50" name="Will Binns-Smith" />
+                      <Avatar
+                        value="Will"
+                        fgColor="#fff"
+                        round={true}
+                        size="50"
+                        name="Will Binns-Smith"
+                      />
                     </div>
                     <div>
                       <p className="pt-1">
@@ -76,17 +86,17 @@ class Home extends React.Component {
                   <Card.Footer>
                     <div className=" d-flex justify-content-between text-center">
                       <Button>
-                        <FontAwesomeIcon icon={faShare} size="sm" /> 10
+                        <FontAwesomeIcon className="home-icon" icon={faShare} size="sm" /> 10
                       </Button>
                       <Button>
-                        <FontAwesomeIcon icon={faCommentDots} size="sm" /> 12
+                        <FontAwesomeIcon className="home-icon" icon={faCommentDots} size="sm" /> 12
                       </Button>
                       <Button
                         onClick={() =>
                           this.setState({ count: this.state.count + 1 })
                         }
                       >
-                        <FontAwesomeIcon icon={faHeart} size="sm" /> 1.5k
+                        <FontAwesomeIcon className="home-icon" icon={faHeart} size="sm" /> 1.5k
                       </Button>
                     </div>
                   </Card.Footer>

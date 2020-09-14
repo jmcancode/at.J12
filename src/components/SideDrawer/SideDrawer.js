@@ -18,7 +18,7 @@ const sideDrawer = (props) => {
           <a href="/plans">Plans</a>
         </li>
         <li>
-          <a href="/messages">Messages</a>
+          <a href="/message">Messages</a>
         </li>
         <li>
           <a href="/settings">Settings</a>
