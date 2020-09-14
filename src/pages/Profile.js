@@ -1,22 +1,21 @@
 import React from "react";
-import UserHeader from "../components/UserHeader";
+
+// Bootstrap components
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import Image from "react-bootstrap/Image";
 
+// custom css
 import "../../src/assets/css/Profile.css";
 
 const Profile = (props) => {
   return (
     <React.Fragment>
       <Container className="mt-5 pt-3">
-        <Card className="border-bottom-0">
+        <Card  style={{height: '100vh'}}>
           <Card.Header>
-            <div className="container-flex d-flex">
-              <FontAwesomeIcon className="mt-2" icon={faArrowLeft} size="lg" />
+            <div className="container text-center">
               <h6 className="pl-3 mt-2" style={{ color: "#BF5700" }}>
                 Profile
               </h6>
@@ -40,11 +39,11 @@ const Profile = (props) => {
                 position: "absolute",
                 zIndex: "2",
                 right: "30%",
-                top: "27%",
+                top: "20%",
               }}
             />
           </div>
-          <div className="container-flex edit_profile-container pt-5">
+          <div className="container-flex edit_profile-container pt-2">
             <Card.Body>
               <Form>
                 <Form.Group controlId="formGroupName">

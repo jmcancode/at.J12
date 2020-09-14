@@ -1,15 +1,21 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
+import Card from 'react-bootstrap/Card';
+
+// custom ccss
 import '../pages/Home.css';
-import PlanCategory from '../components/Plans/PlanCategory';
+// compoentes 
+// import PlanCategory from '../components/Plans/PlanCategory';
 import PlanHeader from '../components/Plans/PlanHeader';
 
 const Plans = (props) => {
   return (
     <Container className="shadow rounded">
-      <PlanHeader />
+    <Card>
+      {<PlanHeader />}
       {/* <h1>Plans Page</h1> */}
       {/* <PlanCategory /> */}
+    </Card>
     </Container>
   );
 };
