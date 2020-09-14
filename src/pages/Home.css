@@ -20,9 +20,7 @@
    z-index: 2;
    left: 25%;
    top: -1%;
-
 }
-
 
 .user-title{
     font-size: 14px;
@@ -41,4 +39,8 @@
     margin: 0;
     font-weight: 300 ;
     padding-top: 4%;
+}
+
+.card-container-user{
+    box-shadow: 10px 10px 20px gray; 
 }

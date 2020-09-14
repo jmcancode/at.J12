@@ -60,7 +60,7 @@ class Home extends React.Component {
 
             <div className="d-flex">
               <div className="card-deck">
-                <Card>
+                <Card className="card-container-user">
                   <Card.Header>
                     <div>
                       <Avatar
@@ -123,7 +123,7 @@ class Home extends React.Component {
                   </Card.Footer>
                 </Card>
 
-                <Card>
+                <Card className="card-container-user">
                   <Card.Header>
                     <Avatar round={true} size="50" name="James Lewis" />
                     <div className="container-row">
@@ -159,7 +159,7 @@ class Home extends React.Component {
                     </div>
                   </Card.Footer>
                 </Card>
-                <Card>
+                <Card className="card-container-user">
                   <Card.Header>
                     <Avatar round={true} size="50" name="Michael Jordan" />
                     <div className="container-row">
