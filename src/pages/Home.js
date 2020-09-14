@@ -43,7 +43,7 @@ class Home extends React.Component {
         </div>
         <container>
           <div className=" container">
-            <div className="container d-flex justify-content-between text-center">
+            <div className="container d-flex justify-content-between text-center pb-3">
               <div className="container-flex d-flex pt-5">
                 <div className="pb-1">
                   <FontAwesomeIcon color="gold" icon={faStar} size="lg" />
@@ -70,6 +70,12 @@ class Home extends React.Component {
                         size="50"
                         name="Will Binns-Smith"
                       />
+                      <div className="container-row">
+                        <p className="user-title">
+                          {""}Will Binns-Smith{""}
+                        </p>
+                        <p className="user-subtitle ">Basketball Team</p>
+                      </div>
                     </div>
                     <div>
                       <p className="pt-1">
@@ -86,17 +92,32 @@ class Home extends React.Component {
                   <Card.Footer>
                     <div className=" d-flex justify-content-between text-center">
                       <Button>
-                        <FontAwesomeIcon className="home-icon" icon={faShare} size="sm" /> 10
+                        <FontAwesomeIcon
+                          className="home-icon"
+                          icon={faShare}
+                          size="sm"
+                        />{" "}
+                        10
                       </Button>
                       <Button>
-                        <FontAwesomeIcon className="home-icon" icon={faCommentDots} size="sm" /> 12
+                        <FontAwesomeIcon
+                          className="home-icon"
+                          icon={faCommentDots}
+                          size="sm"
+                        />{" "}
+                        12
                       </Button>
                       <Button
                         onClick={() =>
                           this.setState({ count: this.state.count + 1 })
                         }
                       >
-                        <FontAwesomeIcon className="home-icon" icon={faHeart} size="sm" /> 1.5k
+                        <FontAwesomeIcon
+                          className="home-icon"
+                          icon={faHeart}
+                          size="sm"
+                        />{" "}
+                        1.5k
                       </Button>
                     </div>
                   </Card.Footer>
@@ -105,6 +126,12 @@ class Home extends React.Component {
                 <Card>
                   <Card.Header>
                     <Avatar round={true} size="50" name="James Lewis" />
+                    <div className="container-row">
+                        <p className="user-title">
+                          {""}James Lewis{""}
+                        </p>
+                        <p className="user-subtitle ">Basketball Team</p>
+                      </div>
 
                     <p className="pt-1">
                       Wow, what an article! I never thought I would need...
@@ -135,6 +162,12 @@ class Home extends React.Component {
                 <Card>
                   <Card.Header>
                     <Avatar round={true} size="50" name="Michael Jordan" />
+                    <div className="container-row">
+                        <p className="user-title">
+                          {""}Michael Jordan{""}
+                        </p>
+                        <p className="user-subtitle ">Baseball Team</p>
+                      </div>
                     <p className="pt-1">
                       Wow, what an article! I never thought I would need...
                     </p>

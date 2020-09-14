@@ -11,6 +11,27 @@
     color: #000 !important;
     background-color: transparent !important;
     border-radius: 10% !important;
-    
 }
 
+.container-row{
+   display: flex !important;
+   flex-direction: column;
+   position: absolute;
+   z-index: 2;
+   left: 25%;
+   top: -1%;
+
+}
+
+
+.user-title{
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding-top: 15%;
+}
+.user-subtitle{
+    font-size: 11px;
+    font-weight: lighter;
+
+}
