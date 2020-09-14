@@ -9,7 +9,7 @@ const Plans = (props) => {
     <Container className="shadow rounded">
       <PlanHeader />
       {/* <h1>Plans Page</h1> */}
-      {/* <PlanCategory /> */}
+      <PlanCategory />
     </Container>
   );
 };

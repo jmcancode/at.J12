@@ -38,6 +38,7 @@
     "react-social-login": "^3.4.9",
     "reactstrap": "^8.5.1",
     "redux": "^4.0.5",
+    "slick-carousel": "^1.8.1",
     "video-react": "^0.14.1",
     "workbox-cli": "^5.1.3"
   },

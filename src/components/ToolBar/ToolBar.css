@@ -1,6 +1,6 @@
 .toolbar {
   display: block;
-  position: fixed;
+  /* position: fixed; */
   z-index: 4;
   width: 100%;
   top: 0;

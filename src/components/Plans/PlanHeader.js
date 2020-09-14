@@ -13,7 +13,7 @@ const PlanHeader = () => {
         <p className="mb-0">Filter</p>
       </div>
 
-      <h3 className="mb-0">PLANS</h3>
+      <h4 className="my-auto">PLANS</h4>
 
       <div className="d-flex align-items-center">
         <div className="mr-2">
