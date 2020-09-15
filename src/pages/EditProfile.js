@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCog, faEdit } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import Image from "react-bootstrap/Image";
 
 import Button from "react-bootstrap/Button";
@@ -12,11 +12,10 @@ import "../assets/css/EditProfile.css";
 
 const EditProfile = () => {
   return (
-    <Container className="mt-5 pt-3">
+    <Container>
       <Card className="border-bottom-0">
-        <Card.Header className="d-flex justify-content-between">
-          {""}EDIT PROFILE{""}
-          <FontAwesomeIcon className="mt-1" icon={faCog} />
+        <Card.Header className="d-inline-flex justify-content-between pl-5">
+          <div style={{color: '#b5700b', paddingLeft: '27%', fontFamily: 'Graduate'}}>EDIT PROFILE</div>
         </Card.Header>
         <Container>
           <div className="container-flex">
@@ -69,11 +68,7 @@ const EditProfile = () => {
               </Form.Group>
               <Form.Group controlId="formGroupDescription">
                 <Form.Label>Description</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  rows="3"
-                  placeholder="Bio"
-                />
+                <Form.Control as="textarea" rows="3" placeholder="Bio" />
               </Form.Group>
               <Form.Group controlId="formGroupEmail">
                 <Form.Label>Email address</Form.Label>
@@ -84,7 +79,7 @@ const EditProfile = () => {
               </Form.Group>
               <Form.Group controlId="formGroupPhone">
                 <Form.Label>Phone</Form.Label>
-                <Form.Control type="tel" placeholder="210-555-5555"/>
+                <Form.Control type="tel" placeholder="210-555-5555" />
               </Form.Group>
               <Button
                 variant="secondary"

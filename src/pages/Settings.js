@@ -13,7 +13,7 @@ const Settings = () => {
     <Container>
       <div className="d-flex justify-content-center mt-5">
         <Card style={{ width: "50rem" }}>
-          <Card.Header className="text-center">SETTINGS</Card.Header>
+          <Card.Header className="text-center" style={{color: "#b5700b"}}>SETTINGS</Card.Header>
           <ListGroup variant="flush">
             <ListGroup.Item className="d-flex justify-content-between">
               <div className="pt-4">Push Notifications</div>

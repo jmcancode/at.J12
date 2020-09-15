@@ -28,14 +28,12 @@ function SamplePrevArrow(props) {
   );
 }
 //---- CUSTOM SLIDER ARROWS ENDS ----//
-
-
 class PlanCategory extends React.Component {
   render() {
 
     const settings = {
       arrows: false,
-      dots: false,
+      dots: true,
       infinite: true,
       centerPadding: "60px",
       speed: 500,

@@ -1,19 +1,28 @@
-import React from 'react';
+import React from "react";
+
 // import Twilil from 'twilio...'
-import '../assets/css/AddPost.css'
+
+// Fontawesome
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {faCaretRight} from '@fortawesome/free-solid-svg-icons';
+
+// bootstrap
+import Card from "react-bootstrap/Card";
+
 
 const Message = (props) => {
-    return(
-        <div className="container" style={{marginTop: "25%" }}>
-        <div className="card-container">
-        <h5>Message feature requires a Twilio account...</h5>
+  return (
+    <div className=" container card-container">
+      <Card className="mx-1 border" style={{height: '100%'}}>
+      <Card.Header className="text-center" style={{color: '#b5700b', fontFamily: 'Graduate'}}>MESSAGE</Card.Header>
+        <div className="card-container card-flex d-flex justify-content-around">
+          <p>Please type your message</p>
+          <p> SEND</p>
+          <FontAwesomeIcon icon={faCaretRight} size="lg"/>
         </div>
-        </div>
-        );
-
-}
-
-
-
+      </Card>
+    </div>
+  );
+};
 
 export default Message;

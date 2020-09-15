@@ -9,7 +9,6 @@ import InputGroup from "react-bootstrap/InputGroup";
 import {
   faImages,
   faCamera,
-  faArrowLeft,
   faCaretRight,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -17,13 +16,12 @@ import "../assets/css/AddPost.css";
 
 const AddPost = (props) => {
   return (
-    <Container className="mt-5 pt-3">
+    <Container>
       <div className="container card-container">
         <Card className="border" style={{height: '100vh'}}>
           <Card.Header>
             <div className="container-flex d-flex">
-              <FontAwesomeIcon className="mt-2" icon={faArrowLeft} size="lg" />
-              <h6 className="pl-3 mt-2" style={{ color: "#BF5700" }}>
+              <h6 className="mx-auto mt-1" style={{ color: "#BF5700" }}>
                 ADD POST
               </h6>
             </div>

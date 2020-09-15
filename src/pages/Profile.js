@@ -1,5 +1,9 @@
 import React from "react";
 
+//Fontawesome Icons
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
+
 // Bootstrap components
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
@@ -12,17 +16,27 @@ import "../../src/assets/css/Profile.css";
 const Profile = (props) => {
   return (
     <React.Fragment>
-      <Container className="mt-5 pt-3">
-        <Card  style={{height: '100vh'}}>
+      <Container>
+        <Card style={{ height: "100vh" }}>
           <Card.Header>
-            <div className="container text-center">
-              <h6 className="pl-3 mt-2" style={{ color: "#BF5700" }}>
+            <div className="container-flex d-flex justify-content-around">
+              <h6 className="ml-5 pl-5 mt-1" style={{ color: "#BF5700" }}>
                 Profile
               </h6>
+              <div>
+                <FontAwesomeIcon
+                  style={{ marginLeft: "100%" }}
+                  className="mt-1"
+                  icon={faCog}
+                  size="md"
+                />
+              </div>
             </div>
           </Card.Header>
           <div className="container-flex">
-            <Card.Img src={require("../assets/images/AdobeStock_214628027.jpeg")} />
+            <Card.Img
+              src={require("../assets/images/AdobeStock_214628027.jpeg")}
+            />
             <Card.ImgOverlay
               className="text-white text-center"
               style={{ paddingTop: "21%" }}

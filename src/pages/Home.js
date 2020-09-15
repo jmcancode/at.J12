@@ -38,7 +38,7 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container-flex pt-5">
+        <div className="container-flex">
           <UserHeader />
         </div>
         <container>
@@ -74,7 +74,7 @@ class Home extends React.Component {
                         <p className="user-title">
                           {""}Will Binns-Smith{""}
                         </p>
-                        <p className="user-subtitle ">Basketball Team</p>
+                        <p className="user-subtitle ">Golf Team</p>
                       </div>
                     </div>
                     <div>
