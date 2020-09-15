@@ -3,6 +3,7 @@ import CardDeck from 'react-bootstrap/CardDeck';
 import PlanCard from './PlanCard';
 import './PlanHeader.css';
 import Slider from "react-slick";
+import { db, auth } from "../../Firebase/Firebase.utils";
 
 
 //---- CUSTOM SLIDER ARROWS STARTS ----//
@@ -28,15 +29,42 @@ function SamplePrevArrow(props) {
   );
 }
 //---- CUSTOM SLIDER ARROWS ENDS ----//
-class PlanCategory extends React.Component {
-  render() {
 
+
+class PlanCategory extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      // user: auth().currentUser,
+      planCats: [],
+      content: '',
+      readError: null,
+      writeError: null
+    };
+  }
+  async componentDidMount() {
+    this.setState({ readError: null });
+    try {
+      db.ref("planCats").on("value", snapshot => {
+        let planCats = [];
+        snapshot.forEach((snap) => {
+          planCats.push(snap.val());
+        });
+        this.setState({ planCats });
+      });
+    } catch (error) {
+      this.setState({ readError: error.message });
+    }
+  }
+
+  render() {
     const settings = {
       arrows: false,
-      dots: true,
+      dots: false,
       infinite: true,
       centerPadding: "60px",
       speed: 500,
+      rows: 1,
       slidesToShow: 2,
       swipeToSlide: true,
       afterChange: function (index) {
@@ -50,19 +78,24 @@ class PlanCategory extends React.Component {
 
     return (
       <div>
-        <header className="d-flex align-items-center justify-content-between">
-          <h6>WELLNESS TECHNIQUES</h6>
-          <p>view all</p>
-        </header>
+        {this.state.planCats.map(planCat => {
+          <div>
 
-        <CardDeck>
-          <Slider {...settings}>
-            <PlanCard
-              image="https://picsum.photos/640/360?random=1"
-              title="Take a Moment"
-              summary="Techniques for practicing mindfulness."
-            />
-            <PlanCard
+            <header className="d-flex align-items-center justify-content-between">
+              <div>
+                <h6 className="font-weight-bold text-uppercase">{planCat.category}</h6>
+                <p>view all</p>
+              </div>
+            </header>
+
+            <CardDeck>
+              <Slider {...settings}>
+                <PlanCard
+                  image="https://picsum.photos/640/360?random=1"
+                  title="Take a Moment"
+                  summary="Techniques for practicing mindfulness."
+                />
+                {/* <PlanCard
               image="https://picsum.photos/640/360?random=2"
               title="Finding Peace"
               summary="Techniques for practicing mindfulness."
@@ -81,9 +114,13 @@ class PlanCategory extends React.Component {
               image="https://picsum.photos/640/360?random=5"
               title="Take a Moment"
               summary="Techniques for practicing mindfulness."
-            />
-          </Slider>
-        </CardDeck>
+            /> */}
+              </Slider>
+            </CardDeck>
+
+
+          </div>
+        })}
       </div>
     );
   }

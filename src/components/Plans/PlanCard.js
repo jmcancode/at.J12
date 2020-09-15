@@ -13,7 +13,7 @@ class PlanCard extends React.Component {
           <Card.Title>
             {this.props.title}
           </Card.Title>
-          <Card.Text>
+          <Card.Text className="">
             {this.props.summary}
           </Card.Text>
         </Card.Body>

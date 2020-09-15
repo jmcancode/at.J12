@@ -5,12 +5,12 @@ import PlanHeader from '../components/Plans/PlanHeader';
 
 const Plans = (props) => {
   return (
-    <div className="shadow rounded mx-3 mt-2 mb-3 pr-3 pb-3 pl-3">
+    <div className="shadow rounded mx-3 mt-2 mb-5 pr-3 pb-3 pl-3">
       <PlanHeader />
-      <PlanCategory />
-      <PlanCategory />
-      <PlanCategory />
-      <PlanCategory />
+      <PlanCategory category="Wellness Techniques" />
+      <PlanCategory category="Male Athletes" />
+      <PlanCategory category="Female Athletes" />
+      <PlanCategory category="Power in Rest" />
 
     </div>
   );
