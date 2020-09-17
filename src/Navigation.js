@@ -21,12 +21,11 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-import './assets/css/Navigation.css';
+import "./assets/css/Navigation.css";
 
 const Navigation = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
-
 
   const tabs = [
     {
@@ -65,7 +64,11 @@ const Navigation = (props) => {
       >
         <div className="container-fluid justify-content-between ">
           <a className="navbar-brand" href="/">
-            <img alt="Athlete Talk" src={require('./assets/AT Logos/at-long-orange.png')} style={{ width: '25%', paddingBottom: '15px' }} />
+            <img
+              alt="Athlete Talk"
+              src={require("./assets/AT Logos/at-long-orange.png")}
+              style={{ width: "25%", paddingBottom: "15px" }}
+            />
           </a>
           <div>
             <Form inline>
@@ -122,6 +125,7 @@ const Navigation = (props) => {
       <Nav
         className="navbar fixed-bottom navbar-light d-block d-lg-none bottom-tab-nav"
         role="navigation"
+        style={{fontSize: 'small'}}
       >
         <Nav className="w-100">
           <div className=" d-flex flex-row justify-content-around w-100">

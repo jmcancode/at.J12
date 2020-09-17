@@ -12,7 +12,9 @@
   color: #bf5700;
 }
 .bottom-nav-link.active {
-  color: #000000;
+  color: gray;
+  border-bottom-style: groove;
+  border-bottom-color: #b5700b;
 }
 .bottom-tab-label {
   font-size: 12px;
