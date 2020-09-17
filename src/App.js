@@ -15,14 +15,13 @@ import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
 
-
 class App extends Component {
   constructor() {
-  super();
-  this.state = {
-    sideDrawerOpen: false,
-  };
-}
+    super();
+    this.state = {
+      sideDrawerOpen: false,
+    };
+  }
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {

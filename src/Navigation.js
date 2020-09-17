@@ -63,7 +63,7 @@ const Navigation = (props) => {
         role="navigation"
       >
         <div className="container-fluid justify-content-between ">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand" href="/home">
             <img
               alt="Athlete Talk"
               src={require("./assets/AT Logos/at-long-orange.png")}

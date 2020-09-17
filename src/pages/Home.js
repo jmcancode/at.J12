@@ -69,6 +69,7 @@ class Home extends React.Component {
                         round={true}
                         size="50"
                         name="Will Binns-Smith"
+                        
                       />
                       <div className="container-row">
                         <p className="user-title">
