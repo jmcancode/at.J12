@@ -125,7 +125,7 @@ const Navigation = (props) => {
       <Nav
         className="navbar fixed-bottom navbar-light d-block d-lg-none bottom-tab-nav"
         role="navigation"
-        style={{fontSize: 'small'}}
+        style={{ fontSize: "small" }}
       >
         <Nav className="w-100">
           <div className=" d-flex flex-row justify-content-around w-100">

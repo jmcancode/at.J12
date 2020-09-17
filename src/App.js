@@ -47,7 +47,7 @@ class App extends Component {
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backdrop}
           <Switch>
-            <Route path="/login" component={Login} />
+            <Route exact path="/login" component={Login} />
             <Route path="/home" component={Home} />
             <Route path="/addpost" component={AddPost} />
             <Route path="/profile" component={Profile} />
