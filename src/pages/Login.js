@@ -17,8 +17,9 @@ class Login extends React.Component {
     username: "",
     password: "",
     errors: [],
+    loading: false,
   };
-  
+
   isFormValid = () => {
     let errors = [];
     let error;
@@ -62,22 +63,35 @@ class Login extends React.Component {
   };
 
   handleSubmit = (event) => {
+    event.preventDefault();
     if (this.isFormValid()) {
-      event.preventDefault();
+      this.setState({ errors: [], loading: true });
       firebase
         .auth()
         .createUserWithEmailAndPassword(this.state.email, this.state.password)
         .then((createdUser) => {
           console.log(createdUser);
+          this.setState({ loading: false });
         })
         .catch((err) => {
           console.error(err);
+          this.setState({
+            erros: this.setState.errors.contact(err),
+            thisloading: false,
+          });
         });
     }
   };
+  handleInputError = (errors, input) => {
+    return errors.some((error) =>
+      error.message.toLowerCase().includes("inputName")
+    )
+      ? "error"
+      : "";
+  };
 
   render() {
-    const { username, password, errors } = this.state;
+    const { username, password, errors, loading } = this.state;
     return (
       <React.Fragment>
         <div className="container-flex mb-5 pb-5">
@@ -108,16 +122,16 @@ class Login extends React.Component {
             <Form className="text-center">
               <Form.Group controlId="Form.ControlInput1">
                 <Form.Control
-                  className="text-center"
                   type="text"
                   placeholder="username"
                   onChange={this.handleChange}
+                  className={this.handleInputError(errors, "username")}
                   value={username}
                 />
               </Form.Group>
               <Form.Group controlId="formBasicPassword">
                 <Form.Control
-                  className="text-center"
+                  className={this.handleInputError(errors, "password")}
                   type="password"
                   placeholder="Password"
                   onChange={this.handleChange}
@@ -128,18 +142,19 @@ class Login extends React.Component {
                 </Form.Text>
               </Form.Group>
               <Button
-                style={{ background: "#BF5700" }}
-                className="btn btn-block"
-                variant="primary"
-                type="submit"
+                style={{ backgroundColor: "#b5700b" }}
+                disabled={loading}
+                className={loading ? "loading" : ""}
+                block
+                size="sm"
               >
-                {""} Log In {""}
+                Register
               </Button>
               <Form.Text className="text-muted">
                 Dont have an account? <Link> Sign up </Link>{" "}
               </Form.Text>
 
-              <Form.Text className="mt-5">
+              <Form.Text className="mt-5 text-muted">
                 {" "}
                 &copy; Where Athletes Talk{" "}
               </Form.Text>

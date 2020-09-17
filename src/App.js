@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+// custom css
 import "./App.css";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+// react-router dom
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+//pages + components
 import Home from "./pages/Home";
 import Navigation from "./Navigation";
 import Profile from "./pages/Profile";
@@ -41,13 +44,13 @@ class App extends Component {
     }
     return (
       <div style={{ height: "100%" }}>
-        <BrowserRouter>
+        <Router>
           <Navigation />
           <ToolBar drawerClickHandler={this.drawerToggleClickHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backdrop}
           <Switch>
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/" component={Login} />
             <Route path="/home" component={Home} />
             <Route path="/addpost" component={AddPost} />
             <Route path="/profile" component={Profile} />
@@ -57,7 +60,7 @@ class App extends Component {
             <Route path="/edit-profile" component={EditProfile} />
             <Route path="/message" component={Messages} />
           </Switch>
-        </BrowserRouter>
+        </Router>
       </div>
     );
   }
