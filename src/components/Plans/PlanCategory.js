@@ -1,5 +1,5 @@
 import React from 'react';
-// import CardDeck from 'react-bootstrap/CardDeck';
+import CardDeck from 'react-bootstrap/CardDeck';
 import PlanCard from './PlanCard';
 import './PlanHeader.css';
 import Slider from "react-slick";
@@ -37,21 +37,22 @@ class PlanCategory extends React.Component {
     super(props);
     this.state = {
       // user: auth().currentUser,
-      planCats: [],
+      articles: [],
       content: '',
       readError: null,
       writeError: null
     };
   }
-  async componentDidMount() {
+  componentDidMount() {
     this.setState({ readError: null });
     try {
-      db.ref("planCats").on("value", snapshot => {
-        let planCats = [];
+      db.ref("articles").on("value", snapshot => {
+        let articles = [];
         snapshot.forEach((snap) => {
-          planCats.push(snap.val());
+          console.log(snap)
+          articles.push(snap.val());
         });
-        this.setState({ planCats });
+        this.setState({ articles });
       });
     } catch (error) {
       this.setState({ readError: error.message });
@@ -79,47 +80,25 @@ class PlanCategory extends React.Component {
 
     return (
       <div>
-        {this.state.planCats.map(planCat => {
-          return <div>
-
-            <header className="d-flex align-items-center justify-content-between">
-              <h6 className="font-weight-bold text-uppercase">{this.props.category}</h6>
-              <p mb-0>view all</p>
-            </header>
-
-            {/* <CardDeck> */}
-            <Slider {...settings}>
-              <PlanCard
-                image="https://picsum.photos/640/360?random=1"
-                title="Take a Moment"
-                summary="Techniques for practicing mindfulness."
-              />
-              <PlanCard
-                image="https://picsum.photos/640/360?random=2"
-                title="Finding Peace"
-                summary="Techniques for practicing mindfulness."
-              />
-              <PlanCard
-                image="https://picsum.photos/640/360?random=3"
-                title="Importance of Rest"
-                summary="Techniques for resting and feeling afreshed."
-              />
-              <PlanCard
-                image="https://picsum.photos/640/360?random=4"
-                title="Take a Moment"
-                summary="Techniques for practicing mindfulness."
-              />
-              <PlanCard
-                image="https://picsum.photos/640/360?random=5"
-                title="Take a Moment"
-                summary="Techniques for practicing mindfulness."
-              />
-            </Slider>
-            {/* </CardDeck> */}
+        <header className="d-flex align-items-center justify-content-between">
+          <h6 className="font-weight-bold text-uppercase">{this.props.category}</h6>
+          <p mb-0>view all</p>
+        </header>
 
 
-          </div>
-        })}
+        <CardDeck>
+          <Slider {...settings}>
+            {this.state.articles.map(article => {
+              return <div key={article.createdDate}>
+                <PlanCard
+                  image="https://picsum.photos/640/360?random"
+                  title={article.title}
+                  summary={article.content}
+                />
+              </div>
+            })}
+          </Slider>
+        </CardDeck>
       </div>
     );
   }
