@@ -1,11 +1,19 @@
 import React from 'react';
+
 import ReactDOM from 'react-dom';
+// custom css
 import './index.css';
+
 import App from './App';
+// serviceworker.js
 import * as serviceWorker from './serviceWorker';
+// bootstap css
 import 'bootstrap/dist/css/bootstrap.min.css';
+// slick.js
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
+// import firebase from "./firebase";
 
 
 ReactDOM.render(

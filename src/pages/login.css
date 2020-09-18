@@ -13,10 +13,9 @@
   border-color: transparent !important;
 }
 
-.login-logo{
+.login-logo {
   position: absolute;
   z-index: 2;
   left: 25%;
   top: 88%;
 }
-

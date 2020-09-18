@@ -1,7 +1,6 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/database';
-
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/database";
 
 const config = {
   apiKey: "AIzaSyBO6f8hRtVkOk7QRAPOVUqL-n5Ff20CqCI",
@@ -11,7 +10,7 @@ const config = {
   storageBucket: "athlete-talk-aa550.appspot.com",
   messagingSenderId: "259642836645",
   appId: "1:259642836645:web:55291c482072c7a1556f4c",
-  measurementId: "G-Z5LN4GKRVM"
+  measurementId: "G-Z5LN4GKRVM",
 };
 
 firebase.initializeApp(config);
@@ -20,6 +19,5 @@ firebase.initializeApp(config);
 export const auth = firebase.auth();
 export const db = firebase.database();
 
-
-
 export default firebase;
+
