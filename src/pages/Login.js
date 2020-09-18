@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
 // react-bootstrap
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
@@ -18,6 +19,7 @@ class Login extends React.Component {
     password: "",
     errors: [],
     loading: false,
+    usersRef: firebase.database().ref("users"),
   };
 
   isFormValid = () => {
@@ -37,27 +39,10 @@ class Login extends React.Component {
     }
   };
 
-  isFormEmpty = ({ username, email, password, passwordConfirmation }) => {
-    return (
-      !username.length ||
-      !email.length ||
-      !password.length ||
-      !passwordConfirmation.length
-    );
-  };
-
-  isPasswordValid = ({ password, passwordConfirmation }) => {
-    if (password.length < 6 || passwordConfirmation.length < 6) {
-      return false;
-    } else if (password !== passwordConfirmation) {
-      return false;
-    } else {
-      return true;
-    }
-  };
 
   displayErrors = (errors) =>
     errors.map((error, i) => <p key={i}>{error.message}</p>);
+
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
@@ -67,21 +52,24 @@ class Login extends React.Component {
     if (this.isFormValid()) {
       this.setState({ errors: [], loading: true });
       firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.state.email, this.state.password)
-        .then((createdUser) => {
-          console.log(createdUser);
-          this.setState({ loading: false });
-        })
-        .catch((err) => {
+      .auth()
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then(sginedInUser => {
+          console.log(sginedInUser)
+      })
+      .catch(err => {
           console.error(err);
           this.setState({
-            erros: this.setState.errors.contact(err),
-            thisloading: false,
-          });
-        });
+              errors: this.state.errors.concat(err),
+              loading: false
+          })
+      })
+      
     }
   };
+
+  isFormValid = ({ email, password}) => email && password;
+ 
   handleInputError = (errors, input) => {
     return errors.some((error) =>
       error.message.toLowerCase().includes("inputName")
@@ -144,7 +132,7 @@ class Login extends React.Component {
               <Button
                 style={{ backgroundColor: "#b5700b" }}
                 disabled={loading}
-                className={loading ? "loading" : ""}
+                className={loading ? "loading..." : " "}
                 block
                 size="sm"
               >
