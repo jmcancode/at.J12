@@ -35,6 +35,7 @@ const Profile = (props) => {
           </Card.Header>
           <div className="container-flex">
             <Card.Img
+              className="mt-0"
               src={require("../assets/images/AdobeStock_214628027.jpeg")}
             />
             <Card.ImgOverlay
@@ -45,6 +46,7 @@ const Profile = (props) => {
               <Card.Text>Football Team</Card.Text>
             </Card.ImgOverlay>
             <Image
+
               src={require("../assets/images/image (1).png")}
               roundedCircle
               style={{
