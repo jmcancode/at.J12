@@ -5,19 +5,19 @@ import Card from 'react-bootstrap/Card';
 class PlanCard extends React.Component {
   render() {
     return (
-      <Card className="mx-1 border-0">
+      <Card className="mx-auto border-0" style={{ width: '8rem' }} >
         <Card.Img variant="top"
-          className="border-0 rounded"
+          className="border-0 mt-0 rounded"
           src={this.props.image} />
         <Card.Body>
           <Card.Title>
             {this.props.title}
           </Card.Title>
-          <Card.Text className="">
+          <Card.Text className="text-muted">
             {this.props.summary}
           </Card.Text>
         </Card.Body>
-      </Card>
+      </ Card>
     )
   }
 }

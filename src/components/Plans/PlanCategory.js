@@ -79,7 +79,7 @@ class PlanCategory extends React.Component {
     };
 
     return (
-      <div>
+      <div onClick="">
         <header className="d-flex align-items-center justify-content-between">
           <h6 className="font-weight-bold text-uppercase">{this.props.category}</h6>
           <p mb-0>view all</p>

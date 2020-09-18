@@ -14,6 +14,7 @@ import Settings from "./pages/Settings";
 import EditProfile from "./pages/EditProfile";
 import Messages from "./pages/Messages";
 import Login from "./pages/Login";
+import SinglePlan from "./pages/SinglePlan"
 import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
@@ -59,6 +60,7 @@ class App extends Component {
             <Route path="/settings" component={Settings} />
             <Route path="/edit-profile" component={EditProfile} />
             <Route path="/message" component={Messages} />
+            <Route path="/plan" component={SinglePlan} />
           </Switch>
         </Router>
       </div>
