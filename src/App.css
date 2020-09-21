@@ -9,11 +9,11 @@
 }
 .nav-link,
 .bottom-nav-link {
-  color: #bf5700;
+  color: #b57000;
 }
 .bottom-nav-link.active {
   color: gray;
-  border-bottom-style: groove;
+  border-bottom-style: solid;
   border-bottom-color: #b5700b;
 }
 .bottom-tab-label {

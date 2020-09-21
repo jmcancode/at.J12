@@ -3,29 +3,30 @@ import CardDeck from 'react-bootstrap/CardDeck';
 import PlanCard from './PlanCard';
 import './PlanHeader.css';
 import Slider from "react-slick";
-// import { auth } from "../../Firebase/Firebase.utils";
 import { db } from "../../Firebase/Firebase.utils";
+
+import '../../assets/css/PlanCategory.css';
 
 
 //---- CUSTOM SLIDER ARROWS STARTS ----//
 function SampleNextArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, style, } = props;
   return (
     <div
       className={className}
       style={{ ...style, display: "block", background: "#BF5700", borderRadius: "50%" }}
-      onClick={onClick}
+      
     />
   );
 }
 
 function SamplePrevArrow(props) {
-  const { className, style, onClick } = props;
+  const { className, style, } = props;
   return (
     <div
       className={className}
       style={{ ...style, display: "block", background: "#BF5700", borderRadius: "50%" }}
-      onClick={onClick}
+      
     />
   );
 }
@@ -79,7 +80,7 @@ class PlanCategory extends React.Component {
     };
 
     return (
-      <div onClick="">
+      <div>
         <header className="d-flex align-items-center justify-content-between">
           <h6 className="font-weight-bold text-uppercase">{this.props.category}</h6>
           <p mb-0>view all</p>
@@ -91,6 +92,7 @@ class PlanCategory extends React.Component {
             {this.state.articles.map(article => {
               return <div key={article.createdDate}>
                 <PlanCard
+                
                   image="https://picsum.photos/640/360?random"
                   title={article.title}
                   summary={article.content}

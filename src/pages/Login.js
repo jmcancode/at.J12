@@ -2,16 +2,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // react-bootstrap
-import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Image from "react-bootstrap/Image";
 import Alert from "react-bootstrap/Alert";
+import InputGroup from "react-bootstrap/InputGroup";
 // Firebase
 import firebase from "../Firebase/Firebase.utils";
 // custom css
 import "./login.css";
+import { FormGroup } from "semantic-ui-react";
 
 class Login extends React.Component {
   state = {
@@ -39,7 +39,6 @@ class Login extends React.Component {
     }
   };
 
-
   displayErrors = (errors) =>
     errors.map((error, i) => <p key={i}>{error.message}</p>);
 
@@ -52,24 +51,23 @@ class Login extends React.Component {
     if (this.isFormValid()) {
       this.setState({ errors: [], loading: true });
       firebase
-      .auth()
-      .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(sginedInUser => {
-          console.log(sginedInUser)
-      })
-      .catch(err => {
+        .auth()
+        .signInWithEmailAndPassword(this.state.email, this.state.password)
+        .then((sginedInUser) => {
+          console.log(sginedInUser);
+        })
+        .catch((err) => {
           console.error(err);
           this.setState({
-              errors: this.state.errors.concat(err),
-              loading: false
-          })
-      })
-      
+            errors: this.state.errors.concat(err),
+            loading: false,
+          });
+        });
     }
   };
 
-  isFormValid = ({ email, password}) => email && password;
- 
+  isFormValid = ({ email, password }) => email && password;
+
   handleInputError = (errors, input) => {
     return errors.some((error) =>
       error.message.toLowerCase().includes("inputName")
@@ -81,81 +79,58 @@ class Login extends React.Component {
   render() {
     const { username, password, errors, loading } = this.state;
     return (
-      <React.Fragment>
-        <div className="container-flex mb-5 pb-5">
-          <Card
-            className="text-white text-center"
-            style={{ height: "170px", borderColor: "transparent" }}
-          >
-            <Card.Img
-              src={require("../assets/images/Rectangle 46.png")}
-              alt="Card image"
-            />
-            <Card.ImgOverlay className="text-center">
-              <Image
-                thumbnail
-                className="login-logo"
-                style={{
-                  backgroundColor: "transparent",
-                  borderColor: "transparent",
-                  height: "98px",
-                }}
-                src={require("../assets/images/whitelogo.png")}
-              />
-            </Card.ImgOverlay>
-          </Card>
-        </div>
-        <Container className="mb-5">
-          <div className="card" style={{ borderColor: "transparent" }}>
-            <Form className="text-center">
-              <Form.Group controlId="Form.ControlInput1">
-                <Form.Control
-                  type="text"
-                  placeholder="username"
-                  onChange={this.handleChange}
-                  className={this.handleInputError(errors, "username")}
-                  value={username}
-                />
+      <Card className="bg-dark text-white">
+        <Card.Img
+          src={require("../assets/login-example.jpg")}
+          alt="Card image"
+          style={{ bordercolor: "transparent", height: "100vh" }}
+        />
+        <Card.ImgOverlay>
+          <div className="container-flex d-flex log-container">
+            <Card.Title className="log-header text-center">
+              ATHLETE REGISTER
+            </Card.Title>
+            <Form>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Control type="email" placeholder="Email" />
+              </Form.Group>
+              <Form.Group controlId="exampleForm.ControlSelect1">
+                <Form.Control as="select">
+                  <option>Select your team</option>
+                  <option>Basketball</option>
+                  <option>Volleyball</option>
+                  <option>Soccer</option>
+                  <option>Track & Field</option>
+                  <option>Football</option>
+                </Form.Control>
               </Form.Group>
               <Form.Group controlId="formBasicPassword">
-                <Form.Control
-                  className={this.handleInputError(errors, "password")}
-                  type="password"
-                  placeholder="Password"
-                  onChange={this.handleChange}
-                  value={password}
+                <Form.Control type="password" placeholder="Password" />
+              </Form.Group>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Control type="password" placeholder="Password" />
+              </Form.Group>
+              <Form.Group controlId="formBasicCheckbox">
+                <Form.Check
+                  type="checkbox"
+                  className="text-muted"
+                  label="I agree to the Terms & Conditions as well as the Privacy Policy."
                 />
-                <Form.Text className="text-muted text-center">
-                  <Link>Forgot Password?</Link>
-                </Form.Text>
               </Form.Group>
               <Button
-                style={{ backgroundColor: "#b5700b" }}
-                disabled={loading}
-                className={loading ? "loading..." : " "}
-                block
+                variant="primary"
                 size="sm"
+                type="submit"
+                value="Submit"
+                className="register-btn"
               >
                 Register
               </Button>
-              <Form.Text className="text-muted">
-                Dont have an account? <Link> Sign up </Link>{" "}
-              </Form.Text>
-
-              <Form.Text className="mt-5 text-muted">
-                {" "}
-                &copy; Where Athletes Talk{" "}
-              </Form.Text>
+              <Form.Text className="text-muted text-center"></Form.Text>
             </Form>
-            {this.state.errors.length > 0 && (
-              <Alert error>
-                <h3>Error</h3>
-                {this.displayErrors(errors)}
-              </Alert>
-            )}
           </div>
-        </Container>
-      </React.Fragment>
+        </Card.ImgOverlay>
+      </Card>
     );
   }
 }

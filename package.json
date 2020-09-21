@@ -16,7 +16,7 @@
     "bcrypt": "^5.0.0",
     "bootstrap": "^4.5.2",
     "emoji-mart": "^3.0.0",
-    "firebase": "^7.19.1",
+    "firebase": "^7.21.0",
     "firebaseui": "^4.6.1",
     "holderjs": "^2.9.7",
     "jquery": "^3.5.1",
@@ -46,6 +46,8 @@
     "reactstrap": "^8.5.1",
     "redux": "^4.0.5",
     "redux-devtools-extension": "^2.13.8",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^1.2.1",
     "slick-carousel": "^1.8.1",
     "video-react": "^0.14.1",
     "workbox-cli": "^5.1.3"

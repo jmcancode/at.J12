@@ -1,3 +1,14 @@
 img {
     width: 15%;
 }
+
+
+
+@media only screen and (min-width: 992px) {
+    .card-deck{
+        display: flex;
+        flex-flow: column !important;
+        margin-left: -15;
+        margin-right: -15;
+    }
+    }

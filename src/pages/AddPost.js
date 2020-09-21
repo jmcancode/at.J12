@@ -18,7 +18,7 @@ const AddPost = (props) => {
   return (
     <Container>
       <div className="container card-container">
-        <Card className="border" style={{height: '100vh'}}>
+        <Card className="shadow rounded  border" style={{height: '100vh'}}>
           <Card.Header>
             <div className="container-flex d-flex">
               <h6 className="mx-auto mt-1" style={{ color: "#BF5700" }}>

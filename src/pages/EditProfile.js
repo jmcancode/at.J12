@@ -15,20 +15,22 @@ const EditProfile = () => {
     <Container>
       <Card className="border-bottom-0">
         <Card.Header className="d-inline-flex justify-content-between pl-5">
-          <div style={{color: '#b5700b', paddingLeft: '27%', fontFamily: 'Graduate'}}>EDIT PROFILE</div>
+          <div
+            style={{
+              color: "#b5700b",
+              paddingLeft: "27%",
+              fontFamily: "Graduate",
+            }}
+          >
+            EDIT PROFILE
+          </div>
         </Card.Header>
         <Container>
           <div className="container-flex">
             <Card.Img
               src={require("../assets/images/AdobeStock_214628027.jpeg")}
             />
-            <Card.ImgOverlay
-              className="text-white text-center"
-              style={{ paddingTop: "21%" }}
-            >
-              <Card.Title>James Lewis</Card.Title>
-              <Card.Text>Football Team</Card.Text>
-            </Card.ImgOverlay>
+
             <FontAwesomeIcon
               style={{
                 position: "absolute",

@@ -1,21 +1,48 @@
-@media all and (min-width: 480px) {
-  .Login {
-    padding: 60px 0;
-  }
-
-  .Login form {
-    margin: 0 auto;
-    max-width: 320px;
-  }
-}
-
-.btn {
-  border-color: transparent !important;
-}
 
 .login-logo {
   position: absolute;
   z-index: 2;
-  left: 25%;
+  left: 24%;
   top: 88%;
+}
+
+.log-header{
+  font-size: 30px !important;
+  font-weight: bold;
+  font-family: Graduate;
+  color: #b57000;
+  padding-bottom: 9%;
+  padding-left: 8%;
+  position: absolute;
+  top: -23%;
+}
+
+.log-container{
+  position: absolute;
+  top: 35%;
+  right: 10%;
+  height: 310px;
+  width: 175px;
+  margin: 0 -15px;
+}
+
+.register-btn{
+  background-color: #b57000 !important;
+  border-color: transparent !important;
+}
+
+.form-control{
+  display: flex !important;
+  width: 100%;
+  height: calc(1em + .75rem + 1px);
+  padding: .355rem .75rem !important;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #ffffff !important;
+  /* background-clip: padding-box; */
+  border-bottom: 1px solid #b57000 !important;
+  /* border-radius: .25rem; */
+  /* transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out; */
 }

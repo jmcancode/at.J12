@@ -9,11 +9,11 @@ class PlanCard extends React.Component {
         <Card.Img variant="top"
           className="border-0 mt-0 rounded"
           src={this.props.image} />
-        <Card.Body>
-          <Card.Title>
+        <Card.Body >
+          <Card.Title style={{ fontSize: "14px", fontWeight: "bold"}}>
             {this.props.title}
           </Card.Title>
-          <Card.Text className="text-muted">
+          <Card.Text className="text-muted" style={{ fontSize: "10px", fontWeight: "normal"}}>
             {this.props.summary}
           </Card.Text>
         </Card.Body>

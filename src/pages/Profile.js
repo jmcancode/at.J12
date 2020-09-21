@@ -17,7 +17,7 @@ const Profile = (props) => {
   return (
     <React.Fragment>
       <Container>
-        <Card style={{ height: "100vh" }}>
+        <Card  className="shadow rounded " style={{ height: "100vh" }}>
           <Card.Header>
             <div className="container-flex d-flex justify-content-around">
               <h6 className="ml-5 pl-5 mt-1" style={{ color: "#BF5700" }}>
@@ -46,7 +46,6 @@ const Profile = (props) => {
               <Card.Text>Football Team</Card.Text>
             </Card.ImgOverlay>
             <Image
-
               src={require("../assets/images/image (1).png")}
               roundedCircle
               style={{

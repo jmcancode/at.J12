@@ -3,6 +3,7 @@ import "firebase/auth";
 import "firebase/database";
 
 const config = {
+  // we need to hide this api key before we can go live. 
   apiKey: "AIzaSyBO6f8hRtVkOk7QRAPOVUqL-n5Ff20CqCI",
   authDomain: "athlete-talk-aa550.firebaseapp.com",
   databaseURL: "https://athlete-talk-aa550.firebaseio.com",

@@ -11,7 +11,10 @@ import {
 import Avatar from "react-avatar";
 
 import UserHeader from "../components/UserHeader";
+
 import { Button } from "reactstrap";
+
+// import firebase from "../Firebase/Firebase.utils";
 
 class Home extends React.Component {
   constructor(props) {
@@ -19,6 +22,7 @@ class Home extends React.Component {
 
     this.state = {
       count: 0,
+      modal: false,
     };
 
     // NEWS FEED
@@ -34,6 +38,17 @@ class Home extends React.Component {
       currentDate: date,
     };
   }
+
+  handleSubmit = (event) => {
+    event.preventDefault();
+    if (this.isFormValid(this.state)) {
+      // this.addChannel();
+    }
+  };
+
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
   render() {
     return (
@@ -69,7 +84,6 @@ class Home extends React.Component {
                         round={true}
                         size="50"
                         name="Will Binns-Smith"
-                        
                       />
                       <div className="container-row">
                         <p className="user-title">
@@ -105,9 +119,11 @@ class Home extends React.Component {
                           className="home-icon"
                           icon={faCommentDots}
                           size="sm"
+                          onChange={this.handleChange}
                         />{" "}
                         12
                       </Button>
+
                       <Button
                         onClick={() =>
                           this.setState({ count: this.state.count + 1 })
@@ -139,6 +155,8 @@ class Home extends React.Component {
                     </p>
                   </Card.Header>
                   <Card.Img
+                    fluid
+                    
                     variant="top"
                     src={require("../assets/images/image (2).png")}
                   />
