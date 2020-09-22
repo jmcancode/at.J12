@@ -3,8 +3,8 @@ import "./Home.css";
 import Card from "react-bootstrap/Card";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faShare,
-  faCommentDots,
+  faThumbsDown,
+  faThumbsUp,
   faStar,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
@@ -54,7 +54,6 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <div className="container-flex">
-          <UserHeader />
         </div>
         <container>
           <div className=" container">
@@ -78,18 +77,11 @@ class Home extends React.Component {
                 <Card className="card-container-user">
                   <Card.Header>
                     <div>
-                      <Avatar
-                        value="Will"
-                        fgColor="#fff"
-                        round={true}
-                        size="50"
-                        name="Will Binns-Smith"
-                      />
                       <div className="container-row">
                         <p className="user-title">
-                          {""}Will Binns-Smith{""}
+                          {""}WELLNESS TECHNIQUES{""}
                         </p>
-                        <p className="user-subtitle ">Golf Team</p>
+                        <p className="user-subtitle ">Conqoruing Machismo</p>
                       </div>
                     </div>
                     <div>
@@ -109,118 +101,151 @@ class Home extends React.Component {
                       <Button>
                         <FontAwesomeIcon
                           className="home-icon"
-                          icon={faShare}
-                          size="sm"
-                        />{" "}
-                        10
-                      </Button>
-                      <Button>
-                        <FontAwesomeIcon
-                          className="home-icon"
-                          icon={faCommentDots}
-                          size="sm"
-                          onChange={this.handleChange}
-                        />{" "}
-                        12
-                      </Button>
-
-                      <Button
-                        onClick={() =>
-                          this.setState({ count: this.state.count + 1 })
-                        }
-                      >
-                        <FontAwesomeIcon
-                          className="home-icon"
                           icon={faHeart}
                           size="sm"
                         />{" "}
-                        1.5k
+                        9k
                       </Button>
-                    </div>
-                  </Card.Footer>
-                </Card>
-
-                <Card className="card-container-user">
-                  <Card.Header>
-                    <Avatar round={true} size="50" name="James Lewis" />
-                    <div className="container-row">
-                      <p className="user-title">
-                        {""}James Lewis{""}
-                      </p>
-                      <p className="user-subtitle ">Basketball Team</p>
-                    </div>
-
-                    <p className="pt-1">
-                      Wow, what an article! I never thought I would need...
-                    </p>
-                  </Card.Header>
-                  <Card.Img
-                    fluid
-                    
-                    variant="top"
-                    src={require("../assets/images/image (2).png")}
-                  />
-                  <Card.Footer>
-                    <div className=" d-flex justify-content-between text-center">
-                      <Button>
-                        <FontAwesomeIcon icon={faShare} size="sm" /> 10
-                      </Button>
-                      <Button>
-                        <FontAwesomeIcon icon={faCommentDots} size="sm" /> 12
-                      </Button>
-                      <Button
-                        onClick={() =>
-                          this.setState({ count: this.state.count + 1 })
-                        }
-                      >
-                        <FontAwesomeIcon icon={faHeart} size="sm" /> 1.5k
-                      </Button>
-                    </div>
-                  </Card.Footer>
-                </Card>
-                <Card className="card-container-user">
-                  <Card.Header>
-                    <Avatar round={true} size="50" name="Michael Jordan" />
-                    <div className="container-row">
-                      <p className="user-title">
-                        {""}Michael Jordan{""}
-                      </p>
-                      <p className="user-subtitle ">Baseball Team</p>
-                    </div>
-                    <p className="pt-1">
-                      Wow, what an article! I never thought I would need...
-                    </p>
-                  </Card.Header>
-
-                  <Card.Img
-                    variant="top"
-                    src={require("../assets/images/image (2).png")}
-                  />
-                  <Card.Footer>
-                    <div className=" d-flex justify-content-between text-center">
                       <Button>
                         <FontAwesomeIcon
-                          onClick={() =>
-                            this.setState({ count: this.state.count + 1 })
-                          }
-                          icon={faShare}
+                          className="home-icon"
+                          icon={faThumbsUp}
                           size="sm"
-                        />
-                        10
+                          onChange={this.handleChange}
+                        />{" "}
+                        12.5k
                       </Button>
-                      <Button>
-                        <FontAwesomeIcon icon={faCommentDots} size="sm" /> 12
-                      </Button>
+
                       <Button
                         onClick={() =>
                           this.setState({ count: this.state.count + 1 })
                         }
                       >
-                        <FontAwesomeIcon icon={faHeart} size="sm" /> 1.5k
+                        <FontAwesomeIcon
+                          className="home-icon"
+                          icon={faThumbsDown}
+                          size="sm"
+                        />{" "}
+                        12
                       </Button>
                     </div>
                   </Card.Footer>
                 </Card>
+
+                <Card className="card-container-user">
+                <Card.Header>
+                  <div>
+                    <div className="container-row">
+                      <p className="user-title">
+                        {""}WELLNESS TECHNIQUES{""}
+                      </p>
+                      <p className="user-subtitle ">Conqoruing Machismo</p>
+                    </div>
+                  </div>
+                  <div>
+                    <p className="user-copy">
+                      Wow, what an article! I never thought I would need...
+                    </p>
+                  </div>
+                </Card.Header>
+                <Card.Img
+                  variant="top"
+                  fluid
+                  src={require("../assets/images/image (2).png")}
+                />
+
+                <Card.Footer>
+                  <div className=" d-flex justify-content-between text-center">
+                    <Button>
+                      <FontAwesomeIcon
+                        className="home-icon"
+                        icon={faHeart}
+                        size="sm"
+                      />{" "}
+                      9k
+                    </Button>
+                    <Button>
+                      <FontAwesomeIcon
+                        className="home-icon"
+                        icon={faThumbsUp}
+                        size="sm"
+                        onChange={this.handleChange}
+                      />{" "}
+                      12.5k
+                    </Button>
+
+                    <Button
+                      onClick={() =>
+                        this.setState({ count: this.state.count + 1 })
+                      }
+                    >
+                      <FontAwesomeIcon
+                        className="home-icon"
+                        icon={faThumbsDown}
+                        size="sm"
+                      />{" "}
+                      12
+                    </Button>
+                  </div>
+                </Card.Footer>
+              </Card>
+              <Card className="card-container-user">
+              <Card.Header>
+                <div>
+                  <div className="container-row">
+                    <p className="user-title">
+                      {""}WELLNESS TECHNIQUES{""}
+                    </p>
+                    <p className="user-subtitle ">Conqoruing Machismo</p>
+                  </div>
+                </div>
+                <div>
+                  <p className="user-copy">
+                    Wow, what an article! I never thought I would need...
+                  </p>
+                </div>
+              </Card.Header>
+              <Card.Img
+                variant="top"
+                fluid
+                src={require("../assets/images/image (2).png")}
+              />
+
+              <Card.Footer>
+                <div className=" d-flex justify-content-between text-center">
+                  <Button>
+                    <FontAwesomeIcon
+                      className="home-icon"
+                      icon={faHeart}
+                      size="sm"
+                    />{" "}
+                    9k
+                  </Button>
+                  <Button>
+                    <FontAwesomeIcon
+                      className="home-icon"
+                      icon={faThumbsUp}
+                      size="sm"
+                      onChange={this.handleChange}
+                    />{" "}
+                    12.5k
+                  </Button>
+
+                  <Button
+                    onClick={() =>
+                      this.setState({ count: this.state.count + 1 })
+                    }
+                  >
+                    <FontAwesomeIcon
+                      className="home-icon"
+                      icon={faThumbsDown}
+                      size="sm"
+                    />{" "}
+                    12
+                  </Button>
+                </div>
+              </Card.Footer>
+            </Card>
               </div>
             </div>
           </div>

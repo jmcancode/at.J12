@@ -11,7 +11,8 @@ import {
   faUserCircle,
   faEnvelope,
   faFolder,
-  faPlusSquare,
+  faBook,
+   faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -34,24 +35,19 @@ const Navigation = (props) => {
       label: "Home",
     },
     {
-      route: "/plans",
+      route: "/plan",
       icon: faFolder,
-      label: "Plans",
+      label: " My Plans",
     },
     {
-      route: "/addpost",
-      icon: faPlusSquare,
-      label: "Add Post",
+      route: "/plans",
+      icon: faGlobe,
+      label: "Discover",
     },
     {
       route: "/message",
-      icon: faEnvelope,
-      label: "Messages",
-    },
-    {
-      route: "/profile",
-      icon: faUserCircle,
-      label: "Profile",
+      icon: faBook,
+      label: "Journal",
     },
   ];
 
