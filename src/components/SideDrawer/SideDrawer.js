@@ -15,19 +15,16 @@ const sideDrawer = (props) => {
           <a href="/home">Home</a>
         </li>
         <li>
-          <a href="/plans">Plans</a>
+          <a href="/plan">My Plans</a>
         </li>
         <li>
-          <a href="/message">Messages</a>
+          <a href="/plans">Discover</a>
         </li>
         <li>
           <a href="/settings">Settings</a>
         </li>
         <li>
-          <a href="/home">School Infomation</a>
-        </li>
-        <li>
-          <a href="/profile">Profile</a>
+          <a href="/">School Infomation</a>
         </li>
 
         {/* bottom contacts */}
