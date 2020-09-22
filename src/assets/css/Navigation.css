@@ -12,3 +12,8 @@ img {
         margin-right: -15;
     }
     }
+
+
+    Navbar {
+        background-color: transparent !important;
+    }

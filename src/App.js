@@ -13,7 +13,8 @@ import About from "./pages/About";
 import Settings from "./pages/Settings";
 import EditProfile from "./pages/EditProfile";
 import Messages from "./pages/Messages";
-import Login from "./pages/Login";
+import Register from "./components/Auth/Register";
+import Login from "./components/Auth/Login";
 import SinglePlan from "./pages/SinglePlan"
 import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
@@ -51,7 +52,8 @@ class App extends Component {
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backdrop}
           <Switch>
-            <Route exact path="/" component={Login} />
+            <Route exact path="/" component={Register} />
+            <Route path="/login" component={Login}/>
             <Route path="/home" component={Home} />
             <Route path="/addpost" component={AddPost} />
             <Route path="/profile" component={Profile} />
