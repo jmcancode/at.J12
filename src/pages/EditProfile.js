@@ -2,10 +2,6 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import Image from "react-bootstrap/Image";
-
 import Button from "react-bootstrap/Button";
 
 import "../assets/css/EditProfile.css";
@@ -14,64 +10,9 @@ const EditProfile = () => {
   return (
     <Container>
       <Card className="border-bottom-0">
-        <Card.Header className="d-inline-flex justify-content-between pl-5">
-          <div
-            style={{
-              color: "#b5700b",
-              paddingLeft: "27%",
-              fontFamily: "Graduate",
-            }}
-          >
-            EDIT PROFILE
-          </div>
-        </Card.Header>
-        <Container>
-          <div className="container-flex">
-            <Card.Img
-              src={require("../assets/images/AdobeStock_214628027.jpeg")}
-            />
-
-            <FontAwesomeIcon
-              style={{
-                position: "absolute",
-                zIndex: "2",
-                top: "36%",
-                right: "35%",
-              }}
-              icon={faEdit}
-            />
-            <Image
-              src={require("../assets/images/image (1).png")}
-              roundedCircle
-              style={{
-                width: "128px",
-                height: "128px",
-                position: "absolute",
-                zIndex: "1",
-                right: "30%",
-                top: "20%",
-              }}
-            />
-            <FontAwesomeIcon
-              style={{
-                position: "absolute",
-                zIndex: "1",
-                top: "30%",
-                right: "10%",
-              }}
-              icon={faEdit}
-            />
-          </div>
           <div className="card-body">
-            <Form className="pt-5">
-              <Form.Group controlId="formGroupName">
-                <Form.Label>Name</Form.Label>
-                <Form.Control type="text" placeholder="James Lewis" />
-              </Form.Group>
-              <Form.Group controlId="formGroupDescription">
-                <Form.Label>Description</Form.Label>
-                <Form.Control as="textarea" rows="3" placeholder="Bio" />
-              </Form.Group>
+            <Form className="pt-1">
+              
               <Form.Group controlId="formGroupEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
@@ -79,14 +20,18 @@ const EditProfile = () => {
                   placeholder="jlewis@university.edu"
                 />
               </Form.Group>
-              <Form.Group controlId="formGroupPhone">
-                <Form.Label>Phone</Form.Label>
-                <Form.Control type="tel" placeholder="210-555-5555" />
+              <Form.Group controlId="formGroupPassword">
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control type="password" placeholder="old password" />
+              </Form.Group>
+              <Form.Group controlId="formGroupPassword">
+                <Form.Label> New Password</Form.Label>
+                <Form.Control type="password" placeholder="new password" />
               </Form.Group>
               <Button
                 variant="secondary"
                 as="button"
-                size="md"
+                size="sm"
                 type="submit"
                 block
               >
@@ -95,7 +40,6 @@ const EditProfile = () => {
               </Button>
             </Form>
           </div>
-        </Container>
       </Card>
     </Container>
   );

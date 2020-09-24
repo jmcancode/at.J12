@@ -8,9 +8,6 @@ import {
   faStar,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import Avatar from "react-avatar";
-
-import UserHeader from "../components/UserHeader";
 
 import { Button } from "reactstrap";
 
@@ -58,7 +55,7 @@ class Home extends React.Component {
         <container>
           <div className=" container">
             <div className="container d-flex justify-content-between text-center pb-3">
-              <div className="container-flex d-flex pt-5">
+              <div className="container-flex d-flex pt-1">
                 <div className="pb-1">
                   <FontAwesomeIcon color="gold" icon={faStar} size="lg" />
                 </div>
@@ -67,7 +64,7 @@ class Home extends React.Component {
                   {this.setState} 34 DAY STREAK
                 </div>
               </div>
-              <div className=" mt-5 pt-1 new_feed">
+              <div className=" mt-1 pt-1 new_feed">
                 <p>NEWS FEED: {this.state.currentDate} </p>
               </div>
             </div>
