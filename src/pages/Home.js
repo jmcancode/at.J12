@@ -53,11 +53,11 @@ class Home extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="container-flex">
-        </div>
+        {/* <div className="container-flex">
+        </div> */}
         <container>
           <div className=" container">
-            <div className="container d-flex justify-content-between text-center pb-3">
+            <div className="container d-flex justify-content-between text-center mb-3">
               <div className="container-flex d-flex pt-5">
                 <div className="pb-1">
                   <FontAwesomeIcon color="gold" icon={faStar} size="lg" />
@@ -67,15 +67,15 @@ class Home extends React.Component {
                   {this.setState} 34 DAY STREAK
                 </div>
               </div>
-              <div className=" mt-5 pt-1 new_feed">
+              <div className="mt-5 pt-1 new_feed">
                 <p>NEWS FEED: {this.state.currentDate} </p>
               </div>
             </div>
 
-            <div className="d-flex">
-              <div className="card-deck container-fluid">
-                <Card className="card-container-user">
-                  <Card.Header>
+            <div className="d-flex justify-content-center">
+              <div className="d-flex flex-column container-fluid">
+                <Card className="shadow mb-5 ">
+                  <Card.Header className="border-bottom-0">
                     <div>
                       <p className="user-title">
                         {""}WELLNESS TECHNIQUES{""}
@@ -92,9 +92,10 @@ class Home extends React.Component {
                     variant="top"
                     fluid
                     src={require("../assets/images/image (2).png")}
+                    className="mt-0 rounded-0"
                   />
 
-                  <Card.Footer>
+                  <Card.Footer className="border-top-0">
                     <div className=" d-flex justify-content-between text-center">
                       <Button>
                         <FontAwesomeIcon
@@ -130,8 +131,8 @@ class Home extends React.Component {
                   </Card.Footer>
                 </Card>
 
-                <Card className="card-container-user">
-                  <Card.Header>
+                <Card className="shadow mb-5">
+                  <Card.Header className="border-bottom-0">
                     <div>
                       <div className="container-row">
                         <p className="user-title">
@@ -150,9 +151,10 @@ class Home extends React.Component {
                     variant="top"
                     fluid
                     src={require("../assets/images/image (2).png")}
+                    className="mt-0 rounded-0"
                   />
 
-                  <Card.Footer>
+                  <Card.Footer className="border-top-0">
                     <div className=" d-flex justify-content-between text-center">
                       <Button>
                         <FontAwesomeIcon
@@ -187,8 +189,8 @@ class Home extends React.Component {
                     </div>
                   </Card.Footer>
                 </Card>
-                <Card className="card-container-user">
-                  <Card.Header>
+                <Card className="shadow mb-5">
+                  <Card.Header className="border-bottom-0">
                     <div>
                       <div className="container-row">
                         <p className="user-title">
@@ -207,9 +209,10 @@ class Home extends React.Component {
                     variant="top"
                     fluid
                     src={require("../assets/images/image (2).png")}
+                    className="mt-0 rounded-0"
                   />
 
-                  <Card.Footer>
+                  <Card.Footer className="border-top-0">
                     <div className=" d-flex justify-content-between text-center">
                       <Button>
                         <FontAwesomeIcon

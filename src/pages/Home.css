@@ -40,15 +40,15 @@
     padding-top: 4%;
 }
 
-.card-container-user{
+/* .card-container-user{
     box-shadow: 10px 10px 20px gray; 
-}
+} */
 
-@media only screen and (min-width: 992px) {
+/* @media only screen and (min-width: 992px) {
 .card-deck{
     display: flex;
     flex-flow: column !important;
     margin-left: -15;
     margin-right: -15;
 }
-}
+} */
