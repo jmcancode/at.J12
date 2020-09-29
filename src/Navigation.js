@@ -12,7 +12,7 @@ import {
   faEnvelope,
   faFolder,
   faBook,
-   faGlobe,
+  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -58,16 +58,17 @@ const Navigation = (props) => {
         className="navbar navbar-expand-md navbar-light d-none d-lg-block fixed-top header-img"
         role="navigation"
       >
-        <div className="container-fluid justify-content-between ">
+        <div className="d-flex container-fluid justify-content-between align-items-center">
           <a className="navbar-brand" href="/">
             <img
               alt="Athlete Talk"
               src={require("./assets/AT Logos/at-long-orange.png")}
-              style={{ width: "25%", paddingBottom: "15px" }}
+              style={{ width: "25%" }}
+              className="my-3 ml-4"
             />
           </a>
-          <div>
-            <Form inline>
+          <div className="d-flex">
+            <Form inline className="pt-0">
               <FormControl
                 type="text"
                 placeholder="Search"
@@ -76,44 +77,45 @@ const Navigation = (props) => {
                 className="mr-sm-2"
               />
             </Form>
-          </div>
-          <Nav className="w-35 .d-sm-none .d-md-block">
-            <Nav.Item className="d-flex d-inline">
-              <div className="pt-2">
-                <i>
-                  <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
-                </i>
-                <FontAwesomeIcon className="mx-2" size="2x" icon={faFolder} />
-                <FontAwesomeIcon className="mx-2" size="2x" icon={faEnvelope} />
-                <FontAwesomeIcon
-                  className="mx-2"
-                  size="2x"
-                  icon={faUserCircle}
-                />
-              </div>
-              <div>
-                <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                  <DropdownToggle
-                    className="btn"
-                    size="md"
-                    color="link"
-                  ></DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem as="button">Administrator</DropdownItem>
-                    <DropdownItem as="button">Athlete</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem
-                      as="button"
-                      tag="a"
-                      href="/src/pages/Login.jsx"
-                    >
-                      Sign-up
+
+            <Nav className="align-items-center">
+              <Nav.Item className="d-flex justify-content-between">
+                <div className="d-flex">
+                  <i>
+                    <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
+                  </i>
+                  <FontAwesomeIcon className="mx-2" size="2x" icon={faFolder} />
+                  <FontAwesomeIcon className="mx-2" size="2x" icon={faEnvelope} />
+                  <FontAwesomeIcon
+                    className="mx-2"
+                    size="2x"
+                    icon={faUserCircle}
+                  />
+                </div>
+                <div className d-none d-sm-block d-md-none>
+                  <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                    <DropdownToggle
+                      className="btn"
+                      size="md"
+                      color="link"
+                    ></DropdownToggle>
+                    <DropdownMenu right>
+                      <DropdownItem as="button">Administrator</DropdownItem>
+                      <DropdownItem as="button">Athlete</DropdownItem>
+                      <DropdownItem divider />
+                      <DropdownItem
+                        as="button"
+                        tag="a"
+                        href="/src/pages/Login.jsx"
+                      >
+                        Sign-up
                     </DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
-              </div>
-            </Nav.Item>
-          </Nav>
+                    </DropdownMenu>
+                  </Dropdown>
+                </div>
+              </Nav.Item>
+            </Nav>
+          </div>
         </div>
       </Navbar>
 

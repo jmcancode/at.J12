@@ -12,14 +12,14 @@
     border-radius: 10% !important;
 }
 
-.container-row{
+/* .container-row{
    display: flex !important;
    flex-direction: column;
    position: inherit;
    z-index: 2;
    
    top: -1%;
-}
+} */
 
 .user-title{
     font-size: 14px;
