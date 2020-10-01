@@ -12,7 +12,6 @@
   font-family: Graduate;
   color: #b57000;
   padding-bottom: 9%;
-  padding-left: 8%;
   position: absolute;
   top: -23%;
 }
@@ -21,8 +20,6 @@
   position: absolute;
   top: 35%;
   right: 10%;
-  height: 310px;
-  width: 175px;
   margin: 0 -15px;
 }
 
@@ -45,4 +42,28 @@
   border-bottom: 1px solid #b57000 !important;
   border-radius: .25rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+@media (max-width: 991px) {
+  .log-container{
+    height: 310px;
+    width: 175px;
+  }
+}
+
+@media (min-width: 992px) {
+  .log-container{
+    top: 25%;
+    background-color: white;
+    border-radius: 5px;
+    padding: 1.5rem;
+    -webkit-box-shadow: 0px 0px 49px -2px rgba(0,0,0,0.46);
+    -moz-box-shadow: 0px 0px 49px -2px rgba(0,0,0,0.46);
+    box-shadow: 0px 0px 49px -2px rgba(0,0,0,0.46);
+  }
+
+  .log-container Form {
+    width: 20vw;
+    padding: 0;
+  }
 }

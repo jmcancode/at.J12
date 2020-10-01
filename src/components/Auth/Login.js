@@ -77,15 +77,22 @@ class Login extends React.Component {
   render() {
     const { username, password, errors, loading } = this.state;
     return (
-      <Card className="bg-dark text-white">
+      <Card className="bg-dark text-white border-0">
         <Card.Img
           src={require("../../assets/login-example.jpg")}
           alt="Card image"
+          className="d-lg-none mt-0 border-0"
           style={{ bordercolor: "transparent", height: "100vh" }}
         />
+        <Card.Img
+          src={require("../../assets/images/field-logo.jpg")}
+          alt="Card image"
+          className="d-none d-lg-block mt-0 border-0 img-fluid"
+          style={{ height: "100vh" }}
+        />
         <Card.ImgOverlay>
-          <div className="container-flex d-flex log-container">
-            <Card.Title className="log-header text-center">
+          <div className="container-flex d-flex justify-content-center log-container">
+            <Card.Title className="d-lg-none log-header text-center">
               ATHLETE LOGIN
             </Card.Title>
             <Form>
