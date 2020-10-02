@@ -44,6 +44,15 @@
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
+.cpyrght {
+  bottom: 5%;
+  margin-left: auto;
+margin-right: auto;
+left: 0;
+right: 0;
+text-align: center;
+}
+
 @media (max-width: 991px) {
   .log-container{
     height: 310px;

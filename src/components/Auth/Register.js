@@ -136,6 +136,7 @@ class Login extends React.Component {
               <Form.Text className="text-muted text-center"></Form.Text>
             </Form>
           </div>
+          <div className="bg-transparent text-center text-white position-absolute cpyrght">Ⓒ 2020 WHERE ATHLETES TALK</div>
         </Card.ImgOverlay>
       </Card>
     );
