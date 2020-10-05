@@ -21,7 +21,7 @@ export default function SinglePlan() {
                 Conquering Machismo
               </Card.Title>
               <Button
-                className="p-0"
+                className="p-2 rounded"
                 onClick={(e) => this.setState({ count: this.state.count + 1 })}
               >
                 <FontAwesomeIcon icon={faHeart} size="lg" color="#B59A80" />{" "}
@@ -71,9 +71,9 @@ export default function SinglePlan() {
             <br />
             <br />
           </Card.Text>
-          <div className="container-flex d-flex justify-content-center" style={{paddingBottom: '25%'}}>
-          <Button variant="primary" >Finish Day</Button>
-          <Button variant="primary" >Finish Plan</Button>
+          <div className="container-flex d-flex justify-content-center" style={{ paddingBottom: '25%' }}>
+            <Button className="rounded p-3" variant="primary" >Finish Day</Button>
+            <Button className="rounded p-3 border-left-0" variant="primary" >Finish Plan</Button>
           </div>
         </Card>
       </div>

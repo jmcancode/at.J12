@@ -14,8 +14,6 @@ const PlanHeader = () => {
       </div>
 
       <h4 className="mx-auto my-auto pr-5 font-weight-bold">DISCOVER</h4>
-
-     
     </div>
   );
 };

@@ -15,7 +15,7 @@ function SampleNextArrow(props) {
     <div
       className={className}
       style={{ ...style, display: "block", background: "#BF5700", borderRadius: "50%" }}
-      
+
     />
   );
 }
@@ -26,7 +26,7 @@ function SamplePrevArrow(props) {
     <div
       className={className}
       style={{ ...style, display: "block", background: "#BF5700", borderRadius: "50%" }}
-      
+
     />
   );
 }
@@ -64,35 +64,73 @@ class PlanCategory extends React.Component {
     const settings = {
       arrows: false,
       dots: false,
+      draggable: true,
       infinite: true,
-      centerPadding: "60px",
       speed: 500,
       rows: 1,
-      slidesToShow: 2,
+      slidesToScroll: 1,
+
       swipeToSlide: true,
       afterChange: function (index) {
         console.log(
           `Slider Changed to: ${index + 1}, background: #222; color: #bada55`
         );
       },
+      responsive: [
+        {
+          breakpoint: 413,
+          settings: {
+            slidesToShow: 1.5,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2.5,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 980,
+          settings: {
+            slidesToShow: 3.5,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 1200,
+          settings: {
+            slidesToShow: 4.5,
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 10000,
+          settings: {
+            slidesToShow: 5.5,
+            slidesToScroll: 1,
+          },
+        },
+      ],
       nextArrow: <SampleNextArrow />,
-      prevArrow: <SamplePrevArrow />
+      prevArrow: <SamplePrevArrow />,
     };
 
     return (
-      <div>
+      <div className="border-bottom mb-4">
         <header className="d-flex align-items-center justify-content-between">
           <h6 className="font-weight-bold text-uppercase">{this.props.category}</h6>
           <p mb-0>view all</p>
         </header>
 
+        <CardDeck className="my-2">
+          <Slider {...settings} className="container">
 
-        <CardDeck>
-          <Slider {...settings}>
             {this.state.articles.map(article => {
               return <div key={article.createdDate}>
                 <PlanCard
-                
+
                   image="https://picsum.photos/640/360?random"
                   title={article.title}
                   summary={article.content}
@@ -100,6 +138,7 @@ class PlanCategory extends React.Component {
               </div>
             })}
           </Slider>
+
         </CardDeck>
       </div>
     );
