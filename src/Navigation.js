@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
@@ -11,8 +10,6 @@ import {
   faUserCircle,
   faEnvelope,
   faFolder,
-  faBook,
-  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -28,30 +25,6 @@ import BottomNav from "./components/BottomNav";
 const Navigation = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
-
-  const tabs = [
-    {
-      route: "/home",
-      icon: faHome,
-      label: "Home",
-    },
-    {
-      route: "/plan",
-      icon: faFolder,
-      label: " My Plans",
-    },
-    {
-      route: "/plans",
-      icon: faGlobe,
-      label: "Discover",
-    },
-    {
-      route: "/message",
-      icon: faBook,
-      label: "Journal",
-    },
-  ];
-
 
 
   return (
