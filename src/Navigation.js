@@ -23,6 +23,7 @@ import {
 } from "reactstrap";
 
 import "./assets/css/Navigation.css";
+import BottomNav from "./components/BottomNav";
 
 const Navigation = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -50,6 +51,8 @@ const Navigation = (props) => {
       label: "Journal",
     },
   ];
+
+
 
   return (
     <div>
@@ -120,30 +123,7 @@ const Navigation = (props) => {
       </Navbar>
 
       {/* Bottom Tab Navigator*/}
-      <Nav
-        className="navbar fixed-bottom navbar-light d-block d-lg-none bottom-tab-nav"
-        role="navigation"
-        style={{ fontSize: "small" }}
-      >
-        <Nav className="w-100">
-          <div className=" d-flex flex-row justify-content-around w-100">
-            {tabs.map((tab, index) => (
-              <Nav.Item key={`tab-${index}`}>
-                <NavLink
-                  to={tab.route}
-                  className="nav-link bottom-nav-link"
-                  activeClassName="active"
-                >
-                  <div className="row d-flex flex-column justify-content-center align-items-center">
-                    <FontAwesomeIcon size="lg" icon={tab.icon} />
-                    <div>{tab.label}</div>
-                  </div>
-                </NavLink>
-              </Nav.Item>
-            ))}
-          </div>
-        </Nav>
-      </Nav>
+      <BottomNav />
     </div>
   );
 };
