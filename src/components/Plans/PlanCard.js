@@ -1,5 +1,4 @@
 import React from 'react';
-// import { render } from '@testing-library/react';
 import Card from 'react-bootstrap/Card';
 
 class PlanCard extends React.Component {

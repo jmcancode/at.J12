@@ -10,6 +10,7 @@ import Card from "react-bootstrap/Card";
 import firebase from "../../Firebase/Firebase.utils";
 // custom css
 import "../../pages/login.css";
+import Alert from "react-bootstrap/Alert";
 
 class Login extends React.Component {
   state = {
@@ -20,62 +21,43 @@ class Login extends React.Component {
     usersRef: firebase.database().ref("users"),
   };
 
-  isFormValid = () => {
-    let errors = [];
-    let error;
+  displayErrors = errors =>
+  errors.map((error, i) => <p key={i}>{error.message}</p>);
 
-    if (this.isFormEmpty(this.state)) {
-      error = { message: "Fill in all fields" };
-      this.setState({ errors: errors.concat(error) });
-      return false;
-    } else if (!this.isPasswordValid(this.state)) {
-      error = { message: "Password is invalid" };
-      this.setState({ errors: errors.concat(error) });
-      return false;
-    } else {
-      return true;
-    }
-  };
+handleChange = event => {
+  this.setState({ [event.target.name]: event.target.value });
+};
 
-  displayErrors = (errors) =>
-    errors.map((error, i) => <p key={i}>{error.message}</p>);
-
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    if (this.isFormValid()) {
-      this.setState({ errors: [], loading: true });
-      firebase
-        .auth()
-        .signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then((sginedInUser) => {
-          console.log(sginedInUser);
-        })
-        .catch((err) => {
-          console.error(err);
-          this.setState({
-            errors: this.state.errors.concat(err),
-            loading: false,
-          });
+handleSubmit = event => {
+  event.preventDefault();
+  if (this.isFormValid(this.state)) {
+    this.setState({ errors: [], loading: true });
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(this.state.email, this.state.password)
+      .then(signedInUser => {
+        console.log(signedInUser);
+      })
+      .catch(err => {
+        console.error(err);
+        this.setState({
+          errors: this.state.errors.concat(err),
+          loading: false
         });
-    }
-  };
+      });
+  }
+};
 
-  isFormValid = ({ email, password }) => email && password;
+isFormValid = ({ email, password }) => email && password;
 
-  handleInputError = (errors, input) => {
-    return errors.some((error) =>
-      error.message.toLowerCase().includes("inputName")
-    )
-      ? "error"
-      : "";
-  };
+handleInputError = (errors, inputName) => {
+  return errors.some(error => error.message.toLowerCase().includes(inputName))
+    ? "error"
+    : "";
+};
 
   render() {
-    const { username, password, errors, loading } = this.state;
+    const { email, password, errors, loading } = this.state;
     return (
       <Card className="bg-dark text-white border-0">
         <Card.Img
@@ -95,28 +77,48 @@ class Login extends React.Component {
             <Card.Title className="d-lg-none log-header text-center">
               ATHLETE LOGIN
             </Card.Title>
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Email" />
+            <Form onSubmit={this.handleSubmit}>
+              <Form.Group>
+                <Form.Control
+                  onChange={this.handleChange}
+                  value={email}
+                  type="email"
+                  placeholder="Email"
+                  name="email"
+                />
               </Form.Group>
-              <Form.Group controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Password" />
+              <Form.Group>
+                <Form.Control
+                  onChange={this.handleChange}
+                  value={password}
+                  className={this.handleInputError(errors, "password")}
+                  type="password"
+                  id="inputPassword6"
+                  placeholder="Password"
+                  name="password"
+                />
               </Form.Group>
-              <Form.Text className="text-muted pb-4">
-                Not a user?{" "}
-                <Link to="/">Sign up</Link>
-              </Form.Text>
               <Button
-                variant="primary"
+                block
+                variant="secondary"
+                disabled={loading}
+                className={loading ? "loading" : ""}
                 size="sm"
                 type="submit"
                 value="Submit"
-                className="register-btn"
               >
                 Login
               </Button>
-              <Form.Text className="text-muted text-center"></Form.Text>
+              <Form.Text className="text-muted pt-3 d-flex justify-content-center">
+                Not a user? <Link to="/">Sign up</Link>
+              </Form.Text>
             </Form>
+            {errors.length > 0 && (
+              <Alert error>
+                <h3>Error</h3>
+                {this.displayErrors(errors)}
+              </Alert>
+            )}
           </div>
           <div className="bg-transparent text-center text-white position-absolute cpyrght">Ⓒ 2020 WHERE ATHLETES TALK</div>
         </Card.ImgOverlay>

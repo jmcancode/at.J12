@@ -8,9 +8,6 @@ import {
   faStar,
   faHeart,
 } from "@fortawesome/free-solid-svg-icons";
-import Avatar from "react-avatar";
-
-import UserHeader from "../components/UserHeader";
 
 import { Button } from "reactstrap";
 
