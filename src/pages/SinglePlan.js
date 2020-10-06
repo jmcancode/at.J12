@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import { Button } from "reactstrap";
@@ -6,6 +6,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 export default function SinglePlan() {
+  const [count, setCount] = useState(0);
+  const handleClick = () => setCount(count + 1);
+  
+  useEffect(() => {
+    document.FontAwesomeIcon = `<FontAwesomeIcon />`
+  })
+
+
+
   return (
     <Container>
       <div className="shadow m-2">
@@ -22,10 +31,9 @@ export default function SinglePlan() {
               </Card.Title>
               <Button
                 className="p-2 rounded"
-                onClick={(e) => this.setState({ count: this.state.count + 1 })}
+                onClick={handleClick}
               >
-                <FontAwesomeIcon icon={faHeart} size="lg" color="#B59A80" />{" "}
-                1.5k
+                <FontAwesomeIcon icon={faHeart} size="lg" color="#B59A80" /> {count}
               </Button>
             </div>
             <Card.Text className="text-muted mb-1">
