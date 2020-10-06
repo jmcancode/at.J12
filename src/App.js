@@ -25,6 +25,7 @@ class App extends Component {
     super();
     this.state = {
       sideDrawerOpen: false,
+      showNav: true,
     };
   }
 
@@ -53,12 +54,12 @@ class App extends Component {
           {backdrop}
           <Switch>
             <Route exact path="/" component={Register} />
-            <Route path="/login" component={Login}/>
+            <Route path="/login" component={Login} />
             <Route path="/home" component={Home} />
-            
-            
+
+
             <Route path="/plans" component={Plans} />
-            
+
             <Route path="/settings" component={Settings} />
             <Route path="/edit-profile" component={EditProfile} />
             <Route path="/message" component={Messages} />

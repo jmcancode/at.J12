@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
-
+import BottomNav from "./components/BottomNav";
+// import routes from '../src/routes'
+import "./assets/css/Navigation.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
   faUserCircle,
@@ -18,9 +20,6 @@ import {
   DropdownMenu,
   DropdownItem,
 } from "reactstrap";
-
-import "./assets/css/Navigation.css";
-import BottomNav from "./components/BottomNav";
 
 const Navigation = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
