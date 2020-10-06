@@ -55,10 +55,10 @@ class App extends Component {
             <Route exact path="/" component={Register} />
             <Route path="/login" component={Login}/>
             <Route path="/home" component={Home} />
-            <Route path="/addpost" component={AddPost} />
-            <Route path="/profile" component={Profile} />
+            
+            
             <Route path="/plans" component={Plans} />
-            <Route path="/about" component={About} />
+            
             <Route path="/settings" component={Settings} />
             <Route path="/edit-profile" component={EditProfile} />
             <Route path="/message" component={Messages} />
