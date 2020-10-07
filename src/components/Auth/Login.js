@@ -106,6 +106,7 @@ handleInputError = (errors, inputName) => {
                 size="sm"
                 type="submit"
                 value="Submit"
+                onClick={this.handleSubmit}
               >
                 Login
               </Button>

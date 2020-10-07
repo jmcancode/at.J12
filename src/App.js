@@ -42,7 +42,7 @@ class App extends Component {
       backdrop = <BackDrop click={this.drawerToggleClickHandler} />;
     }
     return (
-      <div style={{ height: "100%" }}>
+      <div className="app" style={{ height: "100%" }}>
         <Router>
           <Navigation />
           <ToolBar drawerClickHandler={this.drawerToggleClickHandler} />
@@ -52,14 +52,7 @@ class App extends Component {
             <Route exact path="/" component={Register} />
             <Route path="/login" component={Login} />
             <Route path="/home" component={Home} />
-<<<<<<< HEAD
             <Route path="/plans" component={Plans} />
-=======
-
-
-            <Route path="/plans" component={Plans} />
-
->>>>>>> 1c5966fdf92b4605d66460e599fc1378f9ef0d13
             <Route path="/settings" component={Settings} />
             <Route path="/journal" component={Messages} />
             <Route path="/plan" component={SinglePlan} />

@@ -200,6 +200,7 @@ class Register extends React.Component {
                 value="Submit"
                 disabled={loading}
                 className={loading ? "loading" : ""}
+                onClick={this.handleSubmit}
               >
                 Register
               </Button>

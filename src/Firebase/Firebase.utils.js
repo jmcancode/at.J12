@@ -1,6 +1,8 @@
 import firebase from "firebase/app";
 import "firebase/auth";
 import "firebase/database";
+import "firebase/analytics";
+import "firebase/remote-config";
 
 const config = {
   apiKey: "AIzaSyBO6f8hRtVkOk7QRAPOVUqL-n5Ff20CqCI",
@@ -18,6 +20,8 @@ firebase.initializeApp(config);
 //access authentication & database on firebase
 export const auth = firebase.auth();
 export const db = firebase.database();
+export const rc = firebase.remoteConfig();
+export const any = firebase.analytics();
 
 export default firebase;
 

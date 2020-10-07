@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
-import { NavLink, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-=======
->>>>>>> 1c5966fdf92b4605d66460e599fc1378f9ef0d13
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
@@ -11,10 +8,10 @@ import Nav from "react-bootstrap/Nav";
 import BottomNav from "./components/BottomNav";
 // import routes from '../src/routes'
 import "./assets/css/Navigation.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
-
+  faGlobe,
+  faBook,
   faFolder,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -28,32 +25,6 @@ import {
 const Navigation = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
-
-<<<<<<< HEAD
-  const tabs = [
-    {
-      route: "/home",
-      icon: faHome,
-      label: "Home",
-    },
-    {
-      route: "/plan",
-      icon: faFolder,
-      label: " My Plans",
-    },
-    {
-      route: "/plans",
-      icon: faGlobe,
-      label: "Discover",
-    },
-    {
-      route: "/journal",
-      icon: faBook,
-      label: "Journal",
-    },
-  ];
-=======
->>>>>>> 1c5966fdf92b4605d66460e599fc1378f9ef0d13
 
   return (
     <div>
@@ -89,17 +60,21 @@ const Navigation = (props) => {
                     <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
                   </Link>
                   <Link to="/plan">
-                  <FontAwesomeIcon className="mx-2" size="2x" icon={faFolder} />
+                    <FontAwesomeIcon
+                      className="mx-2"
+                      size="2x"
+                      icon={faFolder}
+                    />
                   </Link>
                   <Link to="/plans">
-                  <FontAwesomeIcon className="mx-2" size="2x" icon={faGlobe} />
+                    <FontAwesomeIcon
+                      className="mx-2"
+                      size="2x"
+                      icon={faGlobe}
+                    />
                   </Link>
                   <Link to="/journal">
-                  <FontAwesomeIcon
-                    className="mx-2"
-                    size="2x"
-                    icon={faBook}
-                  />
+                    <FontAwesomeIcon className="mx-2" size="2x" icon={faBook} />
                   </Link>
                 </div>
                 <div className="d-none d-sm-block d-md-none">
@@ -119,7 +94,7 @@ const Navigation = (props) => {
                         href="/src/pages/Login.jsx"
                       >
                         Sign-out
-                    </DropdownItem>
+                      </DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </div>
