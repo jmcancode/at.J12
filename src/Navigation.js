@@ -1,17 +1,21 @@
 import React, { useState } from "react";
+<<<<<<< HEAD
 import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+=======
+>>>>>>> 1c5966fdf92b4605d66460e599fc1378f9ef0d13
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
 import FormControl from "react-bootstrap/FormControl";
 import Nav from "react-bootstrap/Nav";
-
+import BottomNav from "./components/BottomNav";
+// import routes from '../src/routes'
+import "./assets/css/Navigation.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faHome,
 
   faFolder,
-  faBook,
-  faGlobe,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -21,12 +25,11 @@ import {
   DropdownItem,
 } from "reactstrap";
 
-import "./assets/css/Navigation.css";
-
 const Navigation = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
 
+<<<<<<< HEAD
   const tabs = [
     {
       route: "/home",
@@ -49,6 +52,8 @@ const Navigation = (props) => {
       label: "Journal",
     },
   ];
+=======
+>>>>>>> 1c5966fdf92b4605d66460e599fc1378f9ef0d13
 
   return (
     <div>
@@ -125,30 +130,7 @@ const Navigation = (props) => {
       </Navbar>
 
       {/* Bottom Tab Navigator*/}
-      <Nav
-        className="navbar fixed-bottom navbar-light d-block d-lg-none bottom-tab-nav"
-        role="navigation"
-        style={{ fontSize: "small" }}
-      >
-        <Nav className="w-100">
-          <div className=" d-flex flex-row justify-content-around w-100">
-            {tabs.map((tab, index) => (
-              <Nav.Item key={`tab-${index}`}>
-                <NavLink
-                  to={tab.route}
-                  className="nav-link bottom-nav-link"
-                  activeClassName="active"
-                >
-                  <div className="row d-flex flex-column justify-content-center align-items-center">
-                    <FontAwesomeIcon size="lg" icon={tab.icon} />
-                    <div>{tab.label}</div>
-                  </div>
-                </NavLink>
-              </Nav.Item>
-            ))}
-          </div>
-        </Nav>
-      </Nav>
+      <BottomNav />
     </div>
   );
 };

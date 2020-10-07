@@ -2,10 +2,10 @@ import {
   faHome,
   faFolder,
   faGlobe,
-  faBook,
-} from "@fortawesome/react-fontawesome";
+  faBook
+} from '@fortawesome/free-solid-svg-icons';
 
-const routes = [
+export const routesData = [
   {
     route: "/home",
     icon: faHome,
@@ -28,5 +28,3 @@ const routes = [
     label: "Journal",
   },
 ];
-
-export default routes;
