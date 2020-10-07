@@ -15,6 +15,7 @@ import SinglePlan from "./pages/SinglePlan"
 import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
+import firebase from '../src/Firebase/Firebase.utils'
 
 class App extends Component {
   constructor() {
@@ -38,16 +39,29 @@ class App extends Component {
   render() {
     let backdrop;
 
+    let nav;
+    var user = firebase.auth().currentUser;
+
     if (this.state.sideDrawerOpen) {
       backdrop = <BackDrop click={this.drawerToggleClickHandler} />;
     }
+
+    if (user != null) {
+      nav = <div>
+        <Navigation />
+        <ToolBar drawerClickHandler={this.drawerToggleClickHandler} />
+        <SideDrawer show={this.state.sideDrawerOpen} />
+        {backdrop}
+      </div>
+    } else {
+      nav = null;
+    }
+
     return (
       <div className="app" style={{ height: "100%" }}>
         <Router>
-          <Navigation />
-          <ToolBar drawerClickHandler={this.drawerToggleClickHandler} />
-          <SideDrawer show={this.state.sideDrawerOpen} />
-          {backdrop}
+          {nav}
+
           <Switch>
             <Route exact path="/" component={Register} />
             <Route path="/login" component={Login} />
