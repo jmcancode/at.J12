@@ -100,7 +100,7 @@ class Home extends React.Component {
                           icon={faHeart}
                           size="sm"
                         />{" "}
-                        9k
+                        
                       </Button>
                       <Button>
                         <FontAwesomeIcon
@@ -109,7 +109,7 @@ class Home extends React.Component {
                           size="sm"
                           onChange={this.handleChange}
                         />{" "}
-                        12.5k
+                        
                       </Button>
 
                       <Button
@@ -122,7 +122,7 @@ class Home extends React.Component {
                           icon={faThumbsDown}
                           size="sm"
                         />{" "}
-                        12
+                        
                       </Button>
                     </div>
                   </Card.Footer>
@@ -159,7 +159,7 @@ class Home extends React.Component {
                           icon={faHeart}
                           size="sm"
                         />{" "}
-                      9k
+                      
                     </Button>
                       <Button>
                         <FontAwesomeIcon
@@ -168,7 +168,7 @@ class Home extends React.Component {
                           size="sm"
                           onChange={this.handleChange}
                         />{" "}
-                      12.5k
+                      
                     </Button>
 
                       <Button
@@ -181,7 +181,7 @@ class Home extends React.Component {
                           icon={faThumbsDown}
                           size="sm"
                         />{" "}
-                      12
+                      
                     </Button>
                     </div>
                   </Card.Footer>
@@ -217,7 +217,7 @@ class Home extends React.Component {
                           icon={faHeart}
                           size="sm"
                         />{" "}
-                    9k
+                    
                   </Button>
                       <Button>
                         <FontAwesomeIcon
@@ -226,7 +226,7 @@ class Home extends React.Component {
                           size="sm"
                           onChange={this.handleChange}
                         />{" "}
-                    12.5k
+                    
                   </Button>
 
                       <Button
@@ -239,7 +239,7 @@ class Home extends React.Component {
                           icon={faThumbsDown}
                           size="sm"
                         />{" "}
-                    12
+                    
                   </Button>
                     </div>
                   </Card.Footer>

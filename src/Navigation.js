@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
@@ -8,8 +8,7 @@ import Nav from "react-bootstrap/Nav";
 
 import {
   faHome,
-  faUserCircle,
-  faEnvelope,
+
   faFolder,
   faBook,
   faGlobe,
@@ -45,7 +44,7 @@ const Navigation = (props) => {
       label: "Discover",
     },
     {
-      route: "/message",
+      route: "/journal",
       icon: faBook,
       label: "Journal",
     },
@@ -81,18 +80,24 @@ const Navigation = (props) => {
             <Nav className="align-items-center">
               <Nav.Item className="d-flex justify-content-between">
                 <div className="d-flex">
-                  <i>
+                  <Link to="/home">
                     <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
-                  </i>
+                  </Link>
+                  <Link to="/plan">
                   <FontAwesomeIcon className="mx-2" size="2x" icon={faFolder} />
-                  <FontAwesomeIcon className="mx-2" size="2x" icon={faEnvelope} />
+                  </Link>
+                  <Link to="/plans">
+                  <FontAwesomeIcon className="mx-2" size="2x" icon={faGlobe} />
+                  </Link>
+                  <Link to="/journal">
                   <FontAwesomeIcon
                     className="mx-2"
                     size="2x"
-                    icon={faUserCircle}
+                    icon={faBook}
                   />
+                  </Link>
                 </div>
-                <div className d-none d-sm-block d-md-none>
+                <div className="d-none d-sm-block d-md-none">
                   <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle
                       className="btn"
@@ -108,7 +113,7 @@ const Navigation = (props) => {
                         tag="a"
                         href="/src/pages/Login.jsx"
                       >
-                        Sign-up
+                        Sign-out
                     </DropdownItem>
                     </DropdownMenu>
                   </Dropdown>

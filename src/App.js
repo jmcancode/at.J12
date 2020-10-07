@@ -6,12 +6,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 //pages + components
 import Home from "./pages/Home";
 import Navigation from "./Navigation";
-import Profile from "./pages/Profile";
-import AddPost from "./pages/AddPost";
 import Plans from "./pages/Plans";
-import About from "./pages/About";
 import Settings from "./pages/Settings";
-import EditProfile from "./pages/EditProfile";
 import Messages from "./pages/Messages";
 import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
@@ -55,13 +51,9 @@ class App extends Component {
             <Route exact path="/" component={Register} />
             <Route path="/login" component={Login}/>
             <Route path="/home" component={Home} />
-            
-            
             <Route path="/plans" component={Plans} />
-            
             <Route path="/settings" component={Settings} />
-            <Route path="/edit-profile" component={EditProfile} />
-            <Route path="/message" component={Messages} />
+            <Route path="/journal" component={Messages} />
             <Route path="/plan" component={SinglePlan} />
           </Switch>
         </Router>

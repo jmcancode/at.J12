@@ -14,7 +14,7 @@ import Alert from "react-bootstrap/Alert";
 
 class Login extends React.Component {
   state = {
-    username: "",
+    email: "",
     password: "",
     errors: [],
     loading: false,
@@ -64,7 +64,7 @@ handleInputError = (errors, inputName) => {
           src={require("../../assets/login-example.jpg")}
           alt="Card image"
           className="d-lg-none mt-0 border-0"
-          style={{ bordercolor: "transparent", height: "100vh" }}
+          style={{ borderColor: "transparent", height: "100vh" }}
         />
         <Card.Img
           src={require("../../assets/images/field-logo.jpg")}
@@ -120,7 +120,7 @@ handleInputError = (errors, inputName) => {
               </Alert>
             )}
           </div>
-          <div className="bg-transparent text-center text-white position-absolute cpyrght">Ⓒ 2020 WHERE ATHLETES TALK</div>
+          <div className="bg-transparent text-center text-white position-absolute copyright">Ⓒ 2020 WHERE ATHLETES TALK</div>
         </Card.ImgOverlay>
 
       </Card>

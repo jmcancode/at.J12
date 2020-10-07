@@ -11,12 +11,10 @@ import firebase from "../../Firebase/Firebase.utils";
 // custom css
 import "../../pages/login.css";
 
-import md5 from "md5";
-import Alert from 'react-bootstrap/Alert'
 
 class Register extends React.Component {
   state = {
-    username: "",
+    email: "",
     password: "",
     passwordConfirmation: "",
     errors: [],
@@ -50,7 +48,7 @@ class Register extends React.Component {
   };
 
   isPasswordValid = ({ password, passwordConfirmation }) => {
-    if (password.length < 6 || passwordConfirmation.length < 6) {
+    if (password.length < 8 || passwordConfirmation.length < 8) {
       return false;
     } else if (password !== passwordConfirmation) {
       return false;
@@ -78,9 +76,7 @@ class Register extends React.Component {
           createdUser.user
             .updateProfile({
               displayName: this.state.username,
-              photoURL: `http://gravatar.com/avatar/${md5(
-                createdUser.user.email
-              )}?d=Identicon`,
+              
             })
             .then(() => {
               this.saveUser(createdUser).then(() => {
@@ -99,7 +95,7 @@ class Register extends React.Component {
           console.error(err);
           this.setState({
             errors: this.setState.errors.contact(err),
-            thisloading: false,
+            loading: false,
           });
         });
     }
@@ -111,13 +107,12 @@ class Register extends React.Component {
       error.message.toLowerCase().includes("inputName")
     )
       ? "error"
-      : "";
+      : " ";
   };
 
   saveUser = (createdUser) => {
     return this.state.usersRef.child(createdUser.user.uid).set({
       name: createdUser.user.displayName,
-      avatar: createdUser.user.photoURL,
     });
   };
 
@@ -156,7 +151,7 @@ class Register extends React.Component {
                   value={email}
                   className={this.handleInputError(errors, "email")}
                   type="email"
-                  placeholder="Email"
+                  placeholder="School Email"
                   name="email"
                 />
               </Form.Group>
@@ -213,13 +208,13 @@ class Register extends React.Component {
               </Form.Text>
             </Form>
             {this.state.errors.length > 0 && (
-              <Alert error>
+              <alert i error>
                 <h3 className="text-muted">Error</h3>
                 {this.displayErrors(errors)}
-              </Alert>
+              </alert>
             )}
           </div>
-          <div className="bg-transparent text-center text-white position-absolute cpyrght">Ⓒ 2020 WHERE ATHLETES TALK</div>
+          <div className="bg-transparent text-center text-white position-absolute copyright">Ⓒ 2020 WHERE ATHLETES TALK</div>
         </Card.ImgOverlay>
       </Card>
     );

@@ -11,10 +11,10 @@ const toolbar = (props) => (
         <DrawerToggleButton click={props.drawerClickHandler} />
       </div>
       <div className="toolbar_logo text-center">
-        <a href="/"><img alt="Athelte Talk" style={{ size: '1px' }} src={require("../../assets/AT Logos/at-long-orange.png")} /></a>
+        <a href="/"><img alt="Athlete Talk" style={{ size: '1px' }} src={require("../../assets/AT Logos/at-long-orange.png")} /></a>
       </div>
       <div className="toolbar_navigation_items">
-        <a href="/src/pages/Home.js" className>
+        <a href="/src/pages/Home.js">
           <FontAwesomeIcon icon={faSearch} size="lg" />
         </a>
       </div>

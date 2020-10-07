@@ -5,8 +5,11 @@ html {
 }
 
 body {
-  /* background: rgb(97,41,6); */
-  background: linear-gradient(180deg, rgba(97,41,6,1) 0%, rgba(177,130,102,1) 22%, rgba(232,232,232,1) 33%);
+  background: rgb(97,41,6);
+  /* background: linear-gradient(180deg, rgba(97,41,6,1) 0%, rgba(177,130,102,1) 22%, rgba(232,232,232,1) 33%); */
+  background-repeat: no-repeat !important;
+  background-position: center;
+  background-size: contain;
   margin: 0;
   padding: 0;
   height: 100vh;

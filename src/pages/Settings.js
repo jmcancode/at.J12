@@ -133,9 +133,7 @@ const Settings = () => {
                 </Accordion.Collapse>
               </Accordion>
             </ListGroup>
-            <ListGroup.Item>
-            <a href="/">Advanced</a>
-          </ListGroup.Item>
+
             <ListGroup.Item>
             <a href="/">Sign out</a>
           </ListGroup.Item>

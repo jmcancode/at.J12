@@ -2,15 +2,18 @@ import React, {useState, useEffect} from "react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import { Button } from "reactstrap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon} from "@fortawesome/react-fontawesome"
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import {Link} from "react-router-dom";
+
+
 
 export default function SinglePlan() {
   const [count, setCount] = useState(0);
   const handleClick = () => setCount(count + 1);
   
   useEffect(() => {
-    document.FontAwesomeIcon = `<FontAwesomeIcon />`
+    document.icon = `count`
   })
 
 
@@ -50,12 +53,12 @@ export default function SinglePlan() {
               </a>
             </small>
             <small>
-              <a
-                href="/"
+              <Link
+                to="/plans"
                 className="text-muted font-weight-bold  text-decoration-none"
               >
                 view full category
-              </a>
+              </Link>
             </small>
           </Card.Footer>
           <Card.Text className="light border-0 p-4">
