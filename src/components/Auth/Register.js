@@ -75,7 +75,7 @@ class Register extends React.Component {
           console.log(createdUser);
           createdUser.user
             .updateProfile({
-              displayName: this.state.username,
+              displayName: this.state.email,
               
             })
             .then(() => {

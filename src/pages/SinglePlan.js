@@ -1,22 +1,14 @@
-import React, {useState, useEffect} from "react";
+import React from "react";
+import {Link} from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import { Button } from "reactstrap";
-import { FontAwesomeIcon} from "@fortawesome/react-fontawesome"
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import {Link} from "react-router-dom";
+import HeartButton from '../components/Buttons/LikeButton';
 
+import "../components/Buttons/LikeButton.css"
 
 
 export default function SinglePlan() {
-  const [count, setCount] = useState(0);
-  const handleClick = () => setCount(count + 1);
-  
-  useEffect(() => {
-    document.icon = `count`
-  })
-
-
 
   return (
     <Container>
@@ -33,10 +25,9 @@ export default function SinglePlan() {
                 Conquering Machismo
               </Card.Title>
               <Button
-                className="p-2 rounded"
-                onClick={handleClick}
+                className="p-0 rounded"
               >
-                <FontAwesomeIcon icon={faHeart} size="lg" color="#B59A80" /> {count}
+                <HeartButton/>
               </Button>
             </div>
             <Card.Text className="text-muted mb-1">
@@ -55,7 +46,7 @@ export default function SinglePlan() {
             <small>
               <Link
                 to="/plans"
-                className="text-muted font-weight-bold  text-decoration-none"
+                className="text-muted font-weight-bold text-decoration-none"
               >
                 view full category
               </Link>

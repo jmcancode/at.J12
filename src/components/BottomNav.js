@@ -1,5 +1,5 @@
 import React from 'react';
-import firebase from '../Firebase/Firebase.utils'
+// import firebase from '../Firebase/Firebase.utils'; 
 import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
 import { routesData } from '../routesData'
@@ -41,4 +41,4 @@ const BottomNav = () => {
   //   );
   // }
 }
-export default BottomNav
+export default BottomNav;

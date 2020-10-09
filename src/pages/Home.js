@@ -1,15 +1,13 @@
 import React from "react";
 import "./Home.css";
 import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faThumbsDown,
-  faThumbsUp,
-  faStar,
-  faHeart,
-} from "@fortawesome/free-solid-svg-icons";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 
-import { Button } from "reactstrap";
+import HeartButton from "../components/Buttons/LikeButton";
+import ThumbsUp from "../components/Buttons/ThumbsUp";
+import ThumbsDown from "../components/Buttons/ThumbsDown";
 
 // import firebase from "../Firebase/Firebase.utils";
 
@@ -17,12 +15,6 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      count: 0,
-      modal: false,
-    };
-
-    // NEWS FEED
     const today = new Date(),
       date =
         today.getMonth() +
@@ -36,36 +28,21 @@ class Home extends React.Component {
     };
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    if (this.isFormValid(this.state)) {
-      // this.addChannel();
-    }
-  };
-
-  handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
 
   render() {
     return (
       <React.Fragment>
-        {/* <div className="container-flex">
-        </div> */}
-        <container>
+        <Container>
           <div className=" container">
             <div className="container d-flex justify-content-between text-center mb-3">
               <div className="container-flex d-flex pt-5">
                 <div className="pb-1">
                   <FontAwesomeIcon color="gold" icon={faStar} size="lg" />
                 </div>
-                <div className="pl-2 pt-1 day_streak">
-                  {" "}
-                  {this.setState} 34 DAY STREAK
-                </div>
+                <div className="pl-2 pt-1 day_streak">34 DAY STREAK</div>
               </div>
               <div className="mt-5 pt-1 new_feed">
-                <p>NEWS FEED: {this.state.currentDate} </p>
+                <p> {this.state.currentDate} </p>
               </div>
             </div>
 
@@ -74,115 +51,25 @@ class Home extends React.Component {
                 <Card className="shadow mb-5 ">
                   <Card.Header className="border-bottom-0">
                     <div>
-                      <p className="user-title">
-                        {""}WELLNESS TECHNIQUES{""}
-                      </p>
-                      <p className="user-subtitle ">Conqoruing Machismo</p>
+                      <p className="user-title">Male Athletes</p>
+                      <p className="user-subtitle mb-0">Conquering Machismo</p>
                     </div>
                     <div>
                       <p className="user-copy">
-                        Wow, what an article! I never thought I would need...
+                        We've all heard it, "Ego, bigger than..."
                       </p>
                     </div>
                   </Card.Header>
                   <Card.Img
                     variant="top"
-                    fluid
                     src={require("../assets/images/image (2).png")}
                     className="mt-0 rounded-0"
                   />
-
                   <Card.Footer className="border-top-0">
-                    <div className=" d-flex justify-content-between text-center">
-                      <Button>
-                        <FontAwesomeIcon
-                          className="home-icon"
-                          icon={faHeart}
-                          size="sm"
-                        />{" "}
-                        
-                      </Button>
-                      <Button>
-                        <FontAwesomeIcon
-                          className="home-icon"
-                          icon={faThumbsUp}
-                          size="sm"
-                          onChange={this.handleChange}
-                        />{" "}
-                        
-                      </Button>
-
-                      <Button
-                        onClick={() =>
-                          this.setState({ count: this.state.count + 1 })
-                        }
-                      >
-                        <FontAwesomeIcon
-                          className="home-icon"
-                          icon={faThumbsDown}
-                          size="sm"
-                        />{" "}
-                        
-                      </Button>
-                    </div>
-                  </Card.Footer>
-                </Card>
-
-                <Card className="shadow mb-5">
-                  <Card.Header className="border-bottom-0">
-                    <div>
-                      <div className="container-row">
-                        <p className="user-title">
-                          {""}WELLNESS TECHNIQUES{""}
-                        </p>
-                        <p className="user-subtitle ">Conqoruing Machismo</p>
-                      </div>
-                    </div>
-                    <div>
-                      <p className="user-copy">
-                        Wow, what an article! I never thought I would need...
-                    </p>
-                    </div>
-                  </Card.Header>
-                  <Card.Img
-                    variant="top"
-                    fluid
-                    src={require("../assets/images/image (2).png")}
-                    className="mt-0 rounded-0"
-                  />
-
-                  <Card.Footer className="border-top-0">
-                    <div className=" d-flex justify-content-between text-center">
-                      <Button>
-                        <FontAwesomeIcon
-                          className="home-icon"
-                          icon={faHeart}
-                          size="sm"
-                        />{" "}
-                      
-                    </Button>
-                      <Button>
-                        <FontAwesomeIcon
-                          className="home-icon"
-                          icon={faThumbsUp}
-                          size="sm"
-                          onChange={this.handleChange}
-                        />{" "}
-                      
-                    </Button>
-
-                      <Button
-                        onClick={() =>
-                          this.setState({ count: this.state.count + 1 })
-                        }
-                      >
-                        <FontAwesomeIcon
-                          className="home-icon"
-                          icon={faThumbsDown}
-                          size="sm"
-                        />{" "}
-                      
-                    </Button>
+                    <div className="d-flex justify-content-between mt-2">
+                      <HeartButton />
+                      <ThumbsUp />
+                      <ThumbsDown />
                     </div>
                   </Card.Footer>
                 </Card>
@@ -190,64 +77,60 @@ class Home extends React.Component {
                   <Card.Header className="border-bottom-0">
                     <div>
                       <div className="container-row">
-                        <p className="user-title">
-                          {""}WELLNESS TECHNIQUES{""}
-                        </p>
-                        <p className="user-subtitle ">Conqoruing Machismo</p>
+                        <p className="user-title">Mind & Body</p>
+                        <p className="user-subtitle mb-0">Take a walk</p>
                       </div>
                     </div>
                     <div>
                       <p className="user-copy">
-                        Wow, what an article! I never thought I would need...
-                  </p>
+                        Study finds 30 minutes outside in nature can...
+                      </p>
                     </div>
                   </Card.Header>
                   <Card.Img
                     variant="top"
-                    fluid
                     src={require("../assets/images/image (2).png")}
                     className="mt-0 rounded-0"
                   />
-
                   <Card.Footer className="border-top-0">
-                    <div className=" d-flex justify-content-between text-center">
-                      <Button>
-                        <FontAwesomeIcon
-                          className="home-icon"
-                          icon={faHeart}
-                          size="sm"
-                        />{" "}
-                    
-                  </Button>
-                      <Button>
-                        <FontAwesomeIcon
-                          className="home-icon"
-                          icon={faThumbsUp}
-                          size="sm"
-                          onChange={this.handleChange}
-                        />{" "}
-                    
-                  </Button>
-
-                      <Button
-                        onClick={() =>
-                          this.setState({ count: this.state.count + 1 })
-                        }
-                      >
-                        <FontAwesomeIcon
-                          className="home-icon"
-                          icon={faThumbsDown}
-                          size="sm"
-                        />{" "}
-                    
-                  </Button>
+                    <div className=" d-flex justify-content-between mt-2">
+                      <HeartButton />
+                      <ThumbsUp />
+                      <ThumbsDown />
+                    </div>
+                  </Card.Footer>
+                </Card>
+                <Card className="shadow mb-5">
+                  <Card.Header className="border-bottom-0">
+                    <div>
+                      <div className="container-row">
+                        <p className="user-title"> Female Athletes</p>
+                        <p className="user-subtitle mb-0">Finding peace in defeat</p>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="user-copy">
+                        Rough week? Read this article on how we find peace in defeat.
+                      </p>
+                    </div>
+                  </Card.Header>
+                  <Card.Img
+                    variant="top"
+                    src={require("../assets/images/image (2).png")}
+                    className="mt-0 rounded-0"
+                  />
+                  <Card.Footer className="border-top-0">
+                    <div className=" d-flex justify-content-between mt-2">
+                      <HeartButton />
+                      <ThumbsUp />
+                      <ThumbsDown />
                     </div>
                   </Card.Footer>
                 </Card>
               </div>
             </div>
           </div>
-        </container>
+        </Container>
       </React.Fragment>
     );
   }

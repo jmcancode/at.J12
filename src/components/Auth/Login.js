@@ -100,7 +100,7 @@ handleInputError = (errors, inputName) => {
               </Form.Group>
               <Button
                 block
-                variant="secondary"
+                variant="primary"
                 disabled={loading}
                 className={loading ? "loading" : ""}
                 size="sm"

@@ -30,8 +30,6 @@ function SamplePrevArrow(props) {
     />
   );
 }
-//---- CUSTOM SLIDER ARROWS ENDS ----//
-
 
 class PlanCategory extends React.Component {
   constructor(props) {
@@ -121,7 +119,7 @@ class PlanCategory extends React.Component {
       <div className="border-bottom mb-4">
         <header className="d-flex align-items-center justify-content-between">
           <h6 className="font-weight-bold text-uppercase">{this.props.category}</h6>
-          <p mb-0>view all</p>
+          <p className="mb-0">view all</p>
         </header>
 
         <CardDeck className="my-2">
