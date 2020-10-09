@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 // bootstrap
 // import Card from "react-bootstrap/Card";
-import { Card, CardHeader, CardBody, Form } from "reactstrap";
+import { Card, CardHeader, CardBody, Button, Form } from "reactstrap";
 
 import ReactQuill from "react-quill";
 
@@ -52,6 +52,12 @@ class Journal extends Component {
                 }}
               />
             </Form>
+            <Button
+            color="primary"
+            size="sm"
+            className="mt-2"
+            block
+            >Submit</Button>
           </CardBody>
         </Card>
       </div>
