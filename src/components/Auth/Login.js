@@ -1,18 +1,17 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 // react-bootstrap
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-
 // Firebase
 import firebase from "../../Firebase/Firebase.utils";
 // custom css
 import "../../pages/login.css";
-import Alert from "react-bootstrap/Alert";
+// import Alert from "react-bootstrap/Alert";
 
-class Login extends React.Component {
+class Login extends Component {
   state = {
     email: "",
     password: "",
@@ -21,40 +20,46 @@ class Login extends React.Component {
     usersRef: firebase.database().ref("users"),
   };
 
-  displayErrors = errors =>
-  errors.map((error, i) => <p key={i}>{error.message}</p>);
+  displayErrors = (errors) =>
+    errors.map((error, i) => (
+      <p className="text-muted" key={i}>
+        {error.message}
+      </p>
+    ));
 
-handleChange = event => {
-  this.setState({ [event.target.name]: event.target.value });
-};
+  handleChange = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
-handleSubmit = event => {
-  event.preventDefault();
-  if (this.isFormValid(this.state)) {
-    this.setState({ errors: [], loading: true });
-    firebase
-      .auth()
-      .signInWithEmailAndPassword(this.state.email, this.state.password)
-      .then(signedInUser => {
-        console.log(signedInUser);
-      })
-      .catch(err => {
-        console.error(err);
-        this.setState({
-          errors: this.state.errors.concat(err),
-          loading: false
+  handleSubmit = (event) => {
+    event.preventDefault();
+    if (this.isFormValid(this.state)) {
+      this.setState({ errors: [], loading: true });
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.state.email, this.state.password)
+        .then((signedInUser) => {
+          console.log(signedInUser);
+        })
+        .catch((err) => {
+          console.error(err);
+          this.setState({
+            errors: this.state.errors.concat(err),
+            loading: false,
+          });
         });
-      });
-  }
-};
+    }
+  };
 
-isFormValid = ({ email, password }) => email && password;
+  isFormValid = ({ email, password }) => email && password;
 
-handleInputError = (errors, inputName) => {
-  return errors.some(error => error.message.toLowerCase().includes(inputName))
-    ? "error"
-    : "";
-};
+  handleInputError = (errors, inputName) => {
+    return errors.some((error) =>
+      error.message.toLowerCase().includes(inputName)
+    )
+      ? "error"
+      : "";
+  };
 
   render() {
     const { email, password, errors, loading } = this.state;
@@ -100,6 +105,10 @@ handleInputError = (errors, inputName) => {
               </Form.Group>
               <Button
                 block
+                style={{
+                  backgroundColor: "#b57000",
+                  borderColor: "transparent",
+                }}
                 variant="primary"
                 disabled={loading}
                 className={loading ? "loading" : ""}
@@ -111,19 +120,24 @@ handleInputError = (errors, inputName) => {
                 Login
               </Button>
               <Form.Text className="text-muted pt-3 d-flex justify-content-center">
-                Not a user? <Link to="/">Sign up</Link>
+                Not a user?
+                <Link className="pl-1" to="/">
+
+                  Sign up
+                </Link>
               </Form.Text>
             </Form>
             {errors.length > 0 && (
-              <Alert error>
-                <h3>Error</h3>
+              <alert i error>
+                <h4 style={{ color: "red" }}>Error</h4>
                 {this.displayErrors(errors)}
-              </Alert>
+              </alert>
             )}
           </div>
-          <div className="bg-transparent text-center text-white position-absolute copyright">Ⓒ 2020 WHERE ATHLETES TALK</div>
+          <div className="bg-transparent text-center text-white position-absolute copyright">
+            Ⓒ 2020 WHERE ATHLETES TALK
+          </div>
         </Card.ImgOverlay>
-
       </Card>
     );
   }

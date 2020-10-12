@@ -18,10 +18,11 @@ const config = {
 firebase.initializeApp(config);
 
 //access authentication & database on firebase
+export const any = firebase.analytics();
 export const auth = firebase.auth();
 export const db = firebase.database();
 export const rc = firebase.remoteConfig();
-export const any = firebase.analytics();
+
 
 export default firebase;
 

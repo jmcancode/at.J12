@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 // custom css
 import "./App.css";
 // react-router dom
@@ -16,6 +16,8 @@ import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
 import firebase from "../src/Firebase/Firebase.utils";
+
+
 
 class App extends Component {
   constructor() {
@@ -40,7 +42,7 @@ class App extends Component {
     let backdrop;
 
     let nav;
-    var user = firebase.auth().currentUser;
+    const user = firebase.auth().currentUser;
 
     if (this.state.sideDrawerOpen) {
       backdrop = <BackDrop click={this.drawerToggleClickHandler} />;
@@ -63,7 +65,6 @@ class App extends Component {
       <div className="app" style={{ height: "100%" }}>
         <Router>
           {nav}
-
           <Switch>
             <Route exact path="/" component={Register} />
             <Route path="/login" component={Login} />

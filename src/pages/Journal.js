@@ -24,7 +24,12 @@ class Journal extends Component {
           style={{ height: "100vh" }}
         >
           <CardHeader>
-            <h3 className="d-flex justify-content-center mb-0" style={{fontFamily:"Graduate"}}>Journal</h3>
+            <h3
+              className="d-flex justify-content-center mb-0"
+              style={{ fontFamily: "Graduate", color: "b570000" }}
+            >
+              Journal
+            </h3>
           </CardHeader>
           <CardBody>
             <Form>
@@ -52,12 +57,9 @@ class Journal extends Component {
                 }}
               />
             </Form>
-            <Button
-            color="primary"
-            size="sm"
-            className="mt-2"
-            block
-            >Submit</Button>
+            <Button color="primary" size="sm" className="mt-2" block>
+              Submit
+            </Button>
           </CardBody>
         </Card>
       </div>

@@ -36,12 +36,12 @@ export default function SinglePlan() {
           </Card.Body>
           <Card.Footer className="border-0 font d-flex justify-content-between p-3">
             <small>
-              <a
+              <Link
                 href="/"
                 className="text-muted font-weight-bold text-decoration-none"
               >
                 back to plans
-              </a>
+              </Link>
             </small>
             <small>
               <Link

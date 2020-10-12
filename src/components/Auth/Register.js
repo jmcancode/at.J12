@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 // react-bootstrap
@@ -11,11 +11,11 @@ import firebase from "../../Firebase/Firebase.utils";
 // custom css
 import "../../pages/login.css";
 
-
-class Register extends React.Component {
+class Register extends Component {
   state = {
     email: "",
     password: "",
+    uid: "",
     passwordConfirmation: "",
     errors: [],
     loading: false,
@@ -40,11 +40,7 @@ class Register extends React.Component {
   };
 
   isFormEmpty = ({ email, password, passwordConfirmation }) => {
-    return (
-      !email.length ||
-      !password.length ||
-      !passwordConfirmation.length
-    );
+    return !email.length || !password.length || !passwordConfirmation.length;
   };
 
   isPasswordValid = ({ password, passwordConfirmation }) => {
@@ -58,7 +54,11 @@ class Register extends React.Component {
   };
 
   displayErrors = (errors) =>
-    errors.map((error, i) => <p key={i}>{error.message}</p>);
+    errors.map((error, i) => (
+      <p className="text-muted" key={i}>
+        {error.message}
+      </p>
+    ));
 
   handleChange = (event) => {
     this.setState({ [event.target.name]: event.target.value });
@@ -75,8 +75,8 @@ class Register extends React.Component {
           console.log(createdUser);
           createdUser.user
             .updateProfile({
-              displayName: this.state.email,
-              
+              email: this.state.user.email,
+              uid: this.state.user.uid,
             })
             .then(() => {
               this.saveUser(createdUser).then(() => {
@@ -101,7 +101,6 @@ class Register extends React.Component {
     }
   };
 
-
   handleInputError = (errors, input) => {
     return errors.some((error) =>
       error.message.toLowerCase().includes("inputName")
@@ -115,7 +114,6 @@ class Register extends React.Component {
       name: createdUser.user.displayName,
     });
   };
-
 
   render() {
     const {
@@ -145,7 +143,7 @@ class Register extends React.Component {
               ATHLETE REGISTER
             </Card.Title>
             <Form onSubmit={this.handleSubmit}>
-              <Form.Group >
+              <Form.Group>
                 <Form.Control
                   onChange={this.handleChange}
                   value={email}
@@ -165,7 +163,7 @@ class Register extends React.Component {
                   <option>Football</option>
                 </Form.Control>
               </Form.Group>
-              <Form.Group >
+              <Form.Group>
                 <Form.Control
                   placeholder="Password"
                   onChange={this.handleChange}
@@ -175,14 +173,14 @@ class Register extends React.Component {
                   name="password"
                 />
               </Form.Group>
-              <Form.Group >
+              <Form.Group>
                 <Form.Control
-                placeholder="Password Confirmation"
-                onChange={this.handleChange}
-                value={passwordConfirmation}
-                className={this.handleInputError(errors, "password")}
-                type="password"
-                name="passwordConfirmation"
+                  placeholder="Password Confirmation"
+                  onChange={this.handleChange}
+                  value={passwordConfirmation}
+                  className={this.handleInputError(errors, "password")}
+                  type="password"
+                  name="passwordConfirmation"
                 />
               </Form.Group>
               <Form.Group controlId="formBasicCheckbox">
@@ -193,11 +191,15 @@ class Register extends React.Component {
                 />
               </Form.Group>
               <Button
-              block
+                block
                 variant="primary"
                 size="sm"
                 type="submit"
                 value="Submit"
+                style={{
+                  backgroundColor: "#b57000",
+                  borderColor: "transparent",
+                }}
                 disabled={loading}
                 className={loading ? "loading" : ""}
                 onClick={this.handleSubmit}
@@ -205,17 +207,22 @@ class Register extends React.Component {
                 Register
               </Button>
               <Form.Text className="text-muted pt-3">
-                Already a user? <Link  to="/login">Sign in</Link>
+                Already a user?
+                <Link className="pl-1" to="/login">
+                  Sign in
+                </Link>
               </Form.Text>
             </Form>
             {this.state.errors.length > 0 && (
               <alert i error>
-                <h3 className="text-muted">Error</h3>
+                <h4 style={{ color: "red" }}>Error</h4>
                 {this.displayErrors(errors)}
               </alert>
             )}
           </div>
-          <div className="bg-transparent text-center text-white position-absolute copyright">Ⓒ 2020 WHERE ATHLETES TALK</div>
+          <div className="bg-transparent text-center text-white position-absolute copyright">
+            Ⓒ 2020 WHERE ATHLETES TALK
+          </div>
         </Card.ImgOverlay>
       </Card>
     );
