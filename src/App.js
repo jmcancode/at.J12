@@ -26,6 +26,7 @@ class App extends Component {
     this.state = {
       sideDrawerOpen: false,
       showNav: true,
+      currentUser: false,
     };
   }
 
@@ -49,7 +50,7 @@ class App extends Component {
       backdrop = <BackDrop click={this.drawerToggleClickHandler} />;
     }
 
-    if (user != null) {
+    if (user != this.state.currentUser) {
       nav = (
         <div>
           <Navigation />

@@ -7,7 +7,7 @@ import Card from "react-bootstrap/Card";
 import Alert from 'react-bootstrap/Alert'
 // Firebase
 // import firebase from "../../Firebase/Firebase.utils";
-import { Link, useHistory } from "react-router-dom";
+import {  useHistory } from "react-router-dom";
 import { useAuth } from "../../../src/AuthContext/AuthContext";
 
 
@@ -108,9 +108,9 @@ export default function Register() {
             </Button>
             <Form.Text className="text-muted pt-3">
               Already a user?
-              <Link className="pl-1" to="/login">
+              <a className="pl-1" href="/login">
                 Sign in
-              </Link>
+              </a>
             </Form.Text>
           </Form>
           {error && <Alert variant="danger">{error}</Alert>}

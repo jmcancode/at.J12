@@ -1,12 +1,8 @@
-
-import React, { useRef, useState } from "react"
-import { Form, Button, Card, Alert } from "react-bootstrap"
+import React, { useRef, useState } from "react";
+import { Form, Button, Card, Alert } from "react-bootstrap";
 import { useAuth } from "../../../src/AuthContext/AuthContext";
-import { Link, useHistory } from "react-router-dom"
-
+import { useHistory } from "react-router-dom";
 import "../../pages/login.css";
-// import Alert from "react-bootstrap/Alert";
-
 
 export default function Login() {
   const emailRef = useRef()
@@ -53,12 +49,11 @@ export default function Login() {
             ATHLETE LOGIN
           </Card.Title>
           <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
+            <Form.Group className="pt-2" id="email">
               <Form.Control placeholder="Email" type="email" ref={emailRef} required />
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
+
               <Form.Control placeholder="Password" type="password" ref={passwordRef} required />
             </Form.Group>
             <Button
@@ -76,12 +71,14 @@ export default function Login() {
             </Button>
             <Form.Text className="text-muted pt-3 d-flex justify-content-center">
               Not a user?
-              <Link className="pl-1" to="/">
+              <a className="pl-1" href="/">
                 Sign up
-              </Link>
+              </a>
             </Form.Text>
           </Form>
+          <div>
           {error && <Alert variant="danger">{error}</Alert>}
+          </div>
         </div>
         <div className="bg-transparent text-center text-white position-absolute copyright">
           Ⓒ 2020 WHERE ATHLETES TALK
