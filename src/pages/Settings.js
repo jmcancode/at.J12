@@ -1,14 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom"
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import Accordion from "react-bootstrap/Accordion";
 import Form from "react-bootstrap/Form";
+import Alert from "react-bootstrap/Alert";
 import Container from "react-bootstrap/Container";
+
+import {useAuth} from "../AuthContext/AuthContext"
 
 import '../assets/css/Settings.css';
 
-const Settings = () => {
+export default function Settings () {
+  const [error, setError] = useState("");
+  const { currentUser, logout } = useAuth();
+  const history = useHistory();
+
+  async function handleLogout() {
+    setError("")
+
+    try {
+      await logout()
+      history.push("/login")
+    } catch {
+      setError("Failed to log out")
+    }
+  }
   return (
+    <> 
     <div className="container-sm-flex mt-2 pt-1" >
       <Container>
         <div className="d-flex justify-content-center mt-5">
@@ -18,11 +37,8 @@ const Settings = () => {
               <ListGroup.Item className="d-flex justify-content-between">
                 <div className="pt-4">Push Notifications</div>
                 <Form>
-                  <Form.Check type="switch" id="custom-switch" label="" />
+                  <Form.Check className="pt-4" type="switch" id="custom-switch" label="" />
                 </Form>
-              </ListGroup.Item>
-              <ListGroup.Item>
-                <a href="/edit-profile">Edit Profile</a>
               </ListGroup.Item>
               <Accordion defaultActiveKey="0">
                 <Accordion.Toggle as={ListGroup.Item} eventKey="1" className="border-0">
@@ -133,15 +149,19 @@ const Settings = () => {
                 </Accordion.Collapse>
               </Accordion>
             </ListGroup>
-
             <ListGroup.Item>
-            <a href="/">Sign out</a>
+            <a onClick={handleLogout} href="/login">Sign out</a>
+            <div className="text-muted pt-2">
+            {currentUser.email}
+            </div>
           </ListGroup.Item>
           </Card>
+          {error && <Alert variant="danger">{error}</Alert>}
         </div>
       </Container>
     </div>
+    </>
   );
 };
 
-export default Settings;
+

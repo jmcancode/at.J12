@@ -10,13 +10,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "react-quill";
-import AuthProvider from "./components/Auth/Provider/AuthProvider";
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <AuthProvider>
       <App />
-    </AuthProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

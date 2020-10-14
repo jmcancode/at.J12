@@ -1,4 +1,4 @@
-import React, { Component} from "react";
+import React, { Component } from "react";
 // custom css
 import "./App.css";
 // react-router dom
@@ -17,7 +17,8 @@ import SideDrawer from "./components/SideDrawer/SideDrawer";
 import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
 import firebase from "../src/Firebase/Firebase.utils";
 
-
+import { AuthProvider } from "../src/AuthContext/AuthContext";
+import PrivateRoute from "../src/components/PrivateRoute";
 
 class App extends Component {
   constructor() {
@@ -64,16 +65,18 @@ class App extends Component {
     return (
       <div className="app" style={{ height: "100%" }}>
         <Router>
-          {nav}
-          <Switch>
-            <Route exact path="/" component={Register} />
-            <Route path="/login" component={Login} />
-            <Route path="/home" component={Home} />
-            <Route path="/plans" component={Plans} />
-            <Route path="/settings" component={Settings} />
-            <Route path="/journal" component={Journal} />
-            <Route path="/plan" component={SinglePlan} />
-          </Switch>
+          <AuthProvider>
+            {nav}
+            <Switch>
+              <PrivateRoute exact path="/" component={Register} />
+              <Route path="/login" component={Login} />
+              <Route path="/home" component={Home} />
+              <Route path="/plans" component={Plans} />
+              <Route path="/settings" component={Settings} />
+              <Route path="/journal" component={Journal} />
+              <Route path="/plan" component={SinglePlan} />
+            </Switch>
+          </AuthProvider>
         </Router>
       </div>
     );
