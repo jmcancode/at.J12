@@ -13,7 +13,7 @@ import '../assets/css/Settings.css';
 
 export default function Settings () {
   const [error, setError] = useState("");
-  const { currentUser, logout } = useAuth();
+  const { logout } = useAuth();
   const history = useHistory();
 
   async function handleLogout() {
@@ -152,7 +152,7 @@ export default function Settings () {
             <ListGroup.Item>
             <a onClick={handleLogout} href="/login">Sign out</a>
             <div className="text-muted pt-2">
-            {currentUser.email}
+
             </div>
           </ListGroup.Item>
           </Card>
