@@ -43,7 +43,7 @@ class App extends Component {
   render() {
     let backdrop;
 
-    let nav;
+    let nav = true;
     const user = firebase.auth().currentUser;
 
     if (this.state.sideDrawerOpen) {

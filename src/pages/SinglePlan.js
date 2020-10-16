@@ -37,7 +37,7 @@ export default function SinglePlan() {
           <Card.Footer className="border-0 font d-flex justify-content-between p-3">
             <small>
               <Link
-                href="/"
+                to="/plans"
                 className="text-muted font-weight-bold text-decoration-none"
               >
                 back to plans

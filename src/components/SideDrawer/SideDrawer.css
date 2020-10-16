@@ -22,8 +22,9 @@
     list-style: none;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    padding: 15px;
+    justify-items: auto;
+    padding: 25px;
+    padding-top: 50%;
     
     
 }

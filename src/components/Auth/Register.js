@@ -10,7 +10,6 @@ import Alert from 'react-bootstrap/Alert'
 import {  useHistory } from "react-router-dom";
 import { useAuth } from "../../../src/AuthContext/AuthContext";
 
-
 // custom css
 import "../../pages/login.css";
 
@@ -76,19 +75,10 @@ export default function Register() {
               </Form.Control>
             </Form.Group>
             <Form.Group id="password">
-              <Form.Label>Password</Form.Label>
-              <Form.Control placeholder="Password" type="password" ref={passwordRef} required />
+              <Form.Control className="m-0" placeholder="Password" type="password" ref={passwordRef} required />
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Label>Password Confirmation</Form.Label>
               <Form.Control placeholder="Password Confirmation" type="password" ref={passwordConfirmRef} required />
-            </Form.Group>
-            <Form.Group controlId="formBasicCheckbox">
-              <Form.Check
-                type="checkbox"
-                className="text-muted"
-                label="Terms & Conditions"
-              />
             </Form.Group>
             <Button
               block

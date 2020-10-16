@@ -48,6 +48,9 @@ export default function Login() {
           <Card.Title className="d-lg-none log-header text-center">
             ATHLETE LOGIN
           </Card.Title>
+          <div>
+          {error && <Alert variant="danger">{error}</Alert>}
+          </div>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="pt-2" id="email">
               <Form.Control placeholder="Email" type="email" ref={emailRef} required />
@@ -76,9 +79,6 @@ export default function Login() {
               </a>
             </Form.Text>
           </Form>
-          <div>
-          {error && <Alert variant="danger">{error}</Alert>}
-          </div>
         </div>
         <div className="bg-transparent text-center text-white position-absolute copyright">
           Ⓒ 2020 WHERE ATHLETES TALK
