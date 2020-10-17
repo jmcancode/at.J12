@@ -35,13 +35,13 @@ class Home extends React.Component {
         <Container>
           <div className=" container">
             <div className="container d-flex justify-content-between text-center mb-3">
-              <div className="container-flex d-flex pt-5">
+              <div className="container-flex d-flex ">
                 <div className="pb-1">
                   <FontAwesomeIcon color="gold" icon={faStar} size="lg" />
                 </div>
                 <div className="pl-2 pt-1 day_streak">34 DAY STREAK</div>
               </div>
-              <div className="mt-5 pt-1 new_feed">
+              <div className="pt-1 new_feed">
                 <p> {this.state.currentDate} </p>
               </div>
             </div>

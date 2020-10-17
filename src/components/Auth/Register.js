@@ -4,10 +4,10 @@ import React, { useRef, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Alert from 'react-bootstrap/Alert'
+import Alert from "react-bootstrap/Alert";
 // Firebase
 // import firebase from "../../Firebase/Firebase.utils";
-import {  useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useAuth } from "../../../src/AuthContext/AuthContext";
 
 // custom css
@@ -62,7 +62,12 @@ export default function Register() {
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email</Form.Label>
-              <Form.Control placeholder="Email" type="email" ref={emailRef} required />
+              <Form.Control
+                placeholder="Email"
+                type="email"
+                ref={emailRef}
+                required
+              />
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlSelect1">
               <Form.Control as="select">
@@ -75,10 +80,21 @@ export default function Register() {
               </Form.Control>
             </Form.Group>
             <Form.Group id="password">
-              <Form.Control className="m-0" placeholder="Password" type="password" ref={passwordRef} required />
+              <Form.Control
+                className="m-0"
+                placeholder="Password"
+                type="password"
+                ref={passwordRef}
+                required
+              />
             </Form.Group>
             <Form.Group id="password-confirm">
-              <Form.Control placeholder="Password Confirmation" type="password" ref={passwordConfirmRef} required />
+              <Form.Control
+                placeholder="Password Confirmation"
+                type="password"
+                ref={passwordConfirmRef}
+                required
+              />
             </Form.Group>
             <Button
               block
@@ -92,7 +108,6 @@ export default function Register() {
                 borderColor: "transparent",
               }}
               className={loading ? "loading" : ""}
-              
             >
               Register
             </Button>

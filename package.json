@@ -16,7 +16,7 @@
     "bcrypt": "^5.0.0",
     "bootstrap": "^4.5.2",
     "emoji-mart": "^3.0.0",
-    "firebase": "^7.22.1",
+    "firebase": "^7.24.0",
     "firebaseui": "^4.6.1",
     "holderjs": "^2.9.7",
     "jquery": "^3.5.1",

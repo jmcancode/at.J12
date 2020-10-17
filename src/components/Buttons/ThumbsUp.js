@@ -53,7 +53,6 @@ class ThumbsUp extends React.Component {
           >
             {" "}
           </i>
-
           {likes}
         </div>
       );

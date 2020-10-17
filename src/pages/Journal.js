@@ -16,6 +16,7 @@ class Journal extends Component {
       reactQuillText: value,
     });
   };
+
   render() {
     return (
       <div className=" container card-container">
@@ -57,8 +58,14 @@ class Journal extends Component {
                 }}
               />
             </Form>
-            <Button color="primary" size="sm" className="mt-2" block>
-              Submit
+            <Button
+              color="primary"
+              size="sm"
+              className="mt-2"
+              block
+              style={{ backgroundColor: "#b57000", borderColor: "transparent" }}
+            >
+              Done
             </Button>
           </CardBody>
         </Card>

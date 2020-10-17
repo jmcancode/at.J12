@@ -1,15 +1,13 @@
 import React from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import { Button } from "reactstrap";
-import HeartButton from '../components/Buttons/LikeButton';
+import HeartButton from "../components/Buttons/LikeButton";
 
-import "../components/Buttons/LikeButton.css"
-
+import "../components/Buttons/LikeButton.css";
 
 export default function SinglePlan() {
-
   return (
     <Container>
       <div className="shadow m-2">
@@ -24,10 +22,8 @@ export default function SinglePlan() {
               <Card.Title className="font-weight-bolder mb-0">
                 Conquering Machismo
               </Card.Title>
-              <Button
-                className="p-0 rounded"
-              >
-                <HeartButton/>
+              <Button className="p-0 rounded">
+                <HeartButton />
               </Button>
             </div>
             <Card.Text className="text-muted mb-1">
@@ -73,9 +69,16 @@ export default function SinglePlan() {
             <br />
             <br />
           </Card.Text>
-          <div className="container-flex d-flex justify-content-center" style={{ paddingBottom: '25%' }}>
-            <Button className="rounded p-3" variant="primary" >Finish Day</Button>
-            <Button className="rounded p-3 border-left-0" variant="primary" >Finish Plan</Button>
+          <div
+            style={{  paddingBottom: "25%", backgroundColor: "#b57000", borderColor: "transparent" }}
+            className="container-flex d-flex justify-content-center"
+          >
+            <Button className="rounded p-3" variant="primary">
+              Finish Day
+            </Button>
+            <Button className="rounded p-3 border-left-0" variant="primary">
+              Finish Plan
+            </Button>
           </div>
         </Card>
       </div>

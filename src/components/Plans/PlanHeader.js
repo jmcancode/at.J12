@@ -10,9 +10,7 @@ const PlanHeader = () => {
         <div className="mr-2">
           <FontAwesomeIcon icon={faSlidersH} color="#BF5700" />
         </div>
-        <p className="mb-0">Filter</p>
       </div>
-
       <h4 className="mx-auto my-auto pr-5 font-weight-bold">DISCOVER</h4>
     </div>
   );

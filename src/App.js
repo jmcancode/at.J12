@@ -37,7 +37,7 @@ class App extends Component {
   };
 
   backdropClickHandler = () => {
-    this.setState({ sideDrawerOpen: false });
+    this.setState({ sideDrawerOpen: false }); 
   };
 
   render() {
