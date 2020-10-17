@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "react-bootstrap/Navbar";
 import Form from "react-bootstrap/Form";
@@ -13,6 +13,7 @@ import {
   faGlobe,
   faBook,
   faFolder,
+  faUserCog
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -56,25 +57,28 @@ const Navigation = (props) => {
             <Nav className="align-items-center">
               <Nav.Item className="d-flex justify-content-between">
                 <div className="d-flex">
-                  <Link style={{color: "#b57000"}} to="/home">
+                  <Link style={{ color: "#b57000" }} to="/home">
                     <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
                   </Link>
-                  <Link style={{color: "#b57000"}} to="/plan">
+                  <Link style={{ color: "#b57000" }} to="/plan">
                     <FontAwesomeIcon
                       className="mx-2"
                       size="2x"
                       icon={faFolder}
                     />
                   </Link>
-                  <Link style={{color: "#b57000"}} to="/plans">
+                  <Link style={{ color: "#b57000" }} to="/plans">
                     <FontAwesomeIcon
                       className="mx-2"
                       size="2x"
                       icon={faGlobe}
                     />
                   </Link>
-                  <Link style={{color: "#b57000"}} to="/journal">
+                  <Link style={{ color: "#b57000" }} to="/journal">
                     <FontAwesomeIcon className="mx-2" size="2x" icon={faBook} />
+                  </Link>
+                  <Link style={{ color: "#b57000" }} to="/settings">
+                    <FontAwesomeIcon className="mx-2" size="2x" icon={faUserCog} />
                   </Link>
                 </div>
                 <div className="d-none d-sm-block d-md-none">
