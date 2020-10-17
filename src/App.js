@@ -2,7 +2,7 @@ import React, { Component } from "react";
 // custom css
 import "./App.css";
 // react-router dom
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 //pages + components
 import Home from "./pages/Home";
 import Navigation from "./Navigation";
@@ -15,7 +15,6 @@ import SinglePlan from "./pages/SinglePlan";
 import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
-import firebase from "../src/Firebase/Firebase.utils";
 
 import { AuthProvider } from "../src/AuthContext/AuthContext";
 import PrivateRoute from "../src/components/PrivateRoute";
@@ -26,7 +25,6 @@ class App extends Component {
     this.state = {
       sideDrawerOpen: false,
       showNav: true,
-      currentUser: true,
     };
   }
 
@@ -42,40 +40,46 @@ class App extends Component {
 
   render() {
     let backdrop;
-
-    let nav = true;
-    const user = firebase.auth().currentUser;
-
     if (this.state.sideDrawerOpen) {
       backdrop = <BackDrop click={this.drawerToggleClickHandler} />;
     }
 
-    if (user != null) {
-      nav = (
-        <div>
+
+    //CONATINERS FOR KEEPING NAV OUT OF LOGIN/REGISTER
+    //LOGIN CONTAINER WITHOUT NAVIGATION
+    const LoginContainer = () => (
+      <>
+        <Route path="/" render={() => <Redirect to="/login" />} />
+        <Route exact path="/register" component={Register} />
+        <Route path="/login" component={Login} />
+      </>
+    );
+    //DEFAULT CONTAINER WITH NAVIGATION
+    const DefaultContainer = () => (
+      <>
+        <>
           <Navigation />
           <ToolBar drawerClickHandler={this.drawerToggleClickHandler} />
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backdrop}
-        </div>
-      );
-    } else {
-      nav = null;
-    }
+        </>
+        <Route path="/home" component={Home} />
+        <Route path="/plans" component={Plans} />
+        <Route path="/settings" component={Settings} />
+        <Route path="/journal" component={Journal} />
+        <Route path="/plan" component={SinglePlan} />
+      </>
+    );
+
 
     return (
       <div className="app" style={{ height: "100%" }}>
         <Router>
           <AuthProvider>
-            {nav}
             <Switch>
-              <PrivateRoute exact path="/" component={Register} />
-              <Route path="/login" component={Login} />
-              <Route path="/home" component={Home} />
-              <Route path="/plans" component={Plans} />
-              <Route path="/settings" component={Settings} />
-              <Route path="/journal" component={Journal} />
-              <Route path="/plan" component={SinglePlan} />
+              <Route exact path="/(login)" component={LoginContainer} />
+              {/* ADDED PRIVATE ROUTE TO KEEP UNLOGGED USERS AT OUT OF OTHER ROUTES */}
+              <PrivateRoute component={DefaultContainer} />
             </Switch>
           </AuthProvider>
         </Router>
