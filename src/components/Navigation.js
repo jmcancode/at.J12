@@ -11,6 +11,7 @@ import {
   faFolder,
   faBook,
   faGlobe,
+  faUsersCog,
 } from "@fortawesome/free-solid-svg-icons";
 
 import {
@@ -25,30 +26,7 @@ import "../assets/css/Navigation.css";
 const Navigation = (props) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen((prevState) => !prevState);
-
-  const tabs = [
-    {
-      route: "/home",
-      icon: faHome,
-      label: "Home",
-    },
-    {
-      route: "/plan",
-      icon: faFolder,
-      label: " My Plans",
-    },
-    {
-      route: "/plans",
-      icon: faGlobe,
-      label: "Discover",
-    },
-    {
-      route: "/journal",
-      icon: faBook,
-      label: "Journal",
-    },
-  ];
-
+  
   return (
     <div>
       {/* Top Bar*/}
@@ -56,8 +34,8 @@ const Navigation = (props) => {
         className="navbar navbar-expand-md navbar-light d-none d-lg-block fixed-top header-img"
         role="navigation"
       >
-        <div className="container-flex d-flex justify-content-between ">
-          <a className="navbar-brand" href="/">
+        <div className="container-flex d-flex justify-content-between">
+          <a className="navbar-brand" href="/home">
             <img
               alt="Athlete Talk"
               src={require("../assets/AT Logos/at-long-orange.png")}
@@ -65,20 +43,20 @@ const Navigation = (props) => {
             />
           </a>
           <div className="d-flex justify-content-center">
-            <Form inline>
+            <Form>
               <FormControl
                 type="text"
                 placeholder="Search"
                 aria-label="Search"
-                aria-describedby="basic-addon1"
-                className="mr-sm-2"
+                aria-describedBy="basic-addon1"
+                className="mr-sm-5"
               />
             </Form>
           </div>
           <Nav className="w-35 .d-sm-none .d-md-block">
             <Nav.Item className="d-flex d-inline">
               <div className="pt-2 d-flex justify-content-center">
-                <ul className="d-flex">
+                <ul className="d-flex justify-content-center">
                   <Link to="/home">
                     <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
                   </Link>
@@ -99,56 +77,19 @@ const Navigation = (props) => {
                   <NavLink to="/messages">
                     <FontAwesomeIcon className="mx-2" size="2x" icon={faBook} />
                   </NavLink>
+                  <NavLink to="/settings">
+                    <FontAwesomeIcon
+                      className="mx-2"
+                      size="2x"
+                      icon={faUsersCog}
+                    />
+                  </NavLink>
                 </ul>
-              </div>
-              <div>
-                <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                  <DropdownToggle
-                    className="btn"
-                    size="md"
-                    color="link"
-                  ></DropdownToggle>
-                  <DropdownMenu right>
-                    <DropdownItem as="button">Administrator</DropdownItem>
-                    <DropdownItem as="button">Athlete</DropdownItem>
-                    <DropdownItem divider />
-                    <DropdownItem as="button" tag="a" href="/register">
-                      Sign-out
-                    </DropdownItem>
-                  </DropdownMenu>
-                </Dropdown>
               </div>
             </Nav.Item>
           </Nav>
         </div>
       </Navbar>
-
-      {/* Bottom Tab Navigator*/}
-      <Nav
-        className="navbar fixed-bottom navbar-light d-block d-lg-none bottom-tab-nav"
-        role="navigation"
-        style={{ fontSize: "small" }}
-      >
-        <Nav className="w-100">
-          <div className=" d-flex flex-row justify-content-around w-100">
-            {tabs.map((tab, index) => (
-              <Nav.Item key={`tab-${index}`}>
-                <NavLink
-                  to={tab.route}
-                  className="nav-link bottom-nav-link"
-                  activeClassName="active"
-                  style={{ color: "#b57000" }}
-                >
-                  <div className="row d-flex flex-column justify-content-center align-items-center">
-                    <FontAwesomeIcon size="lg" icon={tab.icon} />
-                    <div>{tab.label}</div>
-                  </div>
-                </NavLink>
-              </Nav.Item>
-            ))}
-          </div>
-        </Nav>
-      </Nav>
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-import { Button } from "reactstrap";
+import Button from 'react-bootstrap/Button'
 import HeartButton from "../components/Buttons/LikeButton";
 
 import "../components/Buttons/LikeButton.css";
@@ -22,9 +22,7 @@ export default function SinglePlan() {
               <Card.Title className="font-weight-bolder mb-0">
                 Conquering Machismo
               </Card.Title>
-              <Button className="p-0 rounded">
                 <HeartButton />
-              </Button>
             </div>
             <Card.Text className="text-muted mb-1">
               <small>Techniques for practicing mindfulness.</small>
@@ -70,13 +68,13 @@ export default function SinglePlan() {
             <br />
           </Card.Text>
           <div
-            style={{  paddingBottom: "25%", backgroundColor: "#b57000", borderColor: "transparent" }}
+            style={{  paddingBottom: "25%"}}
             className="container-flex d-flex justify-content-center"
           >
-            <Button className="rounded p-3" variant="primary">
+            <Button className="rounded p-3 mr-3" style={{backgroundColor: "#b57000", borderColor: "transparent"}} variant="primary">
               Finish Day
             </Button>
-            <Button className="rounded p-3 border-left-0" variant="primary">
+            <Button style={{backgroundColor: "#fff", borderColor: "transparent", color: "#b57000"}} className="rounded p-3 border-left-0" variant="primary">
               Finish Plan
             </Button>
           </div>

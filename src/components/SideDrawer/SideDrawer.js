@@ -1,6 +1,6 @@
 import React from "react";
 import "./SideDrawer.css";
-import CampusContacts from "../CampusContacts"
+
 
 const sideDrawer = (props) => {
   let drawerClasses = 'side-drawer';
@@ -23,14 +23,9 @@ const sideDrawer = (props) => {
         <li>
           <a href="/settings">Settings</a>
         </li>
-        <li>
-          <a href="/">School Infomation</a>
-        </li>
 
         {/* bottom contacts */}
-        <li>
-          <CampusContacts />
-        </li>
+        
       </ul>
     </nav>
   );

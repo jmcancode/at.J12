@@ -34,7 +34,7 @@ const Navigation = (props) => {
         role="navigation"
       >
         <div className="d-flex container-fluid justify-content-between align-items-center">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand" href="/home">
             <img
               alt="Athlete Talk"
               src={require("./assets/AT Logos/at-long-orange.png")}
@@ -56,24 +56,24 @@ const Navigation = (props) => {
             <Nav className="align-items-center">
               <Nav.Item className="d-flex justify-content-between">
                 <div className="d-flex">
-                  <Link to="/home">
+                  <Link style={{color: "#b57000"}} to="/home">
                     <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
                   </Link>
-                  <Link to="/plan">
+                  <Link style={{color: "#b57000"}} to="/plan">
                     <FontAwesomeIcon
                       className="mx-2"
                       size="2x"
                       icon={faFolder}
                     />
                   </Link>
-                  <Link to="/plans">
+                  <Link style={{color: "#b57000"}} to="/plans">
                     <FontAwesomeIcon
                       className="mx-2"
                       size="2x"
                       icon={faGlobe}
                     />
                   </Link>
-                  <Link to="/journal">
+                  <Link style={{color: "#b57000"}} to="/journal">
                     <FontAwesomeIcon className="mx-2" size="2x" icon={faBook} />
                   </Link>
                 </div>
