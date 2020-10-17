@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink, Link, withRouter } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Navbar from "react-bootstrap/Navbar";
@@ -14,33 +14,25 @@ import {
   faUsersCog,
 } from "@fortawesome/free-solid-svg-icons";
 
-import {
-  Dropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
-} from "reactstrap";
+
 
 import "../assets/css/Navigation.css";
 
-const Navigation = (props) => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const toggle = () => setDropdownOpen((prevState) => !prevState);
-  
+const Navigation = () => {
+
+
   return (
     <div>
       {/* Top Bar*/}
       <Navbar
         className="navbar navbar-expand-md navbar-light d-none d-lg-block fixed-top header-img"
-        role="navigation"
-      >
+        role="navigation">
         <div className="container-flex d-flex justify-content-between">
           <a className="navbar-brand" href="/home">
             <img
               alt="Athlete Talk"
               src={require("../assets/AT Logos/at-long-orange.png")}
-              style={{ width: "25%" }}
-            />
+              style={{ width: "25%" }}/>
           </a>
           <div className="d-flex justify-content-center">
             <Form>
