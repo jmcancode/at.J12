@@ -33,7 +33,7 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <Container>
-          <div className=" container">
+          <div className=" container mt-5">
             <div className="container d-flex justify-content-between text-center mb-3">
               <div className="container-flex d-flex ">
                 <div className="pb-1">

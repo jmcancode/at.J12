@@ -32,7 +32,7 @@ const Navigation = () => {
             <img
               alt="Athlete Talk"
               src={require("../assets/AT Logos/at-long-orange.png")}
-              style={{ width: "25%" }}/>
+              style={{ width: "25%" }} />
           </a>
           <div className="d-flex justify-content-center">
             <Form>
