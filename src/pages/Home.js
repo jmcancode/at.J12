@@ -39,7 +39,7 @@ class Home extends React.Component {
                 <div className="pb-1">
                   <FontAwesomeIcon color="gold" icon={faStar} size="lg" />
                 </div>
-                <div className="pl-2 pt-1 day_streak">34 DAY STREAK</div>
+                <div className="pl-2 pt-1 day_streak"> DAY STREAK</div>
               </div>
               <div className="pt-1 new_feed">
                 <p> {this.state.currentDate} </p>
@@ -57,7 +57,7 @@ class Home extends React.Component {
                   </Card.Header>
                   <Card.Img
                     variant="top"
-                    src={require("../assets/images/image (2).png")}
+                    src={"https://picsum.photos/640/360?random"}
                     className="mt-0 rounded-0"
                   />
                   <Card.Footer className="border-top-0">
@@ -84,7 +84,7 @@ class Home extends React.Component {
                   </Card.Header>
                   <Card.Img
                     variant="top"
-                    src={require("../assets/images/image (2).png")}
+                    src={"https://picsum.photos/640/360?random"}
                     className="mt-0 rounded-0"
                   />
                   <Card.Footer className="border-top-0">
@@ -111,7 +111,7 @@ class Home extends React.Component {
                   </Card.Header>
                   <Card.Img
                     variant="top"
-                    src={require("../assets/images/image (2).png")}
+                    src={"https://picsum.photos/640/360?random"}
                     className="mt-0 rounded-0"
                   />
                   <Card.Footer className="border-top-0">

@@ -81,11 +81,10 @@ export default function SinglePlan() {
             <Button
               style={{
                 backgroundColor: "#fff",
-                borderColor: "transparent",
-                color: "#b57000",
+                borderColor: "grey",
+                color: "grey",
               }}
-              className="rounded p-3 border-left-0"
-              variant="primary"
+              className="rounded p-3 border-left-0 pl-3"
             >
               Finish Plan
             </Button>

@@ -35,7 +35,6 @@ class PlanCategory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // user: auth().currentUser,
       articles: [],
       content: '',
       readError: null,
