@@ -33,7 +33,7 @@ class Home extends React.Component {
     return (
       <React.Fragment>
         <Container>
-          <div className=" container mt-5">
+          <div className=" container mt-4 mb-5">
             <div className="container d-flex justify-content-between text-center mb-3">
               <div className="container-flex d-flex ">
                 <div className="pb-1">
@@ -47,17 +47,12 @@ class Home extends React.Component {
             </div>
 
             <div className="d-flex justify-content-center">
-              <div className="d-flex flex-column container-fluid">
+              <div className="d-flex flex-column">
                 <Card className="shadow mb-5 ">
                   <Card.Header className="border-bottom-0">
                     <div>
                       <p className="user-title">Male Athletes</p>
                       <p className="user-subtitle mb-0">Conquering Machismo</p>
-                    </div>
-                    <div>
-                      <p className="user-copy">
-                        We've all heard it, "Ego, bigger than..."
-                      </p>
                     </div>
                   </Card.Header>
                   <Card.Img
@@ -66,6 +61,11 @@ class Home extends React.Component {
                     className="mt-0 rounded-0"
                   />
                   <Card.Footer className="border-top-0">
+                    <div>
+                      <p className="py-2 text-muted">
+                        We've all heard it, "Ego, bigger than..."
+                      </p>
+                    </div>
                     <div className="d-flex justify-content-between mt-2">
                       <HeartButton />
                       <ThumbsUp />
@@ -81,11 +81,6 @@ class Home extends React.Component {
                         <p className="user-subtitle mb-0">Take a walk</p>
                       </div>
                     </div>
-                    <div>
-                      <p className="user-copy">
-                        Study finds 30 minutes outside in nature can...
-                      </p>
-                    </div>
                   </Card.Header>
                   <Card.Img
                     variant="top"
@@ -93,6 +88,11 @@ class Home extends React.Component {
                     className="mt-0 rounded-0"
                   />
                   <Card.Footer className="border-top-0">
+                    <div>
+                      <p className="py-2 text-muted">
+                        Study finds 30 minutes outside in nature can...
+                      </p>
+                    </div>
                     <div className=" d-flex justify-content-between mt-2">
                       <HeartButton />
                       <ThumbsUp />
@@ -108,11 +108,6 @@ class Home extends React.Component {
                         <p className="user-subtitle mb-0">Finding peace in defeat</p>
                       </div>
                     </div>
-                    <div>
-                      <p className="user-copy">
-                        Rough week? Read this article on how we find peace in defeat.
-                      </p>
-                    </div>
                   </Card.Header>
                   <Card.Img
                     variant="top"
@@ -120,6 +115,11 @@ class Home extends React.Component {
                     className="mt-0 rounded-0"
                   />
                   <Card.Footer className="border-top-0">
+                    <div>
+                      <p className="py-2 text-muted">
+                        Rough week? Read this article on how we find peace in defeat.
+                      </p>
+                    </div>
                     <div className=" d-flex justify-content-between mt-2">
                       <HeartButton />
                       <ThumbsUp />

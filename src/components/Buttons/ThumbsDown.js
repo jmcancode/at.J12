@@ -20,7 +20,7 @@ class ThumbsDown extends React.Component {
         <div>
           <i
             onClick={this.addLike}
-            className="far fa-thumbs-down fa-2x"
+            className="far fa-thumbs-down fa-lg"
             style={{ color: "#000000" }}
           >
             {" "}
@@ -33,7 +33,7 @@ class ThumbsDown extends React.Component {
         <div>
           <i
             onClick={this.addLike}
-            className="fas fa-thumbs-down fa-2x"
+            className="fas fa-thumbs-down fa-lg"
             style={{ color: "black" }}
           >
             {" "}
@@ -47,10 +47,10 @@ class ThumbsDown extends React.Component {
         <div>
           <i
             onClick={this.addLike}
-            className="fas fa-thumbs-down fa-2x"
+            className="fas fa-thumbs-down fa-lg"
             style={{ color: "black" }}
           >
-          
+
           </i>
           {likes}
         </div>

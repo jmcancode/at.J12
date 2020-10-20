@@ -20,7 +20,7 @@ class HeartButton extends React.Component {
         <div>
           <i
             onClick={this.addLike}
-            className="far fa-heart fa-2x"
+            className="far fa-heart fa-lg"
             style={{ color: "#000000" }}
           ></i>
         </div>
@@ -31,7 +31,7 @@ class HeartButton extends React.Component {
         <div>
           <i
             onClick={this.addLike}
-            className="fas fa-heart fa-2x"
+            className="fas fa-heart fa-lg"
             style={{ color: "red" }}
           ></i>
           {likes}
@@ -43,7 +43,7 @@ class HeartButton extends React.Component {
         <div>
           <i
             onClick={this.addLike}
-            className="fas fa-heart fa-2x"
+            className="fas fa-heart fa-lg"
             style={{ color: "red" }}
           ></i>
           {likes}
