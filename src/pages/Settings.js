@@ -30,7 +30,7 @@ export default function Settings() {
     <>
       <div className="container-sm-flex mt-lg-5 pt-lg-3 mb-3">
         <Container>
-          <div className="d-flex justify-content-center mt-5">
+          <div className="d-flex justify-content-center mt-2 mt-lg-5">
             <Card style={{ width: "50rem" }}>
               <Card.Header className="text-center" style={{ color: "#b5700b" }}>
                 SETTINGS
