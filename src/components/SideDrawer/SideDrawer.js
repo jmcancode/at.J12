@@ -21,6 +21,9 @@ const sideDrawer = (props) => {
           <a href="/plans">Discover</a>
         </li>
         <li>
+          <a href="/journal">Journal</a>
+        </li>
+        <li>
           <a href="/settings">Settings</a>
         </li>
 

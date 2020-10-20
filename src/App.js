@@ -15,7 +15,7 @@ import SinglePlan from "./pages/SinglePlan";
 import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
-
+import { auth, createUserProfileDocument } from "./Firebase/Firebase.utils"
 import { AuthProvider } from "../src/AuthContext/AuthContext";
 import PrivateRoute from "../src/components/PrivateRoute";
 
@@ -25,7 +25,35 @@ class App extends Component {
     this.state = {
       sideDrawerOpen: false,
       showNav: true,
+      currentUser: null
     };
+  }
+
+  unsubscribeFromAuth = null;
+
+  componentDidMount() {
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+
+        userRef.onSnapshot(snapShot => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+          });
+
+          console.log(this.state);
+        });
+      }
+
+      this.setState({ currentUser: userAuth });
+    });
+  }
+
+  componentWillUnmount() {
+    this.unsubscribeFromAuth();
   }
 
   drawerToggleClickHandler = () => {
@@ -45,12 +73,12 @@ class App extends Component {
     }
 
 
-    //CONATINERS FOR KEEPING NAV OUT OF LOGIN/REGISTER
+    //CONTAINERS FOR KEEPING NAV OUT OF LOGIN/REGISTER
     //LOGIN CONTAINER WITHOUT NAVIGATION
     const LoginContainer = () => (
       <>
         <Route path="/" render={() => <Redirect to="/login" />} />
-        <Route exact path="/register" component={Register} />
+        <Route exact path="/" component={Register} />
         <Route path="/login" component={Login} />
       </>
     );
@@ -78,7 +106,6 @@ class App extends Component {
           <AuthProvider>
             <Switch>
               <Route exact path="/(login)" component={LoginContainer} />
-              {/* ADDED PRIVATE ROUTE TO KEEP UNLOGGED USERS AT OUT OF OTHER ROUTES */}
               <PrivateRoute component={DefaultContainer} />
             </Switch>
           </AuthProvider>
