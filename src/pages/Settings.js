@@ -28,7 +28,7 @@ export default function Settings() {
   }
   return (
     <>
-      <div className="container-sm-flex">
+      <div className="container-sm-flex mt-lg-5 pt-lg-3 mb-3">
         <Container>
           <div className="d-flex justify-content-center mt-5">
             <Card style={{ width: "50rem" }}>
