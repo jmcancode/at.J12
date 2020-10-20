@@ -27,5 +27,9 @@ export const routesData = [
     route: "/journal",
     icon: faBook,
     label: "Journal",
+<<<<<<< HEAD
   }
+=======
+  },
+>>>>>>> c103a6031654b6530ebae6aa5e87f1c34e334c70
 ];
