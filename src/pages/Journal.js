@@ -19,7 +19,7 @@ class Journal extends Component {
 
   render() {
     return (
-      <div className=" container card-container">
+      <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
         <Card
           className="mx-1 shadow rounded  border"
           style={{ height: "100vh" }}

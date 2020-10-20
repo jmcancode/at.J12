@@ -45,19 +45,19 @@ const Navigation = (props) => {
                 <img
                   alt="Athlete Talk"
                   src={require("./assets/AT Logos/at-long-orange.png")}
-                  style={{ width: "35%" }}
+                  style={{ width: "55%" }}
                   className="my-3 ml-4"
                 />
               </a>
             </Col>
             <Col className="d-flex justify-content-center">
-              <Form inline className="pt-0">
+              <Form inline className="pt-0 w-100">
                 <FormControl
                   type="text"
                   placeholder="Search"
                   aria-label="Search"
                   aria-describedby="basic-addon1"
-                  className="mr-sm-2"
+                  className="mr-sm-2 w-100"
                 />
               </Form>
             </Col>

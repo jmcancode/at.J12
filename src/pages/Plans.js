@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 
 const Plans = (props) => {
   return (
-    <Container>
+    <Container className="mt-lg-5 pt-lg-5 mb-3">
       <div className="shadow rounded mx-3 mt-2 mb-5 pr-3 pb-3 pl-3">
         <PlanHeader />
         <PlanCategory category="Wellness Techniques" />

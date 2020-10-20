@@ -9,7 +9,7 @@ import "../components/Buttons/LikeButton.css";
 
 export default function SinglePlan() {
   return (
-    <Container>
+    <Container className="mt-lg-5 pt-lg-5 mb-3">
       <div className="shadow m-2">
         <Card className="border-0">
           <Card.Img

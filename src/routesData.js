@@ -3,7 +3,6 @@ import {
   faFolder,
   faGlobe,
   faBook,
-  faUserCog
 } from '@fortawesome/free-solid-svg-icons';
 
 export const routesData = [

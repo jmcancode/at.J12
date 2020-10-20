@@ -10,8 +10,8 @@ const toolbar = (props) => (
       <div>
         <DrawerToggleButton click={props.drawerClickHandler} />
       </div>
-      <div className="toolbar_logo text-center">
-        <a href="/home"><img alt="Athlete Talk" style={{ size: '1px' }} src={require("../../assets/AT Logos/at-long-orange.png")} /></a>
+      <div className="toolbar_logo text-center w-75">
+        <a href="/home"><img alt="Athlete Talk" src={require("../../assets/AT Logos/at-long-orange.png")} className="mt-0" /></a>
       </div>
       <div className="toolbar_navigation_items">
         <a href="/settings">
