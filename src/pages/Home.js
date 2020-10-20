@@ -34,7 +34,7 @@ class Home extends React.Component {
       <React.Fragment>
         <Container>
           <div className=" container mt-4 mb-5">
-            <div className="container d-flex justify-content-between text-center mb-3">
+            <div className="container pt-lg-5 px-0 mt-lg-5 d-flex justify-content-between text-center mb-3">
               <div className="container-flex d-flex ">
                 <div className="pb-1">
                   <FontAwesomeIcon color="gold" icon={faStar} size="lg" />
@@ -47,7 +47,7 @@ class Home extends React.Component {
             </div>
 
             <div className="d-flex justify-content-center">
-              <div className="d-flex flex-column">
+              <div className="d-flex flex-column w-lg-75">
                 <Card className="shadow mb-5 ">
                   <Card.Header className="border-bottom-0">
                     <div>

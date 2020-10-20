@@ -35,10 +35,5 @@ const BottomNav = () => {
       </Nav>
     </Nav>
   );
-  // } else {
-  //   return (
-  //     <div></div>
-  //   );
-  // }
 }
 export default BottomNav;

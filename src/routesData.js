@@ -28,9 +28,4 @@ export const routesData = [
     icon: faBook,
     label: "Journal",
   },
-  {
-    route: "/settings",
-    icon: faUserCog,
-    label: "Settings",
-  },
 ];
