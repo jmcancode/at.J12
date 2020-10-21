@@ -127,7 +127,6 @@ class PlanCategory extends React.Component {
             {this.state.articles.map(article => {
               return <div key={article.createdDate}>
                 <PlanCard
-
                   image="https://picsum.photos/640/360?random"
                   title={article.title}
                   summary={article.content}

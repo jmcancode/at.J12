@@ -4,6 +4,7 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import HeartButton from "../components/Buttons/LikeButton";
+import ButtonGroup from "react-bootstrap/ButtonGroup";
 
 import "../components/Buttons/LikeButton.css";
 
@@ -46,6 +47,14 @@ export default function SinglePlan() {
               </Link>
             </small>
           </Card.Footer>
+          <div className="d-flex justify-content-center pt-4">
+            <ButtonGroup aria-label="Basic example">
+              <Button style={{backgroundColor: "#b57000", borderColor: "transparent"}} variant="primary">Day 1</Button>
+              <Button className="text-muted" variant="secondary">Day 2</Button>
+              <Button className="text-muted" variant="secondary">Day 3</Button>
+              <Button className="text-muted" variant="secondary">Day 4</Button>
+            </ButtonGroup>
+          </div>
           <Card.Text className="light border-0 p-4">
             Baseball ipsum dolor sit amet hit chin music, manager relief pitcher
             4-6-3. Save inside wild pitch walk off out disabled list mustard.
@@ -81,10 +90,10 @@ export default function SinglePlan() {
             <Button
               style={{
                 backgroundColor: "#fff",
-                borderColor: "grey",
-                color: "grey",
+                borderColor: "transparent",
+                
               }}
-              className="rounded p-3 border-left-0 pl-3"
+              className="rounded p-3 border-left-0 pl-3 text-muted"
             >
               Finish Plan
             </Button>

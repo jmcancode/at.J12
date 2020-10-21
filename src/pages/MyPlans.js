@@ -12,9 +12,9 @@ export default function MyPlans() {
     <>
       <Container className="d-flex justify-content-center">
         <ButtonGroup aria-label="Basic example">
-          <Button size="sm" variant="primary">My Plans</Button>
+          <Button style={{backgroundColor: "#b57000", borderColor: "transparent"}} size="sm" variant="primary">My Plans</Button>
           <Button size="sm" variant="secondary">
-            <Link to="/plans">Discover</Link>
+            <Link style={{color: "#b57000"}} to="/plans">Discover</Link>
           </Button>
         </ButtonGroup>
       </Container>
@@ -37,7 +37,7 @@ export default function MyPlans() {
                   />
                   <Media.Body>
                     <p style={{ fontSize: "12px" }}>Male Athletes</p>
-                    <ProgressBar variant="success" animated now={60} />
+                    <ProgressBar style={{width: "80%"}} label="60%" variant="success" animated now={60} />
                   </Media.Body>
                 </Media>
 
@@ -48,10 +48,11 @@ export default function MyPlans() {
                     className="mr-3"
                     src="https://picsum.photos/640/360?random"
                     alt="#"
+                    
                   />
                   <Media.Body>
                     <p style={{ fontSize: "12px" }}>Working with Stress</p>
-                    <ProgressBar variant="success" animated now={40} />
+                    <ProgressBar style={{width: "80%"}} label="40%" variant="success" animated now={40} />
                   </Media.Body>
                 </Media>
 
@@ -65,7 +66,7 @@ export default function MyPlans() {
                   />
                   <Media.Body>
                     <p style={{ fontSize: "12px" }}>List-based media object</p>
-                    <ProgressBar variant="success" animated now={90} />
+                    <ProgressBar style={{width: "80%"}} label="90%" variant="success" animated now={90} />
                   </Media.Body>
                 </Media>
               </ul>

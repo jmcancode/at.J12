@@ -14,8 +14,8 @@ const Plans = (props) => {
     <>
     <Container className="d-flex justify-content-center">
         <ButtonGroup aria-label="Basic example">
-          <Button variant="secondary"><Link to="/myplans" >My Plans</Link></Button>
-          <Button variant="primary">Discover</Button>
+          <Button size="sm" variant="secondary"><Link to="/myplans" style={{color: "#b57000"}}  >My Plans</Link></Button>
+          <Button style={{backgroundColor: "#b57000", borderColor: "transparent"}} size="sm" variant="primary">Discover</Button>
         </ButtonGroup>
       </Container>
 

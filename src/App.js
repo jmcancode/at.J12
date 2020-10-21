@@ -30,7 +30,7 @@ class App extends Component {
     super();
     this.state = {
       sideDrawerOpen: false,
-      showNav: true,
+      showNav: false,
       currentUser: null,
     };
   }
