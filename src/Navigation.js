@@ -68,7 +68,7 @@ const Navigation = (props) => {
                     <Link style={{ color: "black" }} to="/home">
                       <FontAwesomeIcon className="mx-2" size="lg" icon={faHome} />
                     </Link>
-                    <Link style={{ color: "black" }} to="/plan">
+                    <Link style={{ color: "black" }} to="/myplans">
                       <FontAwesomeIcon
                         className="mx-2"
                         size="lg"

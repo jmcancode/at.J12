@@ -13,7 +13,7 @@ export const routesData = [
     component: "Home",
   },
   {
-    route: "/plan",
+    route: "/myplans",
     icon: faFolder,
     label: " My Plans",
   },

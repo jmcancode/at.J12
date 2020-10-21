@@ -14,25 +14,23 @@ import {
   faUsersCog,
 } from "@fortawesome/free-solid-svg-icons";
 
-
-
 import "../assets/css/Navigation.css";
 
 const Navigation = () => {
-
-
   return (
     <div>
       {/* Top Bar*/}
       <Navbar
         className="navbar navbar-expand-md navbar-light d-none d-lg-block fixed-top header-img"
-        role="navigation">
+        role="navigation"
+      >
         <div className="container-flex d-flex justify-content-between">
           <a className="navbar-brand" href="/home">
             <img
               alt="Athlete Talk"
               src={require("../assets/AT Logos/at-long-orange.png")}
-              style={{ width: "25%" }} />
+              style={{ width: "25%" }}
+            />
           </a>
           <div className="d-flex justify-content-center">
             <Form>
@@ -52,7 +50,7 @@ const Navigation = () => {
                   <Link to="/home">
                     <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
                   </Link>
-                  <NavLink to="/plan">
+                  <NavLink to="/myplans">
                     <FontAwesomeIcon
                       className="mx-2"
                       size="2x"
