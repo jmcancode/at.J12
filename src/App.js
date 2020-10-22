@@ -14,6 +14,8 @@ import Navigation from "./Navigation";
 import Plans from "./pages/Plans";
 import Settings from "./pages/Settings";
 import MyPlans from "./pages/MyPlans";
+import CompletedPlans from "./pages/CompletedPlans";
+import SavedPlans from "./pages/SavedPlans";
 import Journal from "./pages/Journal";
 import Register from "./components/Auth/Register";
 import Login from "./components/Auth/Login";
@@ -102,6 +104,8 @@ class App extends Component {
         <Route path="/journal" component={Journal} />
         <Route path="/plan" component={SinglePlan} />
         <Route path="/myplans" component={MyPlans} />
+        <Route path="/completedplans" component={CompletedPlans}/>
+        <Route path="/savedplans" component={SavedPlans}/>
       </>
     );
 

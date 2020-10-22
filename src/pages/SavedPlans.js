@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Media from "react-bootstrap/Media";
 
-export default function MyPlans() {
+export default function SavedPlans() {
   return (
     <>
       <Container className="d-flex justify-content-center">
@@ -32,7 +32,7 @@ export default function MyPlans() {
           <div className="container-fluid d-flex">
             <Card className="border-0">
               <Card.Title className="d-flex justify-content-center text-muted pt-3">
-                My Plans
+                Saved
               </Card.Title>
               <ul className="list-unstyled">
                 <Media as="li">
@@ -44,12 +44,12 @@ export default function MyPlans() {
                     alt="random"
                   />
                   <Media.Body>
-                    <h5 style={{ fontSize: "12px" }}> Male Athletes </h5>
+                    <h5 style={{ fontSize: "12px" }}> Title 1 </h5>
                     <ProgressBar
                       style={{ height: "10px", width: "50%" }}
                       variant="success"
                       animated
-                      now={60}
+                      now={0}
                     />
                   </Media.Body>
                 </Media>
@@ -63,12 +63,12 @@ export default function MyPlans() {
                     alt="#"
                   />
                   <Media.Body>
-                    <h5 style={{ fontSize: "12px" }}> Working with Stress </h5>
+                    <h5 style={{ fontSize: "12px" }}> Title 2 </h5>
                     <ProgressBar
                       style={{ height: "10px", width: "50%" }}
                       variant="success"
                       animated
-                      now={40}
+                      now={0}
                     />
                   </Media.Body>
                 </Media>
@@ -82,28 +82,18 @@ export default function MyPlans() {
                     alt="#"
                   />
                   <Media.Body>
-                    <h5 style={{ fontSize: "12px" }}> Conquering Machismo </h5>
+                    <h5 style={{ fontSize: "12px" }}> Title 3 </h5>
                     <ProgressBar
                       style={{ height: "10px", width: "50%" }}
                       variant="success"
                       animated
-                      now={90}
+                      now={0}
                     />
                   </Media.Body>
                 </Media>
               </ul>
             </Card>
           </div>
-          <div className="float-left">
-            <Link className="text-muted" to="/savedplans" style={{ fontSize: "10px" }}>
-              SAVED PLANS
-            </Link>
-            </div>
-            <div className="float-right">
-            <Link className="text-muted" to="/completedplans" style={{ fontSize: "10px" }}>
-              COMPLETED PLANS
-            </Link>
-            </div>
         </div>
       </Container>
     </>
