@@ -17,7 +17,9 @@ export default function SavedPlans() {
             size="sm"
             variant="primary"
           >
+          <Link style={{ color: "#fff" }} to="/myplans">
             My Plans
+            </Link>
           </Button>
           <Button size="sm" variant="secondary">
             <Link style={{ color: "#b57000" }} to="/plans">
@@ -79,7 +81,7 @@ export default function SavedPlans() {
                     height={64}
                     className="mr-3"
                     src="https://picsum.photos/640/360?random"
-                    alt="#"
+                    alt="random"
                   />
                   <Media.Body>
                     <h5 style={{ fontSize: "12px" }}> Title 3 </h5>

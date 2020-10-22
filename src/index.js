@@ -9,6 +9,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 // slick.js
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+// react quill
+import "./assets/vendor/dist/quill.core.css"
 import "react-quill";
 
 import { AuthProvider } from "./AuthContext/AuthContext";
