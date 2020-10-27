@@ -1,0 +1,115 @@
+import React, { Component } from "react";
+
+// bootstrap
+// import Card from "react-bootstrap/Card";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from "reactstrap";
+
+import ReactQuill from "react-quill";
+
+class Admin extends Component {
+  state = {
+    reactQuillText: "",
+  };
+
+  handleReactQuillChange = (value) => {
+    this.setState({
+      reactQuillText: value,
+    });
+  };
+
+  render() {
+    return (
+      <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
+        <Card
+          className="mx-1 shadow rounded  border"
+          style={{ height: "100vh" }}
+        >
+          <CardHeader>
+            <h3
+              className="d-flex justify-content-center mb-0"
+              style={{ fontFamily: "Graduate", color: "b570000" }}
+            >
+              Plan Upload
+            </h3>
+          </CardHeader>
+          <CardBody>
+            <FormGroup>
+              <Input type="select" name="select" id="exampleSelect">
+                <option>Single Day</option>
+                <option>Multi-Day</option>
+              </Input>
+            </FormGroup>
+            <Form>
+              <Label>Plan Category</Label>
+              <div class="input-group-prepend"></div>
+              <input
+                type="text"
+                className="form-control mb-2"
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+              <Label>Plan Title</Label>
+              <input
+                type="text"
+                className="form-control mb-2"
+                aria-label="Small"
+                aria-describedby="inputGroup-sizing-sm"
+              />
+            </Form>
+            <Form>
+              <Label>Plan Text</Label>
+              <div
+                data-quill-placeholder="Are you sure you want to link?"
+                data-toggle="quill"
+              />
+              <ReactQuill
+                value={this.state.reactQuillText}
+                onChange={this.handleReactQuillChange}
+                theme="snow"
+                modules={{
+                  toolbar: [
+                    ["bold", "italic"],
+                    ["link", "blockquote"],
+                    [
+                      {
+                        list: "ordered",
+                      },
+                      {
+                        list: "bullet",
+                      },
+                    ],
+                  ],
+                }}
+              />
+            </Form>
+            <Form>
+              <div className="form-group mt-2">
+                <input type="file" className="form-control-file" />
+              </div>
+            </Form>
+            <Button
+              color="primary"
+              size="sm"
+              className="mt-2"
+              block
+              style={{ backgroundColor: "#b57000", borderColor: "transparent" }}
+            >
+              Upload
+            </Button>
+          </CardBody>
+        </Card>
+      </div>
+    );
+  }
+}
+
+export default Admin;

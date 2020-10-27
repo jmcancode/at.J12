@@ -15,7 +15,7 @@ const sideDrawer = (props) => {
           <a href="/home">Home</a>
         </li>
         <li>
-          <a href="/plan">My Plans</a>
+          <a href="/myplans">My Plans</a>
         </li>
         <li>
           <a href="/plans">Discover</a>
@@ -25,6 +25,9 @@ const sideDrawer = (props) => {
         </li>
         <li>
           <a href="/settings">Settings</a>
+        </li>
+        <li>
+          <a href="/admin">Administration</a>
         </li>
 
         {/* bottom contacts */}

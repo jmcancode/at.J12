@@ -78,12 +78,6 @@ export default function Login() {
               >
                 Login
               </Button>
-              <Form.Text className="text-muted pt-3 d-flex justify-content-center">
-                Not a user?
-                <a className="pl-1" href="/">
-                  Sign up
-                </a>
-              </Form.Text>
             </Form>
           </div>
           <div className="bg-transparent text-center text-white position-absolute copyright">

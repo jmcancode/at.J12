@@ -14,6 +14,7 @@ import Navigation from "./Navigation";
 import Plans from "./pages/Plans";
 import Settings from "./pages/Settings";
 import MyPlans from "./pages/MyPlans";
+import Admin from "./pages/Admin";
 import CompletedPlans from "./pages/CompletedPlans";
 import SavedPlans from "./pages/SavedPlans";
 import Journal from "./pages/Journal";
@@ -106,6 +107,7 @@ class App extends Component {
         <Route path="/myplans" component={MyPlans} />
         <Route path="/completedplans" component={CompletedPlans}/>
         <Route path="/savedplans" component={SavedPlans}/>
+        <Route path="/admin" component={Admin}/>
       </>
     );
 
