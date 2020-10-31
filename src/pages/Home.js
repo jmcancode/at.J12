@@ -5,6 +5,8 @@ import Container from "react-bootstrap/Container";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 
+import Firestore from "../Firebase/Firebase.utils";
+
 import HeartButton from "../components/Buttons/LikeButton";
 import ThumbsUp from "../components/Buttons/ThumbsUp";
 import ThumbsDown from "../components/Buttons/ThumbsDown";

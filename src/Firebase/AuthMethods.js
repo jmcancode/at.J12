@@ -2,7 +2,7 @@ import firebase from "./Firebase.utils";
 
 export const authMethods = {
   // firebase helper methods go here...
-  signup: (email, password, setErrors, setToken) => {
+  signUp: (email, password, setErrors, setToken) => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
@@ -19,7 +19,7 @@ export const authMethods = {
         setErrors((prev) => [...prev, err.message]);
       });
   },
-  signin: (email, password, setErrors, setToken) => {
+  signIn: (email, password, setErrors, setToken) => {
     //change from create users to...
     firebase
       .auth()
@@ -33,6 +33,7 @@ export const authMethods = {
         setToken(window.localStorage.token);
       })
       .catch((err) => {
+        console.error(err);
         setErrors((prev) => [...prev, err.message]);
       });
   },

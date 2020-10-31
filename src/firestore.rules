@@ -1,0 +1,51 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+        match /Plans/{itemId}{
+
+      allow read: if isSignedIn();
+
+      allow create: if isValidPlan(request.resource.data) &&
+        isOwner(request.resource.data);
+
+      allow update: if isValidPlan(request.resource.data) &&
+        isOwner(request.resource.data) &&
+        isOwner(resource.data) &&
+        isCalm();
+
+      allow delete: if isOwner(resource.data);
+
+      // FUNCTIONS
+      function isSignedIn() {
+        return request.auth != null;
+      }
+  
+      function isOwner(plan) {
+        return request.auth.uid == plan.owner;
+      }
+  
+      function isValidPlan(plan) {
+        return (
+          // plan.PlanCategory
+          plan.PlanCategory is string &&
+          plan.PlanCategory != '' &&
+          // plan.PlanText
+          plan.PlanText is string &&
+          plan.PlanText != '' &&
+          // plan.PlanTitle
+          plan.PlanTitle is string &&
+          plan.PlanTitle != '' 
+        );
+      }
+
+      function isCalm() {
+        return ( 
+          request.time > resource.data.timestamp +
+          duration.value(5, 's')
+        ); 
+      }
+
+    }
+
+}

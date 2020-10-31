@@ -26,6 +26,10 @@ class Admin extends Component {
     });
   };
 
+  handleOnSubmit = (e) => {
+    e.preventDefault()
+  }
+
   render() {
     return (
       <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
