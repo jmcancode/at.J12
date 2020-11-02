@@ -57,6 +57,10 @@ class PlanCategory extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+    console.log(this.state.articles)
+  }
+
   render() {
     const settings = {
       arrows: false,

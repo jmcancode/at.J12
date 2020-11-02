@@ -1,21 +1,46 @@
-import React, { Component } from "react";
+import React from "react";
+// import {db} from "../Firebase/Firebase.utils";
 
-// bootstrap
-// import Card from "react-bootstrap/Card";
+
 import { Card, CardHeader, CardBody, Button, Form } from "reactstrap";
+import ListGroup from "react-bootstrap/ListGroup";
 
 import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 
-class Journal extends Component {
-  state = {
-    reactQuillText: "",
-  };
+class Journal extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      reactQuillText: '',
+      
+    }
+  }
 
-  handleReactQuillChange = (value) => {
+  handleReactQuillChange = (value, delta, source, editor) => {
     this.setState({
       reactQuillText: value,
     });
   };
+
+  handleSubmit = (e,) => {
+    e.preventDefault();
+   this.setState({
+     reactQuillText: '',
+   })
+  };
+
+  componentDidMount() {
+    console.log("component mounted");
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log("component updated");
+    console.log(prevProps, prevState);
+  }
+  componentWillUnmount() {
+    console.log("component unmounted");
+  }
 
   render() {
     return (
@@ -33,7 +58,7 @@ class Journal extends Component {
             </h3>
           </CardHeader>
           <CardBody>
-            <Form>
+            <Form onSubmit={this.handleSubmit}>
               <div
                 data-quill-placeholder="Are you sure you want to link?"
                 data-toggle="quill"
@@ -41,11 +66,13 @@ class Journal extends Component {
               <ReactQuill
                 value={this.state.reactQuillText}
                 onChange={this.handleReactQuillChange}
+                placeholder="Write your thoughts here"
                 theme="snow"
+                bounds={'.app'}
                 modules={{
                   toolbar: [
-                    ["bold", "italic"],
-                    ["link", "blockquote", "code", "image"],
+                    ["bold", "italic", "underline"],
+                    ["link", "blockquote", "image"],
                     [
                       {
                         list: "ordered",
@@ -59,14 +86,25 @@ class Journal extends Component {
               />
             </Form>
             <Button
+              onClick={this.handleSubmit}
+              type="submit"
               color="primary"
               size="sm"
+              id="fileButton"
               className="mt-2"
               block
               style={{ backgroundColor: "#b57000", borderColor: "transparent" }}
             >
               Done
             </Button>
+            <br/>
+            <ListGroup>
+              <ListGroup.Item>Entry: 1</ListGroup.Item>
+              <ListGroup.Item>Entry: 2</ListGroup.Item>
+              <ListGroup.Item>Entry: 3</ListGroup.Item>
+              <ListGroup.Item>Entry: 4</ListGroup.Item>
+              <ListGroup.Item>Entry: 5</ListGroup.Item>
+            </ListGroup>
           </CardBody>
         </Card>
       </div>

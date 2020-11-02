@@ -38,6 +38,7 @@ class App extends Component {
     };
   }
 
+
   unsubscribeFromAuth = null;
 
   componentDidMount() {
@@ -56,7 +57,6 @@ class App extends Component {
           console.log(this.state);
         });
       }
-
       this.setState({ currentUser: userAuth });
     });
   }
@@ -105,9 +105,9 @@ class App extends Component {
         <Route path="/journal" component={Journal} />
         <Route path="/plan" component={SinglePlan} />
         <Route path="/myplans" component={MyPlans} />
-        <Route path="/completedplans" component={CompletedPlans}/>
-        <Route path="/savedplans" component={SavedPlans}/>
-        <Route path="/admin" component={Admin}/>
+        <Route path="/completedplans" component={CompletedPlans} />
+        <Route path="/savedplans" component={SavedPlans} />
+        <Route path="/admin" component={Admin} />
       </>
     );
 

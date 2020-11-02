@@ -17,6 +17,8 @@ const config = {
 };
 
 firebase.initializeApp(config);
+
+
 export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
 
@@ -45,7 +47,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
 //access authentication & database on firebase
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
-export const db = firebase.database();
+export const db = firebase.firestore();
 export const any = firebase.analytics();
 
 

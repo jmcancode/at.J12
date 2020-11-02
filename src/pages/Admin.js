@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import * as React from "react";
 
 // bootstrap
 // import Card from "react-bootstrap/Card";
@@ -15,14 +15,25 @@ import {
 
 import ReactQuill from "react-quill";
 
-class Admin extends Component {
-  state = {
-    reactQuillText: "",
-  };
+class Admin extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      reactQuillText: "",
+      title: "",
+    };
+  }
+  
+  
 
   handleReactQuillChange = (value) => {
     this.setState({
       reactQuillText: value,
+    });
+  };
+  handleTitleChange = (value) => {
+    this.setState({
+      title: value,
     });
   };
 
@@ -84,11 +95,12 @@ class Admin extends Component {
               <ReactQuill
                 value={this.state.reactQuillText}
                 onChange={this.handleReactQuillChange}
+                placeholder="Place your plan content here..."
                 theme="snow"
                 modules={{
                   toolbar: [
                     ["bold", "italic"],
-                    ["link", "blockquote"],
+                    ["link", "blockquote", "image", "video"],
                     [
                       {
                         list: "ordered",
@@ -98,6 +110,9 @@ class Admin extends Component {
                       },
                     ],
                   ],
+                  clipboard: {
+                    matchVisual: false,
+                  }
                 }}
               />
             </Form>
