@@ -8,6 +8,19 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
+import PrivateRoute from "./components/PrivateRoute";
+import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
+import {
+  createFirestoreInstance,
+  reduxFirestore,
+  getFirestore,
+} from "redux-firestore";
+import firebase from "./Firebase/Firebase.utils";
+import "firebase/firestore";
+import rootReducer from "./Redux/store/reducers/rootReducer";
+import { createStore, applyMiddleware, compose } from "redux";
+import thunk from "redux-thunk";
+
 //pages + components
 import Home from "./pages/Home";
 import Navigation from "./Navigation";
@@ -24,46 +37,57 @@ import SinglePlan from "./pages/SinglePlan";
 import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
-import { auth, createUserProfileDocument } from "./Firebase/Firebase.utils";
-import { AuthProvider } from "../src/AuthContext/AuthContext";
-import PrivateRoute from "../src/components/PrivateRoute";
+import { Provider } from "react-redux";
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      sideDrawerOpen: false,
-      showNav: false,
-      currentUser: null,
-    };
-  }
+  state = {
+    sideDrawerOpen: false,
+    showNav: false,
+    currentUser: null,
+  };
 
+  //   drawerToggleClickHandler = () => {
+  //     this.setState((prevState) => {
+  //       return { sideDrawerOpen: !prevState.sideDrawerOpen };
+  //     });
+  //   };
 
-  unsubscribeFromAuth = null;
+  //   backdropClickHandler = () => {
+  //     this.setState({ sideDrawerOpen: false });
+  //   };
 
-  componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
-      if (userAuth) {
-        const userRef = await createUserProfileDocument(userAuth);
+  //   render() {
+  //     let backdrop;
+  //     if (this.state.sideDrawerOpen) {
+  //       backdrop = <BackDrop click={this.drawerToggleClickHandler} />;
+  //     }
+  //     return (
+  //       <div className="app" style={{ height: "100%" }}>
+  //         <Router>
+  //           <Navigation />
+  //           <ToolBar drawerClickHandler={this.state.drawerToggleClickHandler} />
+  //           <SideDrawer show={this.state.sideDrawerOpen} />
+  //           {backdrop}
+  //           <Switch>
+  //             <Route exact path="/" component={Register} />
+  //             <Route path="/login" component={Login} />
+  //             <Route path="/home" component={Home} />
+  //             <Route path="/plans" component={Plans} />
+  //             <Route path="/settings" component={Settings} />
+  //             <Route path="/journal" component={Journal} />
+  //             <Route path="/plan/:id" component={SinglePlan} />
+  //             <Route path="/myplans" component={MyPlans} />
+  //             <Route path="/completedplans" component={CompletedPlans} />
+  //             <Route path="/savedplans" component={SavedPlans} />
+  //             <Route path="/admin" component={Admin} />
+  //           </Switch>
+  //         </Router>
+  //       </div>
+  //     );
+  //   }
+  // }
 
-        userRef.onSnapshot((snapShot) => {
-          this.setState({
-            currentUser: {
-              id: snapShot.id,
-              ...snapShot.data(),
-            },
-          });
-
-          console.log(this.state);
-        });
-      }
-      this.setState({ currentUser: userAuth });
-    });
-  }
-
-  componentWillUnmount() {
-    this.unsubscribeFromAuth();
-  }
+  // export default App;
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
@@ -90,7 +114,7 @@ class App extends Component {
         <Route path="/login" component={Login} />
       </>
     );
-    //DEFAULT CONTAINER WITH NAVIGATION
+
     const DefaultContainer = () => (
       <>
         <>
@@ -110,20 +134,44 @@ class App extends Component {
         <Route path="/admin" component={Admin} />
       </>
     );
-
     return (
       <div className="app" style={{ height: "100%" }}>
         <Router>
-          <AuthProvider>
-            <Switch>
-              <Route exact path="/(login)" component={LoginContainer} />
-              <PrivateRoute component={DefaultContainer} />
-            </Switch>
-          </AuthProvider>
+          <Provider store={store}>
+            <ReactReduxFirebaseProvider {...rffProps}>
+              <Switch>
+                <Route exact path="/(login)" component={LoginContainer} />
+                <PrivateRoute component={DefaultContainer} />
+              </Switch>
+            </ReactReduxFirebaseProvider>
+          </Provider>
         </Router>
       </div>
     );
   }
 }
+const store = createStore(
+  rootReducer,
+  compose(
+    applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
+    reduxFirestore(firebase, { attachAuthIsReady: true })
+  )
+);
+
+const rrfConfig = {
+  userProfile: "users",
+  useFirestoreForProfile: true,
+};
+
+const rffProps = {
+  firebase,
+  useFirestoreForProfile: true,
+  config: rrfConfig,
+  dispatch: store.dispatch,
+  createFirestoreInstance,
+  userProfile: "users",
+  presence: "presence",
+  sessions: "sessions",
+};
 
 export default App;

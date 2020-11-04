@@ -1,33 +1,31 @@
 import React from "react";
-// import {db} from "../Firebase/Firebase.utils";
-
 
 import { Card, CardHeader, CardBody, Button, Form } from "reactstrap";
-import ListGroup from "react-bootstrap/ListGroup";
-
+import JournalList from "./JournalList";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
+import { connect } from "react-redux";
+import {createJournal} from "../Redux/actions/journalActions"
+import {Redirect} from 'react-router-dom';
+
 class Journal extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      reactQuillText: '',
-      
-    }
+      content: "",
+    };
   }
 
-  handleReactQuillChange = (value, delta, source, editor) => {
+  handleContentChange = (e) => {
     this.setState({
-      reactQuillText: value,
+      [e.target.id]: e.target.value
     });
   };
 
-  handleSubmit = (e,) => {
+  handleSubmit = (e) => {
     e.preventDefault();
-   this.setState({
-     reactQuillText: '',
-   })
+   this.props.createJournal(this.state)
   };
 
   componentDidMount() {
@@ -43,6 +41,8 @@ class Journal extends React.Component {
   }
 
   render() {
+    const{auth} = this.props;
+    if(!auth.uid) return <Redirect to='/login'/>
     return (
       <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
         <Card
@@ -64,15 +64,15 @@ class Journal extends React.Component {
                 data-toggle="quill"
               />
               <ReactQuill
-                value={this.state.reactQuillText}
+                value={this.state.content}
                 onChange={this.handleReactQuillChange}
                 placeholder="Write your thoughts here"
                 theme="snow"
-                bounds={'.app'}
+                bounds={".app"}
                 modules={{
                   toolbar: [
                     ["bold", "italic", "underline"],
-                    ["link", "blockquote", "image"],
+                    ["link", "blockquote"],
                     [
                       {
                         list: "ordered",
@@ -95,16 +95,10 @@ class Journal extends React.Component {
               block
               style={{ backgroundColor: "#b57000", borderColor: "transparent" }}
             >
-              Done
+              Submit
             </Button>
-            <br/>
-            <ListGroup>
-              <ListGroup.Item>Entry: 1</ListGroup.Item>
-              <ListGroup.Item>Entry: 2</ListGroup.Item>
-              <ListGroup.Item>Entry: 3</ListGroup.Item>
-              <ListGroup.Item>Entry: 4</ListGroup.Item>
-              <ListGroup.Item>Entry: 5</ListGroup.Item>
-            </ListGroup>
+            <br />
+            <JournalList/>
           </CardBody>
         </Card>
       </div>
@@ -112,4 +106,17 @@ class Journal extends React.Component {
   }
 }
 
-export default Journal;
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth,
+    
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createJournal: (journal) => dispatch(createJournal(journal)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Journal);

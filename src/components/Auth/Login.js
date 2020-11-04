@@ -1,90 +1,112 @@
-import React, { useRef, useState } from "react";
-import { Form, Button, Card, Alert } from "react-bootstrap";
-import { useAuth } from "../../../src/AuthContext/AuthContext";
-import { useHistory } from "react-router-dom";
+import React, { Component } from "react";
+import { Form, Button, Card } from "react-bootstrap";
 import "../../pages/login.css";
+import { connect } from "react-redux";
+import { signIn } from "../../Redux/actions/authActions";
+import { Redirect } from "react-router-dom";
 
-export default function Login() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const { login } = useAuth();
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const history = useHistory();
+class Login extends Component {
+  state = {
+    email: "",
+    password: "",
+  };
 
-  async function handleSubmit(e) {
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  };
+
+  handleSubmit = (e) => {
     e.preventDefault();
+    this.props.signIn(this.state);
+    this.props.history.push("/home");
+  };
+  render() {
+    const { authError, auth } = this.props;
+    if (auth.uid) return <Redirect to="/home" />;
+    return (
+      <>
+        <Card className="bg-dark text-white border-0">
+          <Card.Img
+            src={require("../../assets/login-example.jpg")}
+            alt="Card image"
+            className="d-lg-none mt-0 border-0"
+            style={{ borderColor: "transparent", height: "100vh" }}
+          />
+          <Card.Img
+            src={require("../../assets/images/field-logo.jpg")}
+            alt="Card image"
+            className="d-none d-lg-block mt-0 border-0 img-fluid"
+            style={{ height: "100vh" }}
+          />
+          <Card.ImgOverlay>
+            <div className="container-flex d-flex justify-content-center log-container">
+              <Card.Title className="d-lg-none log-header text-center">
+                ATHLETE LOGIN
+              </Card.Title>
+              <Form onSubmit={this.handleSubmit}>
+                <Form.Group className="pt-2">
+                  <Form.Control
+                    placeholder="Email"
+                    type="email"
+                    onChange={this.handleChange}
+                    id="email"
+                    required
+                  />
+                </Form.Group>
+                <Form.Group>
+                  <Form.Control
+                    placeholder="Password"
+                    type="password"
+                    id="password"
+                    onChange={this.handleChange}
+                    required
+                  />
+                </Form.Group>
 
-    try {
-      setError("");
-      setLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
-      history.push("/home");
-    } catch {
-      setError("Log in error");
-    }
-
-    setLoading(false);
+                <Button
+                  block
+                  style={{
+                    backgroundColor: "#b57000",
+                    borderColor: "transparent",
+                  }}
+                  variant="primary"
+                  size="sm"
+                  type="submit"
+                  Login
+                > Log-In </Button>
+                <div className="d-flex justify-content-center red-text">
+                  {authError ? <p>{authError}</p> : null}
+                </div>
+                <Form.Text className="text-muted pt-3">
+                Not a user?
+                <a className="pl-1" href="/login">
+                  Sign Up
+                </a>
+              </Form.Text>
+              </Form>
+            </div>
+            <div className="bg-transparent text-center text-white position-absolute copyright">
+              Ⓒ 2020 WHERE ATHLETES TALK
+            </div>
+          </Card.ImgOverlay>
+        </Card>
+      </>
+    );
   }
-
-  return (
-    <>
-      <Card className="bg-dark text-white border-0">
-        <Card.Img
-          src={require("../../assets/login-example.jpg")}
-          alt="Card image"
-          className="d-lg-none mt-0 border-0"
-          style={{ borderColor: "transparent", height: "100vh" }}
-        />
-        <Card.Img
-          src={require("../../assets/images/field-logo.jpg")}
-          alt="Card image"
-          className="d-none d-lg-block mt-0 border-0 img-fluid"
-          style={{ height: "100vh" }}
-        />
-        <Card.ImgOverlay>
-          <div className="container-flex d-flex justify-content-center log-container">
-            <Card.Title className="d-lg-none log-header text-center">
-              ATHLETE LOGIN
-            </Card.Title>
-            <div>{error && <Alert variant="danger">{error}</Alert>}</div>
-            <Form onSubmit={handleSubmit}>
-              <Form.Group className="pt-2" id="email">
-                <Form.Control
-                  placeholder="Email"
-                  type="email"
-                  ref={emailRef}
-                  required
-                />
-              </Form.Group>
-              <Form.Group id="password">
-                <Form.Control
-                  placeholder="Password"
-                  type="password"
-                  ref={passwordRef}
-                  required
-                />
-              </Form.Group>
-              <Button
-                block
-                style={{
-                  backgroundColor: "#b57000",
-                  borderColor: "transparent",
-                }}
-                variant="primary"
-                disabled={loading}
-                size="sm"
-                type="submit"
-              >
-                Login
-              </Button>
-            </Form>
-          </div>
-          <div className="bg-transparent text-center text-white position-absolute copyright">
-            Ⓒ 2020 WHERE ATHLETES TALK
-          </div>
-        </Card.ImgOverlay>
-      </Card>
-    </>
-  );
 }
+const mapStateToProps = (state) => {
+  return {
+    authError: state.auth.authError,
+    auth: state.firebase.auth,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds) => dispatch(signIn(creds)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

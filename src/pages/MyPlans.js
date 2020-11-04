@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Media from "react-bootstrap/Media";
 
-export default function MyPlans() {
+const MyPlans = (props) => {
   return (
     <>
       <Container className="d-flex justify-content-center">
@@ -44,50 +44,12 @@ export default function MyPlans() {
                     alt="random"
                   />
                   <Media.Body>
-                    <h5 style={{ fontSize: "12px" }}> Male Athletes </h5>
+                    <h5 style={{ fontSize: "12px" }}> TITLE </h5>
                     <ProgressBar
                       style={{ height: "10px", width: "50%" }}
                       variant="success"
                       animated
                       now={60}
-                    />
-                  </Media.Body>
-                </Media>
-
-                <Media as="li">
-                  <img
-                    width={64}
-                    height={64}
-                    className="mr-3"
-                    src="https://picsum.photos/640/360?random"
-                    alt="#"
-                  />
-                  <Media.Body>
-                    <h5 style={{ fontSize: "12px" }}> Working with Stress </h5>
-                    <ProgressBar
-                      style={{ height: "10px", width: "50%" }}
-                      variant="success"
-                      animated
-                      now={40}
-                    />
-                  </Media.Body>
-                </Media>
-
-                <Media as="li">
-                  <img
-                    width={64}
-                    height={64}
-                    className="mr-3"
-                    src="https://picsum.photos/640/360?random"
-                    alt="#"
-                  />
-                  <Media.Body>
-                    <h5 style={{ fontSize: "12px" }}> Conquering Machismo </h5>
-                    <ProgressBar
-                      style={{ height: "10px", width: "50%" }}
-                      variant="success"
-                      animated
-                      now={90}
                     />
                   </Media.Body>
                 </Media>
@@ -109,3 +71,6 @@ export default function MyPlans() {
     </>
   );
 }
+
+
+export default MyPlans;

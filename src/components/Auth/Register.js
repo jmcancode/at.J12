@@ -1,129 +1,132 @@
-import React, { useRef, useState } from "react";
+import React, { Component } from "react";
+import { Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import {signUp} from "../../Redux/actions/authActions";
 
 // react-bootstrap
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Alert from "react-bootstrap/Alert";
-// Firebase
-// import firebase from "../../Firebase/Firebase.utils";
-import { useHistory } from "react-router-dom";
-import { useAuth } from "../../../src/AuthContext/AuthContext";
 
 // custom css
 import "../../pages/login.css";
 
-export default function Register() {
-  const emailRef = useRef();
-  const passwordRef = useRef();
-  const passwordConfirmRef = useRef();
-  const { signup } = useAuth();
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const history = useHistory();
-
-  async function handleSubmit(e) {
+class Register extends Component {
+  state = {
+    email: "",
+    password: "",
+    firstName: '',
+    lastName: ''
+  };
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value,
+    });
+  };
+  handleSubmit = (e) => {
     e.preventDefault();
+    this.props.signUp(this.state);
+  };
 
-    if (passwordRef.current.value !== passwordConfirmRef.current.value) {
-      return setError("Passwords do not match");
-    }
-
-    try {
-      setError("");
-      setLoading(true);
-      await signup(emailRef.current.value, passwordRef.current.value);
-      history.push("/home");
-    } catch {
-      setError("Failed to create an account");
-    }
-
-    setLoading(false);
+  render() {
+    const { auth, authError } = this.props;
+    if (auth.uid) return <Redirect to="/home" />;
+    return (
+      <Card className="bg-dark text-white border-0">
+        <Card.Img
+          src={require("../../assets/login-example.jpg")}
+          alt="Card image"
+          className="d-lg-none mt-0 border-0"
+          style={{ height: "100vh" }}
+        />
+        <Card.Img
+          src={require("../../assets/images/field-logo.jpg")}
+          alt="Card image"
+          className="d-none d-lg-block mt-0 border-0 img-fluid"
+          style={{ height: "100vh" }}
+        />
+        <Card.ImgOverlay>
+          <div className="container-flex d-flex justify-content-center log-container">
+            <Card.Title className="d-lg-none log-header text-center">
+              ATHLETE REGISTER
+            </Card.Title>
+            <Form>
+              <Form.Group>
+                <Form.Control
+                  placeholder="First Name"
+                  type="text"
+                  id="firstName"
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Control
+                  placeholder="Last Name"
+                  type="text"
+                  id="lastName"
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Control
+                  placeholder="Email"
+                  type="email"
+                  id="email"
+                  required
+                />
+              </Form.Group>
+              <Form.Group>
+                <Form.Control
+                  className="m-0"
+                  placeholder="Password"
+                  type="password"
+                  id="password"
+                  required
+                />
+              </Form.Group>
+              <Button
+                block
+                variant="primary"
+                size="sm"
+                type="submit"
+                value="submit"
+                style={{
+                  backgroundColor: "#b57000",
+                  borderColor: "transparent",
+                }}
+              >
+                Register
+              </Button>
+              <Form.Text className="text-muted pt-3">
+                Already a user?
+                <a className="pl-1" href="/login">
+                  Sign in
+                </a>
+              </Form.Text>
+            </Form>
+            <div className="d-flex justify-content-center red-text">
+            { authError ? <p>{authError}</p> : null }
+          </div>
+          </div>
+          <div className="bg-transparent text-center text-white position-absolute copyright">
+            Ⓒ 2020 WHERE ATHLETES TALK
+          </div>
+        </Card.ImgOverlay>
+      </Card>
+    );
   }
-  return (
-    <Card className="bg-dark text-white border-0">
-      <Card.Img
-        src={require("../../assets/login-example.jpg")}
-        alt="Card image"
-        className="d-lg-none mt-0 border-0"
-        style={{ height: "100vh" }}
-      />
-      <Card.Img
-        src={require("../../assets/images/field-logo.jpg")}
-        alt="Card image"
-        className="d-none d-lg-block mt-0 border-0 img-fluid"
-        style={{ height: "100vh" }}
-      />
-      <Card.ImgOverlay>
-        <div className="container-flex d-flex justify-content-center log-container">
-          <Card.Title className="d-lg-none log-header text-center">
-            ATHLETE REGISTER
-          </Card.Title>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group id="email">
-              <Form.Label>Email</Form.Label>
-              <Form.Control
-                placeholder="Email"
-                type="email"
-                ref={emailRef}
-                required
-              />
-            </Form.Group>
-            <Form.Group controlId="exampleForm.ControlSelect1">
-              <Form.Control as="select">
-                <option>Select your team</option>
-                <option>Basketball</option>
-                <option>Volleyball</option>
-                <option>Soccer</option>
-                <option>Track & Field</option>
-                <option>Football</option>
-              </Form.Control>
-            </Form.Group>
-            <Form.Group id="password">
-              <Form.Control
-                className="m-0"
-                placeholder="Password"
-                type="password"
-                ref={passwordRef}
-                required
-              />
-            </Form.Group>
-            <Form.Group id="password-confirm">
-              <Form.Control
-                placeholder="Password Confirmation"
-                type="password"
-                ref={passwordConfirmRef}
-                required
-              />
-            </Form.Group>
-            <Button
-              block
-              variant="primary"
-              disabled={loading}
-              size="sm"
-              type="submit"
-              value="Submit"
-              style={{
-                backgroundColor: "#b57000",
-                borderColor: "transparent",
-              }}
-              className={loading ? "loading" : ""}
-            >
-              Register
-            </Button>
-            <Form.Text className="text-muted pt-3">
-              Already a user?
-              <a className="pl-1" href="/login">
-                Sign in
-              </a>
-            </Form.Text>
-          </Form>
-          {error && <Alert variant="danger">{error}</Alert>}
-        </div>
-        <div className="bg-transparent text-center text-white position-absolute copyright">
-          Ⓒ 2020 WHERE ATHLETES TALK
-        </div>
-      </Card.ImgOverlay>
-    </Card>
-  );
 }
+const mapStateToProps = (state) => {
+  return {
+    auth: state.firebase.auth,
+    authError: state.auth.authError
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return{
+    signUp: (creds) => dispatch(signUp(creds))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Register);
