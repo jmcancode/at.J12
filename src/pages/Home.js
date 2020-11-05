@@ -7,11 +7,14 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 import { Redirect } from "react-router-dom";
 import moment from "moment";
+import { FaStar } from "react-icons/fa";
+
+
 
 class Home extends Component {
   render() {
     const { plans, auth } = this.props;
-    if (!auth.uid) return <Redirect to="/" />;
+    if (!auth.uid) return <Redirect to="/home" />;
     return (
       <>
         <Container>
@@ -19,8 +22,8 @@ class Home extends Component {
             <div>
               <div className="d-flex flex-column w-lg-100">
                 <div className="d-flex justify-content-between mb-4 mt-0">
+                  <FaStar className="star-icon" style={{color: 'gold', height: '25px', width: '25px'}}/>
                   <div>{moment().format("l")}</div>
-                  <div>{moment().format("LTS")}</div>
                 </div>
                 <PlansList plans={plans} />
               </div>

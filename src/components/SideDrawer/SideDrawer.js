@@ -1,6 +1,5 @@
 import React from "react";
-
-
+// custom css
 import "./SideDrawer.css";
 
 
@@ -28,11 +27,8 @@ const sideDrawer = (props) => {
           <a href="/settings">Settings</a>
         </li>
         <li>
-          <a href="/admin">Administration</a>
+          <a href="/addplans">Administration</a>
         </li>
-
-        {/* bottom contacts */}
-        
       </ul>
     </nav>
   );

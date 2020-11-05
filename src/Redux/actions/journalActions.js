@@ -1,19 +1,20 @@
-export const createJournal = ({journal}) => {
-    return (dispatch, getState, { getFirebase, getFireStore }) => {
-      const firestore = getFireStore();
-      const journal = getState().firebase.profile;
-      const journalId = getState().firebase.auth.uid;
-      firestore.collection('users').doc('uid').add({
+export const createJournal = (journal) => {
+  return (dispatch, getState, { getFireStore }) => {
+    const firestore = getFireStore();
+    const journalId = getState().firebase.auth.uid;
+    firestore
+      .collection('users')
+      .doc('uid')
+      .add({
         ...journal,
-          jouranlContent: "This is where content lives.",
-          id: journalId,
-          createdOn: new Date()
-      }).then(() => {
-          dispatch({ type: "CREATE_JOURNAL", payload: journal });
-      }).catch((err) => {
-          dispatch({ type: 'CREATE_JOURNAL_ERROR', payload: err });
+        journalId: journalId,
+        createdOn: new Date(),
       })
-      
-    }
+      .then(() => {
+        dispatch({ type: "CREATE_JOURNAL_SUCCESS" });
+      })
+      .catch((err) => {
+        dispatch({ type: "CREATE_JOURNAL_ERROR" }, err);
+      });
   };
-  
+};

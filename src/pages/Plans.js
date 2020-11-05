@@ -9,6 +9,10 @@ import PlanCategory from "../components/Plans/PlanCategory";
 import PlanHeader from "../components/Plans/PlanHeader";
 import Container from "react-bootstrap/Container";
 
+import { connect } from "react-redux";
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
+
 
 
 const Plans = ({plans}) => {
@@ -23,7 +27,7 @@ const Plans = ({plans}) => {
 
     <Container className="mt-lg-5 pt-lg-5 mb-3">
       <div className="shadow rounded mx-3 mt-2 mb-5 pr-3 pb-3 pl-3">
-        <PlanHeader />
+        <PlanHeader plans={plans} />
         {plans && plans.map(plans => {
           return(
           <PlanCategory plans={plans} key={plans.id} />
@@ -35,6 +39,19 @@ const Plans = ({plans}) => {
   );
 };
 
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    journal: state.firestore.ordered.journal,
+    auth: state.firebase.auth,
+    notifications: state.firestore.ordered.notifications,
+  };
+};
 
-
-export default Plans;
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: "journal", orderBy: ["createdAt", "desc"] },
+    { collection: "notifications", limit: 3, orderBy: ["time", "desc"] },
+  ])
+)(Plans);

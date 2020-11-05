@@ -10,6 +10,7 @@ import {connect} from "react-redux";
 import {signOut} from "../Redux/actions/authActions";
 
 import "../assets/css/Settings.css";
+import { NavLink } from "react-router-dom";
 
 const Settings = (props) => {
   return (
@@ -57,9 +58,11 @@ const Settings = (props) => {
                 </Accordion>
               </ListGroup>
               <ListGroup.Item className="pb-0">
-                <a onClick={props.signOut} href="/login">
+              <li style={{listStyle: 'none'}}>
+                <NavLink onClick={props.signOut} to="/login">
                   Sign out
-                </a>
+                </NavLink>
+                </li>
                 <div className="text-muted pt-2"></div>
               </ListGroup.Item>
             </Card>

@@ -11,14 +11,12 @@ import {
   Input,
 } from "reactstrap";
 
-import ReactQuill from "react-quill";
+
 import { createPlans } from "../Redux/actions/plansActions";
 import { Redirect } from "react-router-dom";
 
-class Admin extends Component {
+class PlanAdder extends Component {
   state = {
-    content: "",
-    title: "",
     categorySelect: [
       "Social Justice",
       "Personal Development",
@@ -29,6 +27,9 @@ class Admin extends Component {
       "Ethnicity",
       "Gender",
     ],
+    content: "",
+    createdAt: "",
+    title: "",
   };
 
   handleChange = (e, value) => {
@@ -60,7 +61,7 @@ class Admin extends Component {
               className="d-flex justify-content-center mb-0"
               style={{ fontFamily: "Graduate", color: "b570000" }}
             >
-              Plan Upload
+              Upload Plans
             </h3>
           </CardHeader>
           <CardBody>
@@ -89,34 +90,10 @@ class Admin extends Component {
 
             <Form onSubmit={this.handleOnSubmit}>
               <Label>Plan Text</Label>
-              <div
-                data-quill-placeholder="Are you sure you want to link?"
-                data-toggle="quill"
-              />
-              <ReactQuill
-                value={this.state.content}
-                onChange={this.handleChange}
-                placeholder="Place your plan content here..."
-                theme="snow"
-                id="content"
-                modules={{
-                  toolbar: [
-                    ["bold", "italic"],
-                    ["link", "blockquote", "image", "video"],
-                    [
-                      {
-                        list: "ordered",
-                      },
-                      {
-                        list: "bullet",
-                      },
-                    ],
-                  ],
-                  clipboard: {
-                    matchVisual: false,
-                  },
-                }}
-              />
+              <FormGroup>
+              <Label for="exampleText">Text Area</Label>
+              <Input type="textarea" name="text" id="content" />
+            </FormGroup>
             </Form>
             <Button
               color="primary"
@@ -148,4 +125,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Admin);
+export default connect(mapStateToProps, mapDispatchToProps)(PlanAdder);

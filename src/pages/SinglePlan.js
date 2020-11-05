@@ -8,14 +8,14 @@ import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
 
 import Button from "react-bootstrap/Button";
-import HeartButton from "../components/Buttons/LikeButton";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
+import LikeButton from "../components/Buttons/LikeButton";
+import LoadingSpinner from "../components/Spinner";
 
 import "../components/Buttons/LikeButton.css";
 
 const SinglePlan = (props) => {
   const { plans, auth } = props;
-  if (!auth.uid) return <Redirect to='/login'/>
+  if (!auth.uid) return <Redirect to="/login" />;
   if (plans) {
     return (
       <Container className="mt-lg-5 pt-lg-5 mb-3">
@@ -31,7 +31,7 @@ const SinglePlan = (props) => {
                 <Card.Title className="font-weight-bolder mb-0">
                   {props.plans.title}
                 </Card.Title>
-                <HeartButton />
+                <LikeButton />
               </div>
             </Card.Body>
             <Card.Footer className="border-0 font d-flex justify-content-between p-3">
@@ -52,28 +52,7 @@ const SinglePlan = (props) => {
                 </Link>
               </small>
             </Card.Footer>
-            <div className="d-flex justify-content-center pt-4">
-              <ButtonGroup aria-label="Basic example">
-                <Button
-                  style={{
-                    backgroundColor: "#b57000",
-                    borderColor: "transparent",
-                  }}
-                  variant="primary"
-                >
-                  Day 1
-                </Button>
-                <Button className="text-muted" variant="secondary">
-                  Day 2
-                </Button>
-                <Button className="text-muted" variant="secondary">
-                  Day 3
-                </Button>
-                <Button className="text-muted" variant="secondary">
-                  Day 4
-                </Button>
-              </ButtonGroup>
-            </div>
+            <div className="d-flex justify-content-center pt-4"></div>
             <Card.Text className="light border-0 p-4">
               {plans.content}
             </Card.Text>
@@ -89,7 +68,7 @@ const SinglePlan = (props) => {
                 }}
                 variant="primary"
                 type="submit"
-                >
+              >
                 Finish Day
               </Button>
               <Button
@@ -109,9 +88,33 @@ const SinglePlan = (props) => {
     );
   } else {
     return (
-      <div>
-        <p>Loading plan...</p>
-      </div>
+      <>
+        <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
+          <Card
+            className="mx-1 shadow rounded  border"
+            style={{ height: "100vh" }}
+          >
+            <Card.Header className="text-center">
+              <h4>Quote of the day</h4>
+            </Card.Header>
+            <Card.Body>
+              <blockquote className="blockquote mb-0">
+                <h2 className="text-center">
+                  "When the praises go up, the blessings come down"
+                </h2>
+                <footer className="blockquote-footer mt-4 mr-5 ml-5">
+                  <cite title="Source Title" src="">
+                    Chance the Rapper
+                  </cite>
+                </footer>
+              </blockquote>
+              <div className="mt-5 pt-5">
+              <LoadingSpinner />
+              </div>
+              </Card.Body>
+          </Card>
+        </div>
+      </>
     );
   }
 };
@@ -119,15 +122,18 @@ const SinglePlan = (props) => {
 const mapStateToProps = (state, ownProps) => {
   const id = ownProps.match.params.id;
   const plans = state.firestore.data.plans;
-  const plan = plans ? plans[id] : null
+  const plan = plans ? plans[id] : null;
   return {
     plan: plan,
-    auth: state.firebase.auth
-  }
-}
+    auth: state.firebase.auth,
+  };
+};
 
-export default compose(connect(mapStateToProps),
-firestoreConnect([{
-  collection: 'plans'
-}])
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    {
+      collection: "plans",
+    },
+  ])
 )(SinglePlan);

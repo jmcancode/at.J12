@@ -10,8 +10,8 @@ const PlansList = ({ plans, planId }) => {
           return (
             <>
               <div className="container" key={plans.id}>
-                <Link to={"/plan/" + plans.id} >
-                  <HomeCard plans={plans} />
+                <Link to={"/plan/" + plans.id} key={plans.id} >
+                  <HomeCard plans={plans} key={plans.id} />
                 </Link>
               </div>
             </>

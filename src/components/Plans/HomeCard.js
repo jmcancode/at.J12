@@ -20,11 +20,13 @@ const HomeCard = (props) => {
           <Card.Title style={{ color: "#000000", size: "24px" }}>
             {plans.title}
           </Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">{plans.categorySelect}</Card.Subtitle>
+          <Card.Subtitle className="mb-2 text-muted">
+            {plans.categorySelect}
+          </Card.Subtitle>
           <Card.Text style={{ color: "#000000", size: "12px" }}>
             {plans.content}
           </Card.Text>
-          <div className="d-flex inline-flex justify-content-between mt-2">
+          <div className="d-flex inline-flex justify-content-center mt-2">
             <Button
               size="sm"
               type="submit"

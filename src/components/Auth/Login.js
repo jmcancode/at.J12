@@ -5,7 +5,7 @@ import { connect } from "react-redux";
 import { signIn } from "../../Redux/actions/authActions";
 import { Redirect } from "react-router-dom";
 
-class Login extends Component {
+class login extends Component {
   state = {
     email: "",
     password: "",
@@ -74,7 +74,6 @@ class Login extends Component {
                   variant="primary"
                   size="sm"
                   type="submit"
-                  Login
                 > Log-In </Button>
                 <div className="d-flex justify-content-center red-text">
                   {authError ? <p>{authError}</p> : null}
@@ -109,4 +108,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+export default connect(mapStateToProps, mapDispatchToProps)(login);

@@ -27,12 +27,12 @@ import Navigation from "./Navigation";
 import Plans from "./pages/Plans";
 import Settings from "./pages/Settings";
 import MyPlans from "./pages/MyPlans";
-import Admin from "./pages/Admin";
+import PlanAdder from "./pages/PlanAdder";
 import CompletedPlans from "./pages/CompletedPlans";
 import SavedPlans from "./pages/SavedPlans";
 import Journal from "./pages/Journal";
 import Register from "./components/Auth/Register";
-import Login from "./components/Auth/Login";
+import login from "./components/Auth/Login";
 import SinglePlan from "./pages/SinglePlan";
 import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
@@ -45,49 +45,6 @@ class App extends Component {
     showNav: false,
     currentUser: null,
   };
-
-  //   drawerToggleClickHandler = () => {
-  //     this.setState((prevState) => {
-  //       return { sideDrawerOpen: !prevState.sideDrawerOpen };
-  //     });
-  //   };
-
-  //   backdropClickHandler = () => {
-  //     this.setState({ sideDrawerOpen: false });
-  //   };
-
-  //   render() {
-  //     let backdrop;
-  //     if (this.state.sideDrawerOpen) {
-  //       backdrop = <BackDrop click={this.drawerToggleClickHandler} />;
-  //     }
-  //     return (
-  //       <div className="app" style={{ height: "100%" }}>
-  //         <Router>
-  //           <Navigation />
-  //           <ToolBar drawerClickHandler={this.state.drawerToggleClickHandler} />
-  //           <SideDrawer show={this.state.sideDrawerOpen} />
-  //           {backdrop}
-  //           <Switch>
-  //             <Route exact path="/" component={Register} />
-  //             <Route path="/login" component={Login} />
-  //             <Route path="/home" component={Home} />
-  //             <Route path="/plans" component={Plans} />
-  //             <Route path="/settings" component={Settings} />
-  //             <Route path="/journal" component={Journal} />
-  //             <Route path="/plan/:id" component={SinglePlan} />
-  //             <Route path="/myplans" component={MyPlans} />
-  //             <Route path="/completedplans" component={CompletedPlans} />
-  //             <Route path="/savedplans" component={SavedPlans} />
-  //             <Route path="/admin" component={Admin} />
-  //           </Switch>
-  //         </Router>
-  //       </div>
-  //     );
-  //   }
-  // }
-
-  // export default App;
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
@@ -105,13 +62,11 @@ class App extends Component {
       backdrop = <BackDrop click={this.drawerToggleClickHandler} />;
     }
 
-    //CONTAINERS FOR KEEPING NAV OUT OF LOGIN/REGISTER
-    //LOGIN CONTAINER WITHOUT NAVIGATION
     const LoginContainer = () => (
       <>
-        <Route path="/" render={() => <Redirect to="/login" />} />
-        <Route exact path="/" component={Register} />
-        <Route path="/login" component={Login} />
+        <Route path="/home" return={() => <Redirect to="/login" />} />
+        <Route exact path="/register" component={Register} />
+        <Route path="/login" component={login} />
       </>
     );
 
@@ -131,7 +86,7 @@ class App extends Component {
         <Route path="/myplans" component={MyPlans} />
         <Route path="/completedplans" component={CompletedPlans} />
         <Route path="/savedplans" component={SavedPlans} />
-        <Route path="/admin" component={Admin} />
+        <Route path="/addplans" component={PlanAdder} />
       </>
     );
     return (
@@ -140,7 +95,7 @@ class App extends Component {
           <Provider store={store}>
             <ReactReduxFirebaseProvider {...rffProps}>
               <Switch>
-                <Route exact path="/(login)" component={LoginContainer} />
+                <Route exact path="/login" component={LoginContainer} />
                 <PrivateRoute component={DefaultContainer} />
               </Switch>
             </ReactReduxFirebaseProvider>

@@ -1,13 +1,14 @@
 import React from "react";
-
-import { Card, CardHeader, CardBody, Button, Form } from "reactstrap";
+//reactstrap
+import { Card, CardHeader, CardBody, Button, Form, FormGroup, Label, Input } from "reactstrap";
+// custom components
 import JournalList from "./JournalList";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
-
+// react-redux
 import { connect } from "react-redux";
 import {createJournal} from "../Redux/actions/journalActions"
+// react-router-dom
 import {Redirect} from 'react-router-dom';
+
 
 class Journal extends React.Component {
   constructor(props) {
@@ -63,27 +64,10 @@ class Journal extends React.Component {
                 data-quill-placeholder="Are you sure you want to link?"
                 data-toggle="quill"
               />
-              <ReactQuill
-                value={this.state.content}
-                onChange={this.handleReactQuillChange}
-                placeholder="Write your thoughts here"
-                theme="snow"
-                bounds={".app"}
-                modules={{
-                  toolbar: [
-                    ["bold", "italic", "underline"],
-                    ["link", "blockquote"],
-                    [
-                      {
-                        list: "ordered",
-                      },
-                      {
-                        list: "bullet",
-                      },
-                    ],
-                  ],
-                }}
-              />
+              <FormGroup>
+              <Label for="exampleText">What's on your mind?</Label>
+              <Input type="textarea" name="text" id="content" />
+            </FormGroup>
             </Form>
             <Button
               onClick={this.handleSubmit}
