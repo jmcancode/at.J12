@@ -5,9 +5,10 @@ import { Card, CardHeader, CardBody, Button, Form, FormGroup, Label, Input } fro
 import JournalList from "./JournalList";
 // react-redux
 import { connect } from "react-redux";
-import {createJournal} from "../Redux/actions/journalActions"
 // react-router-dom
 import {Redirect} from 'react-router-dom';
+import { firestoreConnect } from "react-redux-firebase";
+import { compose } from "redux";
 
 
 class Journal extends React.Component {
@@ -26,20 +27,9 @@ class Journal extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-   this.props.createJournal(this.state)
+   this.props.createJournal(this.state);
   };
 
-  componentDidMount() {
-    console.log("component mounted");
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    console.log("component updated");
-    console.log(prevProps, prevState);
-  }
-  componentWillUnmount() {
-    console.log("component unmounted");
-  }
 
   render() {
     const{auth} = this.props;
@@ -91,16 +81,18 @@ class Journal extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
+    journal: state.firestore.ordered.journal,
     auth: state.firebase.auth,
-    
+    notifications: state.firestore.ordered.notifications,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    createJournal: (journal) => dispatch(createJournal(journal)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Journal);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: "journal", orderBy: ["createdAt", "desc"] },
+    { collection: "notifications", limit: 3, orderBy: ["time", "desc"] },
+  ])
+)(Journal);

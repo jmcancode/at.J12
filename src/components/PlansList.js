@@ -9,9 +9,9 @@ const PlansList = ({ plans, planId }) => {
         plans.map((plans) => {
           return (
             <>
-              <div className="container" key={plans.id}>
-                <Link to={"/plan/" + plans.id} key={plans.id} >
-                  <HomeCard plans={plans} key={plans.id} />
+              <div className="container" >
+                <Link to={"/plan/" + plans.id} >
+                  <HomeCard plans={plans}  />
                 </Link>
               </div>
             </>

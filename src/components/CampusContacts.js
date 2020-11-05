@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhoneAlt } from "@fortawesome/free-solid-svg-icons";
 
 const campusContacts = (props) => {
-
   return (
 
     <div className="d-flex justify-content-around mt-5">

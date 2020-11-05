@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
@@ -14,8 +14,7 @@ import LoadingSpinner from "../components/Spinner";
 import "../components/Buttons/LikeButton.css";
 
 const SinglePlan = (props) => {
-  const { plans, auth } = props;
-  if (!auth.uid) return <Redirect to="/login" />;
+  const { plans } = props;
   if (plans) {
     return (
       <Container className="mt-lg-5 pt-lg-5 mb-3">
@@ -99,12 +98,12 @@ const SinglePlan = (props) => {
             </Card.Header>
             <Card.Body>
               <blockquote className="blockquote mb-0">
-                <h2 className="text-center">
-                  "When the praises go up, the blessings come down"
-                </h2>
+                <h5 className="text-center">
+                “Effectively, change is almost impossible without industry-wide collaboration, cooperation, and consensus.”
+                </h5>
                 <footer className="blockquote-footer mt-4 mr-5 ml-5">
                   <cite title="Source Title" src="">
-                    Chance the Rapper
+                    Phil Jackson
                   </cite>
                 </footer>
               </blockquote>

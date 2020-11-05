@@ -2,15 +2,14 @@ import React from "react";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import CardDeck from "react-bootstrap/CardDeck";
-// import LikeButton from "../Buttons/LikeButton";
-// import ThumbsUp from "../Buttons/ThumbsUp";
-// import ThumbsDown from "../Buttons/ThumbsDown";
+
+import "../../pages/Home.css";
 
 const HomeCard = (props) => {
   const { plans } = props;
 
   return (
-    <CardDeck>
+    <CardDeck className="card-deck">
       <Card
         style={{ width: "18rem" }}
         className="shadow-lg p-3 mb-5 bg-white rounded"

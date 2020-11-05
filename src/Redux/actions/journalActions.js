@@ -4,7 +4,7 @@ export const createJournal = (journal) => {
     const journalId = getState().firebase.auth.uid;
     firestore
       .collection('users')
-      .doc('uid')
+      .doc(`uid/journal/{journalId}`)
       .add({
         ...journal,
         journalId: journalId,

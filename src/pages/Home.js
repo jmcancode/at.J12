@@ -14,7 +14,7 @@ import { FaStar } from "react-icons/fa";
 class Home extends Component {
   render() {
     const { plans, auth } = this.props;
-    if (!auth.uid) return <Redirect to="/home" />;
+    if (!auth.uid) return <Redirect to="/login" />;
     return (
       <>
         <Container>

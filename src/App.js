@@ -82,7 +82,7 @@ class App extends Component {
         <Route path="/plans" component={Plans} />
         <Route path="/settings" component={Settings} />
         <Route path="/journal" component={Journal} />
-        <Route path="/plan" component={SinglePlan} />
+        <Route path="/plan/:id" component={SinglePlan} />
         <Route path="/myplans" component={MyPlans} />
         <Route path="/completedplans" component={CompletedPlans} />
         <Route path="/savedplans" component={SavedPlans} />
