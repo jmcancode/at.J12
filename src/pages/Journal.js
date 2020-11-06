@@ -22,12 +22,12 @@ import { Redirect } from "react-router-dom";
 
 class Journal extends Component {
   state = {
-    content: "" ,
+    journals: "" ,
   };
 
   handleContentChange = (e) => {
     this.setState({
-      content:  e.target.value,
+      journals:  e.target.value,
     });
   };
 
@@ -38,9 +38,16 @@ class Journal extends Component {
 
   handleClick = (e) =>{
     this.setState({
-      content: ''
+      journals: ''
     });
     console.log(e.target)
+  }
+  addJournal = (journal) => {
+    journal.id = Math.random();
+    let journals = [...this.state.journals, journal];
+    this.setState({
+      journals: journal
+    })
   }
 
 

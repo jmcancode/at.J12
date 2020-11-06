@@ -15,14 +15,9 @@ class JournalList extends Component {
       "Gender",
       "Social Justice",
     ],
+
   }
-  addJournal = (journal) => {
-    journal.id = Math.random();
-    let journals = [...this.state.journals, journal];
-    this.setState({
-      journals: journal
-    })
-  }
+
   render() {
     const {  auth  } = this.props;
     if (!auth.uid) return <Redirect to="/login" />;

@@ -24,15 +24,13 @@ import {
   getFirebase,
   isLoaded,
 } from "react-redux-firebase";
-// Firebase 
+// Firebase
 import firebase from "./Firebase/Firebase.utils";
 import "firebase/firestore";
 // custom components
 import LoadingSpinner from "./components/Spinner";
 //react-bootstrap
 import Card from "react-bootstrap/Card";
-
-
 
 const rrfConfig = {
   userProfile: "users",
@@ -65,29 +63,12 @@ function AuthIsLoaded({ children }) {
   if (!isLoaded(auth))
     return (
       <>
-        <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
-          <Card
-            className="mx-1 shadow rounded  border mt-3 mt-lg-5"
-            style={{ height: "100vh" }}
-          >
-            <Card.Header className="text-center">
-              <h4>Quote of the day</h4>
-            </Card.Header>
-            <Card.Body>
-              <blockquote className="blockquote mb-0">
-                <h5 className="text-center">
-                  "When the praises go up, the blessings come down"
-                </h5>
-                <footer className="blockquote-footer ml-5">
-                  <cite title="Source Title" src="">
-                    Chance the Rapper
-                  </cite>
-                </footer>
-              </blockquote>
-              <div className="mt-5 pt-5">
-                <LoadingSpinner />
-              </div>
-            </Card.Body>
+        <div>
+          <Card>
+            <Card.Img
+              style={{ height: "100vh", width: "100vw", margin: "0%", padding: "0%" }}
+              src={require("./assets/Splash.jpg")}
+            />
           </Card>
         </div>
       </>
