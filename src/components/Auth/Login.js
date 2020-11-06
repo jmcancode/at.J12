@@ -78,12 +78,6 @@ class login extends Component {
                 <div className="d-flex justify-content-center red-text">
                   {authError ? <p>{authError}</p> : null}
                 </div>
-                <Form.Text className="text-muted pt-3">
-                Not a user?
-                <a className="pl-1" href="/login">
-                  Sign Up
-                </a>
-              </Form.Text>
               </Form>
             </div>
             <div className="bg-transparent text-center text-white position-absolute copyright">

@@ -2,7 +2,6 @@ import firebase from "firebase/app";
 import 'firebase/firestore';
 import "firebase/auth";
 
-
 const config = {
   apiKey: "AIzaSyBO6f8hRtVkOk7QRAPOVUqL-n5Ff20CqCI",
   authDomain: "athlete-talk-aa550.firebaseapp.com",

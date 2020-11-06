@@ -1,20 +1,24 @@
 export const createJournal = (journal) => {
-  return (dispatch, getState, { getFireStore }) => {
+  return (dispatch, getState, { getFirebase, getFireStore }) => {
     const firestore = getFireStore();
-    const journalId = getState().firebase.auth.uid;
+    const authorId = getState().firebase.auth.uid;
+    const profile = getState().firebase.profile;
+    const email = getState().firebase.email;
     firestore
-      .collection('users')
-      .doc(`uid/journal/{journalId}`)
+      .collection('journal')
+      .doc(`journal/{journalId}`)
       .add({
         ...journal,
-        journalId: journalId,
+        content: "",
         createdOn: new Date(),
+        authorId: authorId,
+        userEmail: profile.email,
       })
       .then(() => {
-        dispatch({ type: "CREATE_JOURNAL_SUCCESS" });
+        dispatch({ type: 'CREATE_JOURNAL_SUCCESS' });
       })
       .catch((err) => {
-        dispatch({ type: "CREATE_JOURNAL_ERROR" }, err);
+        dispatch({ type: 'CREATE_JOURNAL_ERROR' }, err);
       });
   };
 };

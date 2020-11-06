@@ -2,20 +2,17 @@ import React from "react";
 import { Link} from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-
 import { connect } from "react-redux";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
-
 import Button from "react-bootstrap/Button";
 import LikeButton from "../components/Buttons/LikeButton";
 import LoadingSpinner from "../components/Spinner";
-
 import "../components/Buttons/LikeButton.css";
 
 const SinglePlan = (props) => {
   const { plans } = props;
-  if (plans) {
+  if (plans ) {
     return (
       <Container className="mt-lg-5 pt-lg-5 mb-3">
         <div className="shadow m-2">
@@ -28,7 +25,7 @@ const SinglePlan = (props) => {
             <Card.Body className="mt-1">
               <div className="d-flex justify-content-between my-1">
                 <Card.Title className="font-weight-bolder mb-0">
-                  {props.plans.title}
+            THIS IS A TEST TITLE
                 </Card.Title>
                 <LikeButton />
               </div>
@@ -53,7 +50,7 @@ const SinglePlan = (props) => {
             </Card.Footer>
             <div className="d-flex justify-content-center pt-4"></div>
             <Card.Text className="light border-0 p-4">
-              {plans.content}
+             THIS IS WHERE PLANS CONTEXT WILL LIVE
             </Card.Text>
             <div
               style={{ paddingBottom: "25%" }}
@@ -88,7 +85,7 @@ const SinglePlan = (props) => {
   } else {
     return (
       <>
-        <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
+        <div className=" container card-container mt-lg-5 pt-4 pt-lg-5 mb-3">
           <Card
             className="mx-1 shadow rounded  border"
             style={{ height: "100vh" }}
@@ -133,6 +130,7 @@ export default compose(
   firestoreConnect([
     {
       collection: "plans",
+      
     },
   ])
 )(SinglePlan);

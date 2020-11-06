@@ -20,12 +20,13 @@ const MyPlans = (props) => {
             My Plans
           </Button>
           <Button size="sm" variant="secondary">
-            <Link style={{ color: "#b57000" }} to="/plans">
+            <Link style={{ color: "#b57000" }} to="/discover">
               Discover
             </Link>
           </Button>
         </ButtonGroup>
       </Container>
+
       <Container className="mt-lg-5 pt-lg-5 mb-3">
         <div className="shadow m-2">
           <div className="container-fluid d-flex">

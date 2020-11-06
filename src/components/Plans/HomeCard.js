@@ -5,9 +5,10 @@ import CardDeck from "react-bootstrap/CardDeck";
 
 import "../../pages/Home.css";
 
+
+
 const HomeCard = (props) => {
   const { plans } = props;
-
   return (
     <CardDeck className="card-deck">
       <Card

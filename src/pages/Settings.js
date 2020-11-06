@@ -13,6 +13,7 @@ import "../assets/css/Settings.css";
 import { NavLink } from "react-router-dom";
 
 const Settings = (props) => {
+  const {auth} = props;
   return (
     <>
       <div className="container-sm-flex mt-lg-5 pt-lg-3 mb-3">
@@ -60,7 +61,7 @@ const Settings = (props) => {
               <ListGroup.Item className="pb-0">
               <li style={{listStyle: 'none'}}>
                 <NavLink onClick={props.signOut} to="/login">
-                  Sign out
+                  Sign out: <span className="text-muted">{props.auth.email}</span>
                 </NavLink>
                 </li>
                 <div className="text-muted pt-2"></div>
@@ -73,6 +74,14 @@ const Settings = (props) => {
     </>
   );
 }
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    journal: state.firestore.journal,
+    auth: state.firebase.auth,
+    notifications: state.firestore.ordered.notifications,
+  };
+};
 
 const mapDispatchToProps = (dispatch) => {
 return {
@@ -80,4 +89,4 @@ return {
 }
 }
 
-export default connect(null, mapDispatchToProps)(Settings)
+export default connect(mapStateToProps, mapDispatchToProps)(Settings)

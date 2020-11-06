@@ -1,39 +1,52 @@
-import React from "react";
+import React, { Component } from "react";
 //reactstrap
-import { Card, CardHeader, CardBody, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  Button,
+  Form,
+  FormGroup,
+  Label,
+  Input,
+} from "reactstrap";
 // custom components
 import JournalList from "./JournalList";
+import { createJournal } from "../Redux/actions/journalActions";
 // react-redux
 import { connect } from "react-redux";
-// react-router-dom
-import {Redirect} from 'react-router-dom';
-import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+import { firestoreConnect } from 'react-redux-firebase'
+// react-router-dom
+import { Redirect } from "react-router-dom";
 
-
-class Journal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      content: "",
-    };
-  }
+class Journal extends Component {
+  state = {
+    content: "" ,
+  };
 
   handleContentChange = (e) => {
     this.setState({
-      [e.target.id]: e.target.value
+      content:  e.target.value,
     });
   };
 
   handleSubmit = (e) => {
     e.preventDefault();
-   this.props.createJournal(this.state);
+    this.props.addJournal(this.state);
   };
+
+  handleClick = (e) =>{
+    this.setState({
+      content: ''
+    });
+    console.log(e.target)
+  }
 
 
   render() {
-    const{auth} = this.props;
-    if(!auth.uid) return <Redirect to='/login'/>
+    const { auth, journal } = this.props;
+    if (!auth.uid) return <Redirect to="/login" />;
     return (
       <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
         <Card
@@ -55,16 +68,21 @@ class Journal extends React.Component {
                 data-toggle="quill"
               />
               <FormGroup>
-              <Label for="exampleText">What's on your mind?</Label>
-              <Input type="textarea" name="text" id="content" />
-            </FormGroup>
+                <Label htmlfor="exampleText">What's on your mind?</Label>
+                <Input
+                  type="textarea"
+                  name="text"
+                  id="content"
+                  onChange={this.handleContentChange}
+                />
+              </FormGroup>
             </Form>
             <Button
-              onClick={this.handleSubmit}
+              onClick={this.handleClick}
               type="submit"
               color="primary"
               size="sm"
-              id="fileButton"
+              id="submit"
               className="mt-2"
               block
               style={{ backgroundColor: "#b57000", borderColor: "transparent" }}
@@ -72,7 +90,7 @@ class Journal extends React.Component {
               Submit
             </Button>
             <br />
-            <JournalList/>
+            <JournalList addJournal={this.addJournal} />
           </CardBody>
         </Card>
       </div>
@@ -85,14 +103,16 @@ const mapStateToProps = (state) => {
   return {
     journal: state.firestore.ordered.journal,
     auth: state.firebase.auth,
-    notifications: state.firestore.ordered.notifications,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createJournal: (journal) => dispatch(createJournal(journal)),
   };
 };
 
 export default compose(
-  connect(mapStateToProps),
-  firestoreConnect([
-    { collection: "journal", orderBy: ["createdAt", "desc"] },
-    { collection: "notifications", limit: 3, orderBy: ["time", "desc"] },
-  ])
-)(Journal);
+  connect(mapStateToProps, mapDispatchToProps), firestoreConnect([
+  {collection: 'journal', orderBy: ['createdOn', 'desc']}
+]))(Journal);

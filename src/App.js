@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import "./App.css";
 // react-router dom
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
   Redirect,
@@ -20,11 +20,10 @@ import "firebase/firestore";
 import rootReducer from "./Redux/store/reducers/rootReducer";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-
 //pages + components
 import Home from "./pages/Home";
 import Navigation from "./Navigation";
-import Plans from "./pages/Plans";
+import Plans from "./pages/DiscoverPage";
 import Settings from "./pages/Settings";
 import MyPlans from "./pages/MyPlans";
 import PlanAdder from "./pages/PlanAdder";
@@ -79,10 +78,10 @@ class App extends Component {
           {backdrop}
         </>
         <Route path="/home" component={Home} />
-        <Route path="/plans" component={Plans} />
+        <Route path="/discover" component={Plans} />
         <Route path="/settings" component={Settings} />
         <Route path="/journal" component={Journal} />
-        <Route path="/plan/:id" component={SinglePlan} />
+        <Route path="/plan" component={SinglePlan} />
         <Route path="/myplans" component={MyPlans} />
         <Route path="/completedplans" component={CompletedPlans} />
         <Route path="/savedplans" component={SavedPlans} />
@@ -91,7 +90,7 @@ class App extends Component {
     );
     return (
       <div className="app" style={{ height: "100%" }}>
-        <Router>
+        <BrowserRouter>
           <Provider store={store}>
             <ReactReduxFirebaseProvider {...rffProps}>
               <Switch>
@@ -100,13 +99,15 @@ class App extends Component {
               </Switch>
             </ReactReduxFirebaseProvider>
           </Provider>
-        </Router>
+        </BrowserRouter>
       </div>
     );
   }
 }
+const initialState = {};
 const store = createStore(
   rootReducer,
+  initialState,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
     reduxFirestore(firebase, { attachAuthIsReady: true })
@@ -120,11 +121,10 @@ const rrfConfig = {
 
 const rffProps = {
   firebase,
-  useFirestoreForProfile: true,
+  updateProfileOnLogin: false,
   config: rrfConfig,
   dispatch: store.dispatch,
   createFirestoreInstance,
-  userProfile: "users",
   presence: "presence",
   sessions: "sessions",
 };

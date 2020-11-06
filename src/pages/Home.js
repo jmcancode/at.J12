@@ -1,19 +1,28 @@
 import React, { Component } from "react";
+// custom css
 import "./Home.css";
+// react-bootstrap
 import Container from "react-bootstrap/Container";
+// redux
 import { connect } from "react-redux";
-import PlansList from "../components/PlansList";
 import { firestoreConnect } from "react-redux-firebase";
 import { compose } from "redux";
+// react-router
 import { Redirect } from "react-router-dom";
+// moment.js
 import moment from "moment";
+// react-icons
 import { FaStar } from "react-icons/fa";
-
-
+// custom components
+import PlansList from "../components/PlansList";
+import Notifications from "../components/Notifications";
 
 class Home extends Component {
+  state={
+    session: [1,3,4,5,6],
+  }
   render() {
-    const { plans, auth } = this.props;
+    const { plans, auth, notifications } = this.props;
     if (!auth.uid) return <Redirect to="/login" />;
     return (
       <>
@@ -22,8 +31,21 @@ class Home extends Component {
             <div>
               <div className="d-flex flex-column w-lg-100">
                 <div className="d-flex justify-content-between mb-4 mt-0">
-                  <FaStar className="star-icon" style={{color: 'gold', height: '25px', width: '25px'}}/>
+                  <FaStar
+                    className="star-icon"
+                    style={{
+                      color: "gold",
+                      height: "25px",
+                      width: "25px",
+                      padding: "0%",
+                      margin: "0%",
+                    }}
+                  />
                   <div>{moment().format("l")}</div>
+                </div>
+                <div className="mx-auto">
+                  {" "}
+                  <Notifications notifications={notifications} />{" "}
                 </div>
                 <PlansList plans={plans} />
               </div>
@@ -36,7 +58,6 @@ class Home extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
   return {
     plans: state.firestore.ordered.plans,
     auth: state.firebase.auth,
@@ -48,6 +69,6 @@ export default compose(
   connect(mapStateToProps),
   firestoreConnect([
     { collection: "plans", orderBy: ["createdAt", "desc"] },
-    { collection: "notifications", limit: 3, orderBy: ["time", "desc"] },
+    { collection: "notifications", limit: 1, orderBy: ["time", "desc"] },
   ])
 )(Home);

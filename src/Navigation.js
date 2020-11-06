@@ -20,7 +20,7 @@ import {
 
 import { Container } from "reactstrap";
 
-const Navigation = (props) => {
+const Navigation = () => {
   return (
     <div>
       <Navbar
@@ -69,7 +69,7 @@ const Navigation = (props) => {
                         icon={faFolder}
                       />
                     </Link>
-                    <Link style={{ color: "black" }} to="/plans">
+                    <Link style={{ color: "black" }} to="/disover">
                       <FontAwesomeIcon
                         className="mx-2"
                         size="lg"

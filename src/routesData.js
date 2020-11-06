@@ -18,7 +18,7 @@ export const routesData = [
     label: " My Plans",
   },
   {
-    route: "/plans",
+    route: "/discover",
     icon: faGlobe,
     label: "Discover",
   },

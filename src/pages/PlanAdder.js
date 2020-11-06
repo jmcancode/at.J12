@@ -1,19 +1,19 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
+// import { connect } from "react-redux";
 import {
   Card,
   CardHeader,
   CardBody,
   Button,
   Form,
+  FormText,
   FormGroup,
   Label,
   Input,
 } from "reactstrap";
 
-
-import { createPlans } from "../Redux/actions/plansActions";
-import { Redirect } from "react-router-dom";
+// import { createPlans } from "../Redux/actions/plansActions";
+// import { Redirect } from "react-router-dom";
 
 class PlanAdder extends Component {
   state = {
@@ -27,29 +27,25 @@ class PlanAdder extends Component {
       "Ethnicity",
       "Gender",
     ],
-    content: "",
-    createdAt: "",
     title: "",
+    content: "",
+    exampleFile: '',
   };
 
-  handleChange = (e, value) => {
+  handleChange = (e) => {
     this.setState({
       [e.target.id]: e.target.value,
-      content: value,
-
     });
   };
 
   handleOnSubmit = (e) => {
     e.preventDefault();
-    console.log(this.state);
+    console.log(this.state.title);
     this.props.createPlans(this.state);
-    
+    this.props.history.push('/home');
   };
 
   render() {
-    const { auth } = this.props;
-    if (!auth.uid) return <Redirect to="/" />;
     return (
       <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
         <Card
@@ -65,9 +61,15 @@ class PlanAdder extends Component {
             </h3>
           </CardHeader>
           <CardBody>
+          <Form onSubmit={this.handleOnSubmit}>
             <FormGroup>
               <Label>Plan Category</Label>
-              <Input onChange={this.handleChange} type="select" name="select" id="categorySelect">
+              <Input
+                onChange={this.handleChange}
+                type="select"
+                name="select"
+                id="categorySelect"
+              >
                 <option>Social Justice</option>
                 <option>Personal Development</option>
                 <option>Pro Sports</option>
@@ -87,13 +89,16 @@ class PlanAdder extends Component {
               aria-describedby="inputGroup-sizing-sm"
               onChange={this.handleChange}
             />
-
-            <Form onSubmit={this.handleOnSubmit}>
-              <Label>Plan Text</Label>
               <FormGroup>
-              <Label for="exampleText">Text Area</Label>
-              <Input type="textarea" name="text" id="content" />
-            </FormGroup>
+                <Label for="content">Text Area</Label>
+                <Input type="textarea" name="text" id="content" />
+                <FormGroup>
+                  <Input className="pt-2" type="file" name="file" id="exampleFile" multiple />
+                  <FormText color="muted">
+                    You can upload multiple files at once. PNG, JPG, and MP4 are accepted.
+                  </FormText>
+                </FormGroup>
+              </FormGroup>
             </Form>
             <Button
               color="primary"
@@ -112,17 +117,5 @@ class PlanAdder extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    auth: state.firebase.auth,
-    
-  };
-};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    createPlans: (plans) => dispatch(createPlans(plans)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(PlanAdder);
+export default PlanAdder;

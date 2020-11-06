@@ -22,7 +22,7 @@ export default function CompletedPlans() {
             </Link>
           </Button>
           <Button size="sm" variant="secondary">
-            <Link style={{ color: "#b57000" }} to="/plans">
+            <Link style={{ color: "#b57000" }} to="/discover">
               Discover
             </Link>
           </Button>

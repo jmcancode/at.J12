@@ -39,8 +39,10 @@ const rrfConfig = {
   useFirestoreForProfile: true,
 };
 
+const initalState = {};
 const store = createStore(
   rootReducer,
+  initalState,
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
     reduxFirestore(firebase, { attachAuthIsReady: true })
@@ -49,9 +51,9 @@ const store = createStore(
 
 const rffProps = {
   firebase,
-  useFirestoreForProfile: true,
   config: rrfConfig,
   dispatch: store.dispatch,
+  useFirestoreForProfile: true,
   createFirestoreInstance,
   userProfile: "users",
   presence: "presence",
