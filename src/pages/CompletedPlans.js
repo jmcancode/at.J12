@@ -10,7 +10,7 @@ import Media from "react-bootstrap/Media";
 export default function CompletedPlans() {
   return (
     <>
-      <Container className="d-flex justify-content-center">
+      <Container className="d-flex justify-content-center mt-lg-5 pt-lg-5">
         <ButtonGroup aria-label="Basic example">
           <Button
             style={{ backgroundColor: "#b57000", borderColor: "transparent" }}

@@ -1,7 +1,7 @@
 .side-drawer{
     height: 100%;
     background-color: #000000;
-    box-shadow: 1px 0px 7px rgba(0,0,0,0.5);
+    box-shadow: 2px 0px 7px rgba(158 126 56);
     position: fixed;
     top: 0;
     left: 0;
@@ -15,7 +15,7 @@
 .side-drawer ul {
     height: 100vh;
     width: 100%;
-    background-image: url("../../assets/images/bg.png");
+    background-image: url("../../assets/WakeForest/menu-2.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     border-color: transparent;
@@ -24,7 +24,7 @@
     flex-direction: column;
     justify-items: auto;
     padding: 25px;
-    padding-top: 50%;
+    padding-top: 33%;
     
     
 }
@@ -35,7 +35,7 @@
 .side-drawer a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.95rem;
+    font-size: 2rem;
 }
 
 .side-drawer a:hover,

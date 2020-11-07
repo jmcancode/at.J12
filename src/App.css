@@ -9,24 +9,24 @@
 }
 .nav-link,
 .bottom-nav-link {
-  color: #b57000;
+  color: #9E7E38;
 }
 .bottom-nav-link.active {
   color: gray;
   border-bottom-style: solid;
-  border-bottom-color: #b5700b;
+  border-bottom-color: #9E7E38;
 }
 .bottom-tab-label {
   font-size: 12px;
 }
 
 .navbar-brand{
-  color: #bf5700 !important;
+  color: #9E7E38 !important;
 }
 
 
 .dropdown{
-  color: #bf5700 !important;
+  color: #9E7E38 !important;
 }
 
 

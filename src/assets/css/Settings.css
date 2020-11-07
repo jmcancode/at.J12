@@ -9,17 +9,17 @@
 }
 
 .list-group-item a {
-    color: #b5700b;
+    color: #9E7E38;
 }
 
 .list-group-item:hover {
-    color: #b57000 !important;
+    color: #9E7E38 !important;
 }
 
 
 
 a:hover {
-    color: #b57000;
+    color: #9E7E38;
     text-decoration: none;
 }
 

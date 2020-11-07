@@ -19,7 +19,6 @@ import "../assets/css/Navigation.css";
 const Navigation = () => {
   return (
     <div>
-      {/* Top Bar*/}
       <Navbar
         className="navbar navbar-expand-md navbar-light d-none d-lg-block fixed-top header-img"
         role="navigation"
@@ -50,7 +49,7 @@ const Navigation = () => {
                   <Link to="/home">
                     <FontAwesomeIcon className="mx-2" size="2x" icon={faHome} />
                   </Link>
-                  <NavLink to="/myplans">
+                  <NavLink to="/watchlater">
                     <FontAwesomeIcon
                       className="mx-2"
                       size="2x"

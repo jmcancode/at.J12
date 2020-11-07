@@ -27,8 +27,6 @@ import {
 // Firebase
 import firebase from "./Firebase/Firebase.utils";
 import "firebase/firestore";
-// custom components
-import LoadingSpinner from "./components/Spinner";
 //react-bootstrap
 import Card from "react-bootstrap/Card";
 
@@ -67,7 +65,8 @@ function AuthIsLoaded({ children }) {
           <Card>
             <Card.Img
               style={{ height: "100vh", width: "100vw", margin: "0%", padding: "0%" }}
-              src={require("./assets/Splash.jpg")}
+              src={require("./assets/WakeForest/wf-spash.jpg")} 
+              cover
             />
           </Card>
         </div>

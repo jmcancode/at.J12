@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 import { signIn } from "../../Redux/actions/authActions";
 import { Redirect } from "react-router-dom";
 
+
 class login extends Component {
   state = {
     email: "",
@@ -29,7 +30,7 @@ class login extends Component {
       <>
         <Card className="bg-dark text-white border-0">
           <Card.Img
-            src={require("../../assets/login-example.jpg")}
+            src={require("../../assets/WakeForest/login.jpg")}
             alt="Card image"
             className="d-lg-none mt-0 border-0"
             style={{ borderColor: "transparent", height: "100vh" }}
@@ -68,13 +69,15 @@ class login extends Component {
                 <Button
                   block
                   style={{
-                    backgroundColor: "#b57000",
+                    backgroundColor: "#9E7E38",
                     borderColor: "transparent",
                   }}
                   variant="primary"
                   size="sm"
                   type="submit"
-                > Log-In </Button>
+                > 
+                Log-In 
+                </Button>
                 <div className="d-flex justify-content-center red-text">
                   {authError ? <p>{authError}</p> : null}
                 </div>

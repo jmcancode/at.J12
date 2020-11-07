@@ -3,11 +3,8 @@
 html {
   height: 100vh;
 }
-
-
-
 body {
-  background: rgb(97,41,6);
+  background: rgb(158 ,126, 56);
   /* background: linear-gradient(180deg, rgba(97,41,6,1) 0%, rgba(177,130,102,1) 22%, rgba(232,232,232,1) 33%); */
   background-repeat: no-repeat !important;
   background-position: center;
@@ -22,5 +19,5 @@ body {
 }
 
 Link {
-  color: #b5700b;
+  color: #9E7E38;
 }

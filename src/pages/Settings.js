@@ -20,7 +20,7 @@ const Settings = (props) => {
         <Container>
           <div className="d-flex justify-content-center mt-2 mt-lg-5">
             <Card style={{ width: "50rem" }}>
-              <Card.Header className="text-center" style={{ color: "#b5700b" }}>
+              <Card.Header className="text-center" style={{ color: "#9E7E38" }}>
                 SETTINGS
               </Card.Header>
               <ListGroup variant="flush">

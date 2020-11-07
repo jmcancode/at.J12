@@ -13,7 +13,7 @@ const HomeCard = (props) => {
     <CardDeck className="card-deck">
       <Card
         style={{ width: "18rem" }}
-        className="shadow-lg p-3 mb-5 bg-white rounded"
+        className="shadow-lg p-3 mb-5 bg-white rounded mb-lg-3 p-lg-3"
       >
         <Card.Img variant="top" src="https://picsum.photos/640/360?random" />
         <Card.Body>
@@ -30,7 +30,7 @@ const HomeCard = (props) => {
             <Button
               size="sm"
               type="submit"
-              style={{ backgroundColor: "#b57000", borderColor: "transparent" }}
+              style={{ backgroundColor: "#9E7E38", borderColor: "transparent" }}
             >
               Read More
             </Button>

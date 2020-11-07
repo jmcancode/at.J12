@@ -19,6 +19,7 @@ import { compose } from "redux";
 import { firestoreConnect } from 'react-redux-firebase'
 // react-router-dom
 import { Redirect } from "react-router-dom";
+import { add } from "lodash";
 
 class Journal extends Component {
   state = {
@@ -34,6 +35,9 @@ class Journal extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.addJournal(this.state);
+    this.setState({
+      content: ''
+    })
   };
 
   handleClick = (e) =>{
@@ -52,7 +56,7 @@ class Journal extends Component {
 
 
   render() {
-    const { auth, journal } = this.props;
+    const { auth} = this.props;
     if (!auth.uid) return <Redirect to="/login" />;
     return (
       <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
@@ -63,11 +67,12 @@ class Journal extends Component {
           <CardHeader>
             <h3
               className="d-flex justify-content-center mb-0"
-              style={{ fontFamily: "Graduate", color: "b570000" }}
+              style={{ fontFamily: "Graduate", color: "#9E7E38" }}
             >
-              Journal
+              Journal Entry
             </h3>
           </CardHeader>
+          <JournalList/>
           <CardBody>
             <Form onSubmit={this.handleSubmit}>
               <div
@@ -81,6 +86,7 @@ class Journal extends Component {
                   name="text"
                   id="content"
                   onChange={this.handleContentChange}
+                  value={this.state.journals}
                 />
               </FormGroup>
             </Form>
@@ -92,12 +98,12 @@ class Journal extends Component {
               id="submit"
               className="mt-2"
               block
-              style={{ backgroundColor: "#b57000", borderColor: "transparent" }}
+              style={{ backgroundColor: "#9E7E38", borderColor: "transparent" }}
             >
               Submit
             </Button>
             <br />
-            <JournalList addJournal={this.addJournal} />
+            
           </CardBody>
         </Card>
       </div>
@@ -108,7 +114,6 @@ class Journal extends Component {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    journal: state.firestore.ordered.journal,
     auth: state.firebase.auth,
   };
 };

@@ -34,7 +34,7 @@ const Navigation = () => {
               <a className="" href="/home">
                 <img
                   alt="Athlete Talk"
-                  src={require("./assets/AT Logos/at-long-orange.png")}
+                  src={require("./assets/AT Logos/at-long-blk.png")}
                   style={{ width: "55%" }}
                   className="my-3 ml-4"
                 />
@@ -69,7 +69,7 @@ const Navigation = () => {
                         icon={faFolder}
                       />
                     </Link>
-                    <Link style={{ color: "black" }} to="/disover">
+                    <Link style={{ color: "black" }} to="/discover">
                       <FontAwesomeIcon
                         className="mx-2"
                         size="lg"

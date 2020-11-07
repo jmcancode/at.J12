@@ -7,7 +7,7 @@ const campusContacts = (props) => {
 
     <div className="d-flex justify-content-around mt-5">
 
-      <a href={"tel: +1210-896-0348"}
+      <a href={"tel: +1336-758-5911"}
         className="d-flex align-items-center justify-content-center border border-white rounded p-2" >
         <div className="mr-2">
           <FontAwesomeIcon icon={faPhoneAlt} size="sm" />
@@ -18,7 +18,7 @@ const campusContacts = (props) => {
         </h6>
       </a>
 
-      <a href={"tel: +1210-896-0348"}
+      <a href={"tel: +1336-758-5850"}
         className="d-flex align-items-center justify-content-center border border-white rounded p-2">
         <div className="mr-2">
           <FontAwesomeIcon icon={faPhoneAlt} size="sm" />

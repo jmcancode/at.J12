@@ -55,7 +55,7 @@ class PlanAdder extends Component {
           <CardHeader>
             <h3
               className="d-flex justify-content-center mb-0"
-              style={{ fontFamily: "Graduate", color: "b570000" }}
+              style={{ fontFamily: "Graduate", color: "#9E7E38" }}
             >
               Upload Plans
             </h3>
@@ -106,7 +106,7 @@ class PlanAdder extends Component {
               className="mt-2"
               type="submit"
               block
-              style={{ backgroundColor: "#b57000", borderColor: "transparent" }}
+              style={{ backgroundColor: "#9E7E38", borderColor: "transparent" }}
             >
               Upload
             </Button>

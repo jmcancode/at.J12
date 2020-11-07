@@ -1,10 +1,8 @@
 import React from "react";
-import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
+import DrawerToggleButton from '../SideDrawer/DrawerTogglerButton/DrawerToggleButton';
 import './ToolBar.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-
-
 
 
 const toolbar = (props) => (
@@ -14,7 +12,7 @@ const toolbar = (props) => (
         <DrawerToggleButton click={props.drawerClickHandler} />
       </div>
       <div className="toolbar_logo text-center w-75">
-        <a href="/home"><img alt="Athlete Talk" src={require("../../assets/AT Logos/at-long-orange.png")} className="mt-0" /></a>
+        <a href="/home"><img alt="Athlete Talk" src={require("../../assets/AT Logos/at-long-blk.png")} className="mt-0" /></a>
       </div>
       <div className="toolbar_navigation_items">
         <a href="/settings">

@@ -26,8 +26,8 @@ class Home extends Component {
     if (!auth.uid) return <Redirect to="/login" />;
     return (
       <>
-        <Container>
-          <div className=" container mt-4 mb-5">
+        <Container className="mt-lg-5 pt-lg-5">
+          <div className=" container mt-4 mb-5 mb-lg-5 mt-lg-4">
             <div>
               <div className="d-flex flex-column w-lg-100">
                 <div className="d-flex justify-content-between mb-4 mt-0">
@@ -41,11 +41,11 @@ class Home extends Component {
                       margin: "0%",
                     }}
                   />
-                  <div>{moment().format("l")}</div>
+                  <div>News Feed: {moment().format("l")}</div>
                 </div>
                 <div className="mx-auto">
                   {" "}
-                  <Notifications notifications={notifications} />{" "}
+                  <Notifications notifications={notifications} className="mt-lg-5" />{" "}
                 </div>
                 <PlansList plans={plans} />
               </div>

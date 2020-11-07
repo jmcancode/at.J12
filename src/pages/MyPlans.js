@@ -7,26 +7,25 @@ import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Media from "react-bootstrap/Media";
 
-const MyPlans = (props) => {
+const MyPlans = () => {
   return (
     <>
-      <Container className="d-flex justify-content-center">
+      <Container className="d-flex justify-content-center mt-lg-5 pt-lg-5">
         <ButtonGroup aria-label="Basic example">
           <Button
-            style={{ backgroundColor: "#b57000", borderColor: "transparent" }}
+            style={{ backgroundColor: "#9E7E38", borderColor: "transparent" }}
             size="sm"
             variant="primary"
           >
             My Plans
           </Button>
           <Button size="sm" variant="secondary">
-            <Link style={{ color: "#b57000" }} to="/discover">
+            <Link style={{ color: "#9E7E38" }} to="/discover">
               Discover
             </Link>
           </Button>
         </ButtonGroup>
       </Container>
-
       <Container className="mt-lg-5 pt-lg-5 mb-3">
         <div className="shadow m-2">
           <div className="container-fluid d-flex">
@@ -35,6 +34,7 @@ const MyPlans = (props) => {
                 My Plans
               </Card.Title>
               <ul className="list-unstyled">
+              <Link to="/:plan_id">
                 <Media as="li">
                   <img
                     width={65}
@@ -43,6 +43,7 @@ const MyPlans = (props) => {
                     src="https://picsum.photos/640/360?random"
                     alt="random"
                   />
+                  
                   <Media.Body>
                     <h5 style={{ fontSize: "12px" }}> TITLE </h5>
                     <ProgressBar
@@ -53,6 +54,7 @@ const MyPlans = (props) => {
                     />
                   </Media.Body>
                 </Media>
+                </Link>
               </ul>
             </Card>
           </div>

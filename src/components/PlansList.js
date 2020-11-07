@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Item } from "semantic-ui-react";
 import HomeCard from './Plans/HomeCard';
 
 const PlansList = ({ plans }) => {
@@ -11,8 +10,8 @@ const PlansList = ({ plans }) => {
           return (
             <>
               <div className="container"  >
-                <Link to={"/plan" + plans.id} key={plans.id} >
-                  <HomeCard plans={plans} key={plans.id} />
+                <Link to={"/" + plans.id}>
+                  <HomeCard plans={plans} />
                 </Link>
               </div>
             </>

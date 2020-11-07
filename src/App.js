@@ -23,7 +23,7 @@ import thunk from "redux-thunk";
 //pages + components
 import Home from "./pages/Home";
 import Navigation from "./Navigation";
-import Plans from "./pages/DiscoverPage";
+import DiscoverPage from "./pages/DiscoverPage";
 import Settings from "./pages/Settings";
 import MyPlans from "./pages/MyPlans";
 import PlanAdder from "./pages/PlanAdder";
@@ -37,13 +37,26 @@ import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
 import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
 import { Provider } from "react-redux";
+import Axios from "axios";
 
 class App extends Component {
   state = {
     sideDrawerOpen: false,
     showNav: false,
     currentUser: null,
+    posts:[],
   };
+
+
+  componentDidMount() {
+    Axios.get('https://jsonplaceholder.typicode.com/posts')
+    .then(res => {
+      console.log(res)
+      this.setState({
+        posts: res.data.slice(0,10)
+      })
+    })
+  }
 
   drawerToggleClickHandler = () => {
     this.setState((prevState) => {
@@ -78,11 +91,11 @@ class App extends Component {
           {backdrop}
         </>
         <Route path="/home" component={Home} />
-        <Route path="/discover" component={Plans} />
+        <Route path="/discover" component={DiscoverPage} />
         <Route path="/settings" component={Settings} />
         <Route path="/journal" component={Journal} />
-        <Route path="/plan" component={SinglePlan} />
-        <Route path="/myplans" component={MyPlans} />
+        <Route exact path="/:plan_id" component={SinglePlan} />
+        <Route path="/watchlater" component={MyPlans} />
         <Route path="/completedplans" component={CompletedPlans} />
         <Route path="/savedplans" component={SavedPlans} />
         <Route path="/addplans" component={PlanAdder} />

@@ -18,10 +18,10 @@ import { compose } from "redux";
 const Plans = ({plans}) => {
   return (
     <>
-    <Container className="d-flex justify-content-center">
+    <Container className="d-flex justify-content-center mt-lg-5 pt-lg-5 ">
         <ButtonGroup aria-label="Basic example">
-          <Button size="sm" variant="secondary"><Link to="/myplans" style={{color: "#b57000"}} >My Plans</Link></Button>
-          <Button style={{backgroundColor: "#b57000", borderColor: "transparent"}} size="sm" variant="primary">Discover</Button>
+          <Button size="sm" variant="secondary"><Link to="/watchlater" style={{color: "#9E7E38"}} >My Plans</Link></Button>
+          <Button style={{backgroundColor: "#9E7E38", borderColor: "transparent"}} size="sm" variant="primary">Discover</Button>
         </ButtonGroup>
       </Container>
 
