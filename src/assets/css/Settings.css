@@ -24,9 +24,8 @@ a:hover {
 }
 
 
-
 .custom-control-input:checked~.custom-control-label::before {
     color: #fff;
-    border-color: #9E7E38 !important;
-    background-color: #9E7E38 !important;
+    border-color: #9E7E38;
+    background-color: #000000 !important;
 }

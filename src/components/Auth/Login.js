@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import { signIn } from "../../Redux/actions/authActions";
 import { Redirect } from "react-router-dom";
 
-
 class login extends Component {
   state = {
     email: "",
@@ -25,7 +24,7 @@ class login extends Component {
   };
   render() {
     const { authError, auth } = this.props;
-    if (auth.uid) return <Redirect to="/home" />;
+    if (auth.uid) return <Redirect to="/login" />;
     return (
       <>
         <Card className="bg-dark text-white border-0">
@@ -49,6 +48,7 @@ class login extends Component {
               <Form onSubmit={this.handleSubmit}>
                 <Form.Group className="pt-2">
                   <Form.Control
+                    className="border-top-0 border-left-0 border-right-0 bg-0"
                     placeholder="Email"
                     type="email"
                     onChange={this.handleChange}
@@ -58,6 +58,7 @@ class login extends Component {
                 </Form.Group>
                 <Form.Group>
                   <Form.Control
+                    className="border-top-0 border-left-0 border-right-0 bg-0"
                     placeholder="Password"
                     type="password"
                     id="password"
@@ -75,9 +76,15 @@ class login extends Component {
                   variant="primary"
                   size="sm"
                   type="submit"
-                > 
-                Log-In 
+                >
+                  Log-In
                 </Button>
+                <Form.Text className="text-muted pt-3">
+                  Not a user?
+                  <a className="pl-1 text-muted" href="/login">
+                    Sign Up
+                  </a>
+                </Form.Text>
                 <div className="d-flex justify-content-center red-text">
                   {authError ? <p>{authError}</p> : null}
                 </div>

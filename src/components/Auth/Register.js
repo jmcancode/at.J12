@@ -53,6 +53,7 @@ class Register extends Component {
             <Form>
               <Form.Group>
                 <Form.Control
+                className="border-top-0 border-left-0 border-right-0 bg-0"
                   placeholder="First Name"
                   type="text"
                   id="firstName"
@@ -61,6 +62,7 @@ class Register extends Component {
               </Form.Group>
               <Form.Group>
                 <Form.Control
+                className="border-top-0 border-left-0 border-right-0 bg-0"
                   placeholder="Last Name"
                   type="text"
                   id="lastName"
@@ -69,6 +71,7 @@ class Register extends Component {
               </Form.Group>
               <Form.Group>
                 <Form.Control
+                className="border-top-0 border-left-0 border-right-0 bg-0"
                   placeholder="Email"
                   type="email"
                   id="email"
@@ -77,7 +80,7 @@ class Register extends Component {
               </Form.Group>
               <Form.Group>
                 <Form.Control
-                  className="m-0"
+                className="border-top-0 border-left-0 border-right-0 bg-0 m-0"
                   placeholder="Password"
                   type="password"
                   id="password"

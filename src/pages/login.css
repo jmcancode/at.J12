@@ -37,10 +37,9 @@
   font-weight: 400;
   line-height: 1.5;
   color: #495057;
-  background-color: #ffffff !important;
+  background-color: transparent !important;
   background-clip: padding-box;
-  border-bottom: 1px solid #9E7E38 !important;
-  border-radius: .25rem;
+  border-radius: none;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 

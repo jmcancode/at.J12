@@ -1,6 +1,7 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import Image from "react-bootstrap/Image";
+import "../../App.css";
 
 class ProfileHeader extends React.Component {
   state = {
@@ -10,7 +11,7 @@ class ProfileHeader extends React.Component {
   };
   render() {
     return (
-      <div style={{backgroundColor: "transparent"}} className="text-center">
+      <div className="text-center border-0">
         <Card
           style={{ borderColor: "transparent" }}
           className="text-white profile"
@@ -30,8 +31,8 @@ class ProfileHeader extends React.Component {
             <Image
               src={require("../../assets/images/image (1).png")}
               alt="userimage"
-              roundedCircle
-              fluid
+              className="border border-color rounded-circle fluid"
+              
             />
           </Card.ImgOverlay>
         </Card>

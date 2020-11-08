@@ -29,6 +29,10 @@
   color: #9E7E38 !important;
 }
 
+.bg-light.scrolled {
+  background-color: white!important;
+  transition:500ms ease;
+}
 
 @media all and (min-width: 480px) {
   .login {
@@ -40,9 +44,4 @@
     max-width: 320px;
   }
 }
-.bg-light.scrolled {
-  background-color: white!important;
-  transition:500ms ease;
-}
-
 

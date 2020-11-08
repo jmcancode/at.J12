@@ -1,8 +1,9 @@
 import {
   faHome,
-  faUser,  
+ 
   faStickyNote,
   faFolder,
+  faUserCircle,
 } from '@fortawesome/free-solid-svg-icons';
 
 export const routesData = [
@@ -24,7 +25,7 @@ export const routesData = [
   },
   {
     route: "/profile",
-    icon: faUser,
+    icon: faUserCircle,
     label: "Profile",
   }
 ];

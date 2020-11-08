@@ -55,9 +55,9 @@ class PlanAdder extends Component {
           <CardHeader>
             <h3
               className="d-flex justify-content-center mb-0"
-              style={{ fontFamily: "Graduate", color: "#9E7E38" }}
+              style={{ fontFamily: "Graduate", color: "black" }}
             >
-              Upload Plans
+              Admin Post
             </h3>
           </CardHeader>
           <CardBody>

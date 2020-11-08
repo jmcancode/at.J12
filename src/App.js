@@ -27,7 +27,7 @@ import Home from "./pages/Home";
 import Navigation from "./Navigation";
 import DiscoverPage from "./pages/DiscoverPage";
 import Settings from "./pages/Settings";
-import MyPlans from "./pages/MyPlans";
+import MyPlans from "./pages/Plans/MyPlans";
 import PlanAdder from "./pages/PlanAdder";
 import CompletedPlans from "./pages/CompletedPlans";
 import SavedPlans from "./pages/SavedPlans";
@@ -80,7 +80,7 @@ class App extends Component {
 
     const LoginContainer = () => (
       <>
-        <Route path="/home" return={() => <Redirect to="/login" />} />
+        <Route path="/home" return={() => <Route to="/login" />} />
         <Route exact path="/register" component={Register} />
         <Route path="/login" component={login} />
       </>

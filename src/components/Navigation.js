@@ -38,7 +38,7 @@ const Navigation = () => {
                 placeholder="Search"
                 aria-label="Search"
                 aria-describedBy="basic-addon1"
-                className="mr-sm-5"
+                className="mr-sm-5 border-left-0 border-0"
               />
             </Form>
           </div>

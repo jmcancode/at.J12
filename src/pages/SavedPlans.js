@@ -67,7 +67,7 @@ class SavedPlans extends React.Component {
                       alt="random"
                     />
                     <Media.Body>
-                      <h5 style={{ fontSize: "12px" }}> {this.state.title[Math.floor(Math.random() * 8)]} </h5>
+                      <h5 className="text-white" style={{ fontSize: "12px" }}> {this.state.title[Math.floor(Math.random() * 8)]} </h5>
                       <ProgressBar
                         style={{ height: "10px", width: "50%" }}
                         variant="success"
@@ -86,7 +86,7 @@ class SavedPlans extends React.Component {
                       alt="#"
                     />
                     <Media.Body>
-                      <h5 style={{ fontSize: "12px" }}> {this.state.title[Math.floor(Math.random() * 8)]}</h5>
+                      <h5 className="text-white" style={{ fontSize: "12px" }}> {this.state.title[Math.floor(Math.random() * 8)]}</h5>
                       <ProgressBar
                         style={{ height: "10px", width: "50%" }}
                         variant="success"
@@ -105,7 +105,7 @@ class SavedPlans extends React.Component {
                       alt="random"
                     />
                     <Media.Body>
-                      <h5 style={{ fontSize: "12px" }}> {this.state.title[Math.floor(Math.random() * 7)]} </h5>
+                      <h5 className="text-white" style={{ fontSize: "12px" }}> {this.state.title[Math.floor(Math.random() * 7)]} </h5>
                       <ProgressBar
                         style={{ height: "10px", width: "50%" }}
                         variant="success"

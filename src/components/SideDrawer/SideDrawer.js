@@ -1,5 +1,5 @@
 import React from "react";
-import Route from "react-router-dom";
+
 // custom css
 import "./SideDrawer.css";
 
@@ -9,8 +9,9 @@ const sideDrawer = (props) => {
     drawerClasses = "side-drawer open";
   }
   return (
-    <nav className={drawerClasses}>
+    <nav className={drawerClasses} >
       <ul>
+      <hr className="top-line"/>
         <li>
           <a href="/home">Home</a>
         </li>
