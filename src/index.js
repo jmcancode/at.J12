@@ -64,14 +64,20 @@ function AuthIsLoaded({ children }) {
         <div>
           <Card>
             <Card.Img
-              style={{ height: "100vh", width: "100vw", margin: "0%", padding: "0%" }}
-              src={require("./assets/WakeForest/wf-spash.jpg")} 
+              style={{
+                height: "100vh",
+                width: "100vw",
+                margin: "0%",
+                padding: "0%",
+              }}
+              src={require("./assets/WakeForest/wf-spash.jpg")}
               cover
             />
           </Card>
         </div>
       </>
     );
+    
 
   return children;
 }

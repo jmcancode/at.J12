@@ -6,20 +6,20 @@ import Form from "react-bootstrap/Form";
 
 import Container from "react-bootstrap/Container";
 
-import {connect} from "react-redux";
-import {signOut} from "../Redux/actions/authActions";
+import { connect } from "react-redux";
+import { signOut } from "../Redux/actions/authActions";
 
 import "../assets/css/Settings.css";
 import { NavLink } from "react-router-dom";
 
 const Settings = (props) => {
-  const {auth} = props;
+  const { auth } = props;
   return (
     <>
-      <div className="container-sm-flex mt-lg-5 pt-lg-3 mb-3">
+      <div style={{ backgroundColor: "transparent"}} className="container-sm-flex mt-lg-5 pt-lg-3 mb-3">
         <Container>
           <div className="d-flex justify-content-center mt-2 mt-lg-5">
-            <Card style={{ width: "50rem" }}>
+            <Card style={{ width: "50rem", height: "100%" }}>
               <Card.Header className="text-center" style={{ color: "#9E7E38" }}>
                 SETTINGS
               </Card.Header>
@@ -59,21 +59,21 @@ const Settings = (props) => {
                 </Accordion>
               </ListGroup>
               <ListGroup.Item className="pb-0">
-              <li style={{listStyle: 'none'}}>
-                <NavLink onClick={props.signOut} to="/login">
-                  Sign out: <span className="text-muted">{props.auth.email}</span>
-                </NavLink>
+                <li style={{ listStyle: "none" }}>
+                  <NavLink onClick={props.signOut} to="/login">
+                    Sign out:{" "}
+                    <span className="text-muted">{props.auth.email}</span>
+                  </NavLink>
                 </li>
                 <div className="text-muted pt-2"></div>
               </ListGroup.Item>
             </Card>
-
           </div>
         </Container>
       </div>
     </>
   );
-}
+};
 const mapStateToProps = (state) => {
   console.log(state);
   return {
@@ -84,9 +84,9 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-return {
-  signOut: () => dispatch(signOut())
-}
-}
+  return {
+    signOut: () => dispatch(signOut()),
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Settings)
+export default connect(mapStateToProps, mapDispatchToProps)(Settings);

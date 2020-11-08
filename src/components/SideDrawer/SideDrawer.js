@@ -1,4 +1,5 @@
 import React from "react";
+import Route from "react-router-dom";
 // custom css
 import "./SideDrawer.css";
 
@@ -23,7 +24,7 @@ const sideDrawer = (props) => {
           <a href="/settings">Settings</a>
         </li>
         <li>
-          <a href="/settings">Admin Post</a>
+          <a href="/addplans">Admin Post</a>
         </li>
       </ul>
     </nav>

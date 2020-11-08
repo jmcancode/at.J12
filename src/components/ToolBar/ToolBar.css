@@ -1,12 +1,15 @@
 .toolbar {
-  /* display: block; */
+
   position: sticky;
   z-index: 4;
   width: 100%;
   top: 0;
   left: 0;
-  background: #ffffff;
+  background: transparent;
   height: 56px;
+}
+.toolbar_navigation.active{
+  background-color: #fff;
 }
 
 .toolbar_navigation {

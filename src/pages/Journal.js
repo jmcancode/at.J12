@@ -12,14 +12,10 @@ import {
 } from "reactstrap";
 // custom components
 import JournalList from "./JournalList";
-import { createJournal } from "../Redux/actions/journalActions";
-// react-redux
-import { connect } from "react-redux";
-import { compose } from "redux";
-import { firestoreConnect } from 'react-redux-firebase'
+
 // react-router-dom
 import { Redirect } from "react-router-dom";
-import { add } from "lodash";
+
 
 class Journal extends Component {
   state = {
@@ -56,8 +52,6 @@ class Journal extends Component {
 
 
   render() {
-    const { auth} = this.props;
-    if (!auth.uid) return <Redirect to="/login" />;
     return (
       <div className=" container card-container mt-lg-5 pt-lg-5 mb-3">
         <Card
@@ -72,7 +66,6 @@ class Journal extends Component {
               Journal Entry
             </h3>
           </CardHeader>
-          <JournalList/>
           <CardBody>
             <Form onSubmit={this.handleSubmit}>
               <div
@@ -111,20 +104,5 @@ class Journal extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return {
-    auth: state.firebase.auth,
-  };
-};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    createJournal: (journal) => dispatch(createJournal(journal)),
-  };
-};
-
-export default compose(
-  connect(mapStateToProps, mapDispatchToProps), firestoreConnect([
-  {collection: 'journal', orderBy: ['createdOn', 'desc']}
-]))(Journal);
+export default Journal;

@@ -70,6 +70,7 @@ class PlanAdder extends Component {
                 name="select"
                 id="categorySelect"
               >
+                <option>None</option>
                 <option>Social Justice</option>
                 <option>Personal Development</option>
                 <option>Pro Sports</option>

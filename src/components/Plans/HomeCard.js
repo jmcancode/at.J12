@@ -1,11 +1,13 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
+// import Button from "react-bootstrap/Button";
 import CardDeck from "react-bootstrap/CardDeck";
 
+import LikeButton from "../Buttons/LikeButton";
+import ThumbsUp from "../Buttons/ThumbsUp";
+import ThumbsDown from "../Buttons/ThumbsDown";
+
 import "../../pages/Home.css";
-
-
 
 const HomeCard = (props) => {
   const { plans } = props;
@@ -26,14 +28,10 @@ const HomeCard = (props) => {
           <Card.Text style={{ color: "#000000", size: "12px" }}>
             {plans.content}
           </Card.Text>
-          <div className="d-flex inline-flex justify-content-center mt-2">
-            <Button
-              size="sm"
-              type="submit"
-              style={{ backgroundColor: "#9E7E38", borderColor: "transparent" }}
-            >
-              Read More
-            </Button>
+          <div className="d-flex inline-flex justify-content-between mt-2">
+            <LikeButton />
+            <ThumbsUp />
+            <ThumbsDown />
           </div>
         </Card.Body>
       </Card>

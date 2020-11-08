@@ -56,7 +56,7 @@ class SinglePlan extends Component {
               </small>
               <small>
                 <Link
-                  to="/plans"
+                  to="/discover"
                   className="text-muted font-weight-bold text-decoration-none"
                 >
                   view full category

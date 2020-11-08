@@ -9,12 +9,12 @@
 }
 .nav-link,
 .bottom-nav-link {
-  color: #9E7E38;
+  color: #000;
 }
 .bottom-nav-link.active {
-  color: gray;
+  color:  #9E7E38;
   border-bottom-style: solid;
-  border-bottom-color: #9E7E38;
+  border-bottom-color:  #9E7E38;
 }
 .bottom-tab-label {
   font-size: 12px;
@@ -40,6 +40,9 @@
     max-width: 320px;
   }
 }
-
+.bg-light.scrolled {
+  background-color: white!important;
+  transition:500ms ease;
+}
 
 

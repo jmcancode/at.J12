@@ -8,6 +8,10 @@ import { compose } from "redux";
 import Card from 'react-bootstrap/Card';
 
 class PlanCard extends React.Component {
+  state = {
+    title: "Test Title",
+    content: 'Lorem Ipsum' 
+  }
   render() {
     return (
       <Card className="mx-auto border-0" style={{ width: '8rem' }} >
@@ -16,10 +20,10 @@ class PlanCard extends React.Component {
           src="https://picsum.photos/640/360?random" />
         <Card.Body >
           <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}>
-            {this.props.title}
+            {this.state.title}
           </Card.Title>
           <Card.Text className="text-muted" style={{ fontSize: "10px", fontWeight: "normal" }}>
-            {this.props.content}
+            {this.state.content}
           </Card.Text>
         </Card.Body>
       </ Card>

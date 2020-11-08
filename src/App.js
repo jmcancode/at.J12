@@ -8,18 +8,20 @@ import {
   Route,
   Redirect,
 } from "react-router-dom";
-import PrivateRoute from "./components/PrivateRoute";
+//react-redux-firebase
 import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
 import {
   createFirestoreInstance,
   reduxFirestore,
   getFirestore,
 } from "redux-firestore";
-import firebase from "./Firebase/Firebase.utils";
-import "firebase/firestore";
 import rootReducer from "./Redux/store/reducers/rootReducer";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
+import { Provider } from "react-redux";
+// firebase 
+import firebase from "./Firebase/Firebase.utils";
+import "firebase/firestore";
 //pages + components
 import Home from "./pages/Home";
 import Navigation from "./Navigation";
@@ -35,8 +37,10 @@ import login from "./components/Auth/Login";
 import SinglePlan from "./pages/SinglePlan";
 import ToolBar from "./components/ToolBar/ToolBar";
 import SideDrawer from "./components/SideDrawer/SideDrawer";
-import BackDrop from "./components/SideDrawer/BackDrop/BackDrop";
-import { Provider } from "react-redux";
+import BackDrop from "./components/BackDrop/BackDrop";
+import UserProfile from "./pages/UserProfile/UserProfile";
+import PrivateRoute from "./components/PrivateRoute";
+//Axios
 import Axios from "axios";
 
 class App extends Component {
@@ -99,6 +103,7 @@ class App extends Component {
         <Route path="/completedplans" component={CompletedPlans} />
         <Route path="/savedplans" component={SavedPlans} />
         <Route path="/addplans" component={PlanAdder} />
+        <Route path="/profile" component={UserProfile}/>
       </>
     );
     return (
@@ -117,6 +122,7 @@ class App extends Component {
     );
   }
 }
+
 const initialState = {};
 const store = createStore(
   rootReducer,

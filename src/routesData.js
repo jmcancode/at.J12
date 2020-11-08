@@ -15,7 +15,7 @@ export const routesData = [
   {
     route: "/discover",
     icon: faFolder,
-    label: "Discover",
+    label: "Plans",
   },
   {
     route: "/journal",
@@ -23,7 +23,7 @@ export const routesData = [
     label: "Journal",
   },
   {
-    route: "/watchlater",
+    route: "/profile",
     icon: faUser,
     label: "Profile",
   }
