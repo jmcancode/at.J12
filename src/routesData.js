@@ -1,6 +1,5 @@
 import {
   faHome,
- 
   faStickyNote,
   faFolder,
   faUserCircle,
@@ -11,7 +10,6 @@ export const routesData = [
     route: "/home",
     icon: faHome,
     label: "Home",
-    component: "Home",
   },
   {
     route: "/discover",

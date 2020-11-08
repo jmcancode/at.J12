@@ -13,7 +13,7 @@ import "../assets/css/Settings.css";
 import { NavLink } from "react-router-dom";
 
 const Settings = (props) => {
-  const { auth } = props;
+  // const { auth } = props;
   return (
     <>
       <div style={{ backgroundColor: "transparent"}} className="container-sm-flex mt-lg-5 pt-lg-3 mb-3">
@@ -77,7 +77,6 @@ const Settings = (props) => {
 const mapStateToProps = (state) => {
   console.log(state);
   return {
-    journal: state.firestore.journal,
     auth: state.firebase.auth,
     notifications: state.firestore.ordered.notifications,
   };

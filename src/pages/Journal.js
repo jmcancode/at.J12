@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 //reactstrap
-import { Card, CardTitle, CardText, ListGroup, ListItem, ListGroupItem } from "reactstrap";
+import { Card, CardText, ListGroup, ListGroupItem } from "reactstrap";
 // Axios
 import Axios from "axios";
 
@@ -21,10 +21,10 @@ class Journal extends Component {
     const postList = posts.length ? (
       posts.map((post) => {
         return (
-          <Card  className="mb-2 b-0" key={post.id}>
+          <Card className="mb-2 b-0" key={post.id}>
             <ListGroup>
-            <ListGroupItem>
-              <CardText>{post.body}</CardText>
+              <ListGroupItem>
+                <CardText>{post.body}</CardText>
               </ListGroupItem>
             </ListGroup>
           </Card>

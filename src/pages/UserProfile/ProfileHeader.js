@@ -18,7 +18,7 @@ class ProfileHeader extends React.Component {
         >
           <Card.Img
             src={require("../../assets/images/AdobeStock_214628027.jpeg")}
-            fluid
+            className="fluid"
           />
           <Card.ImgOverlay style={{backgroundColor: "transparent"}}>
             <Card.Title style={{ fontSize: "25px", fontWeight: "bold" }}>
@@ -32,7 +32,6 @@ class ProfileHeader extends React.Component {
               src={require("../../assets/images/image (1).png")}
               alt="userimage"
               className="border border-color rounded-circle fluid"
-              
             />
           </Card.ImgOverlay>
         </Card>

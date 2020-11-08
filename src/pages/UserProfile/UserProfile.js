@@ -2,15 +2,13 @@ import React, { Component } from "react";
 //reactstrap
 import {
   Col,
-  Button,
   Form,
   FormGroup,
   Card,
   CardHeader,
   CardBody,
   Label,
-  Input,
-  FormText,
+  Input
 } from "reactstrap";
 // custom components
 import ProfileHeader from "./ProfileHeader";

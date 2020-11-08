@@ -24,7 +24,7 @@ class Home extends Component {
   };
   render() {
     const { plans, auth } = this.props;
-    if (!auth.uid) return <Redirect to="/" />;
+    if (!auth.uid) return <Redirect to="/home" />;
     return (
       <>
         <Container className="mt-lg-5 pt-lg-5">

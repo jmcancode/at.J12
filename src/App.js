@@ -6,7 +6,6 @@ import {
   BrowserRouter,
   Switch,
   Route,
-  Redirect,
 } from "react-router-dom";
 //react-redux-firebase
 import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
