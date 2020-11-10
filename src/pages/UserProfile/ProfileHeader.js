@@ -11,14 +11,15 @@ class ProfileHeader extends React.Component {
   };
   render() {
     return (
-      <div className="text-center border-0">
+      <div className="text-center">
         <Card
-          style={{ borderColor: "transparent" }}
+          style={{ backgroundColor: "transparent", borderColor: "transparent", objectFit: "cover" }}
           className="text-white profile"
         >
           <Card.Img
             src={require("../../assets/images/AdobeStock_214628027.jpeg")}
-            className="fluid"
+            className="fluid m-0"
+            
           />
           <Card.ImgOverlay style={{backgroundColor: "transparent"}}>
             <Card.Title style={{ fontSize: "25px", fontWeight: "bold" }}>

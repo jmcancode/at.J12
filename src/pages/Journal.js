@@ -24,7 +24,7 @@ class Journal extends Component {
           <Card className="mb-2 b-0" key={post.id}>
             <ListGroup>
               <ListGroupItem>
-                <CardText>{post.body}</CardText>
+                <CardText>{post.title}</CardText>
               </ListGroupItem>
             </ListGroup>
           </Card>

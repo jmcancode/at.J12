@@ -7,6 +7,7 @@ import Button from "react-bootstrap/Button";
 import ProgressBar from "react-bootstrap/ProgressBar";
 import Media from "react-bootstrap/Media";
 
+
 class SavedPlans extends React.Component {
   state = {
     title: [
@@ -62,7 +63,7 @@ class SavedPlans extends React.Component {
                     <img
                       width={65}
                       height={65}
-                      className="mr-3"
+                      className="mr-3 fluid"
                       src="https://picsum.photos/640/360?random"
                       alt="random"
                     />
@@ -81,7 +82,7 @@ class SavedPlans extends React.Component {
                     <img
                       width={64}
                       height={64}
-                      className="mr-3"
+                      className="mr-3 fluid"
                       src="https://picsum.photos/640/360?random"
                       alt="#"
                     />
@@ -100,7 +101,7 @@ class SavedPlans extends React.Component {
                     <img
                       width={64}
                       height={64}
-                      className="mr-3"
+                      className="mr-3 fluid"
                       src="https://picsum.photos/640/360?random"
                       alt="random"
                     />

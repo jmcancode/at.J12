@@ -7,6 +7,8 @@ import LikeButton from "../Buttons/LikeButton";
 import ThumbsUp from "../Buttons/ThumbsUp";
 import ThumbsDown from "../Buttons/ThumbsDown";
 
+import {Link} from "react-router-dom";
+
 import "../../pages/Home.css";
 
 const HomeCard = (props) => {
@@ -19,9 +21,11 @@ const HomeCard = (props) => {
       >
         <Card.Img variant="top" src="https://picsum.photos/640/360?random" />
         <Card.Body>
+        <Link to={"/" + plans.id} key={plans.id}>
           <Card.Title style={{ color: "#000000", size: "24px" }}>
             {plans.title}
           </Card.Title>
+          </Link>
           <Card.Subtitle className="mb-2 text-muted">
             {plans.categorySelect}
           </Card.Subtitle>

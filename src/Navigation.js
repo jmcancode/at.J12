@@ -12,10 +12,10 @@ import Col from "react-bootstrap/Col";
 import "./assets/css/Navigation.css";
 import {
   faHome,
-  faGlobe,
-  faBook,
+  faUserCircle,
   faFolder,
   faUserCog,
+  faStickyNote,
 } from "@fortawesome/free-solid-svg-icons";
 
 import { Container } from "reactstrap";
@@ -62,32 +62,33 @@ const Navigation = () => {
                         icon={faHome}
                       />
                     </Link>
-                    <Link style={{ color: "black" }} to="/myplans">
+                    <Link style={{ color: "black" }} to="/discover">
                       <FontAwesomeIcon
                         className="mx-2"
                         size="lg"
                         icon={faFolder}
                       />
                     </Link>
-                    <Link style={{ color: "black" }} to="/discover">
+                    <Link style={{ color: "black" }} to="/addjournal">
                       <FontAwesomeIcon
                         className="mx-2"
                         size="lg"
-                        icon={faGlobe}
+                        icon={faStickyNote}
                       />
                     </Link>
-                    <Link style={{ color: "black" }} to="/journal">
-                      <FontAwesomeIcon
-                        className="mx-2"
-                        size="lg"
-                        icon={faBook}
-                      />
-                    </Link>
+
                     <Link style={{ color: "black" }} to="/settings">
                       <FontAwesomeIcon
                         className="mx-2"
                         size="lg"
                         icon={faUserCog}
+                      />
+                    </Link>
+                    <Link style={{ color: "black" }} to="/profile">
+                      <FontAwesomeIcon
+                        className="mx-2"
+                        size="lg"
+                        icon={faUserCircle}
                       />
                     </Link>
                   </div>

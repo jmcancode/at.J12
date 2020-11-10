@@ -1,48 +1,44 @@
 import React from "react";
-
-// REACT-REDUX
-import { connect } from "react-redux";
-import { firestoreConnect } from "react-redux-firebase";
-import { compose } from "redux";
 // REACT-BOOTSTRAP
-import Card from 'react-bootstrap/Card';
+import Card from "react-bootstrap/Card";
+import { Link } from "react-router-dom";
 
 class PlanCard extends React.Component {
   state = {
-    title: "Test Title",
-    content: 'Lorem Ipsum' 
-  }
+    title: "Take a Moment",
+    content: "Techniques for practicing mindfullness",
+  };
   render() {
     return (
-      <Card className="mx-auto border-0" style={{ width: '8rem' }} >
-        <Card.Img variant="top"
-          className="border-0 mt-0 rounded"
-          src="https://picsum.photos/640/360?random" />
-        <Card.Body >
-          <Card.Title style={{ fontSize: "14px", fontWeight: "bold" }}>
-            {this.state.title}
-          </Card.Title>
-          <Card.Text className="text-muted" style={{ fontSize: "10px", fontWeight: "normal" }}>
-            {this.state.content}
-          </Card.Text>
-        </Card.Body>
-      </ Card>
-    )
+      <>
+        <Card className="mx-auto border-0" style={{ width: "8rem" }}>
+          <Card.Body>
+            <div>
+              <Card.Img
+                variant="top"
+                className="border-0 mt-0 rounded"
+                src="https://picsum.photos/640/360?random"
+              />
+            </div>
+            <Card.Title
+              className="pt-2"
+              style={{ fontSize: "14px", fontWeight: "bold" }}
+            >
+              <Link style={{ color: "#9E7E38" }} to={"/multiday"}>
+                {" "}
+                {this.state.title}{" "}
+              </Link>
+            </Card.Title>
+            <Card.Text
+              className="text-muted"
+              style={{ fontSize: "10px", fontWeight: "normal" }}
+            >
+              {this.state.content}
+            </Card.Text>
+          </Card.Body>
+        </Card>
+      </>
+    );
   }
 }
-const mapStateToProps = (state, ownProps) => {
-  console.log(state);
-  return {
-    plans: state.firestore.ordered.plans,
-    auth: state.firebase.auth,
-    notifications: state.firestore.ordered.notifications,
-  };
-};
-
-export default compose(
-  connect(mapStateToProps),
-  firestoreConnect([
-    { collection: "plans", orderBy: ["createdAt", "desc"] },
-    { collection: "notifications", limit: 3, orderBy: ["time", "desc"] },
-  ])
-)(PlanCard);
+export default PlanCard;

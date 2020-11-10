@@ -29,6 +29,8 @@ import firebase from "./Firebase/Firebase.utils";
 import "firebase/firestore";
 //react-bootstrap
 import Card from "react-bootstrap/Card";
+//react-carousel
+import "react-multi-carousel/lib/styles.css";
 
 const rrfConfig = {
   userProfile: "users",

@@ -28,7 +28,7 @@ class Home extends Component {
     return (
       <>
         <Container className="mt-lg-5 pt-lg-5">
-        <Container ProfileHeader >
+        <Container>
         <ProfileHeader/>
         <br/>
         </Container>

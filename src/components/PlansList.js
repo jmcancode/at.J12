@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import HomeCard from './Plans/HomeCard';
+import HomeCard from "./Plans/HomeCard";
 
 const PlansList = ({ plans }) => {
   return (
@@ -9,10 +8,8 @@ const PlansList = ({ plans }) => {
         plans.map((plans) => {
           return (
             <>
-              <div className="container"  >
-                <Link to={"/" + plans.id} key={plans.id}>
-                  <HomeCard plans={plans} />
-                </Link>
+              <div className="container">
+                <HomeCard plans={plans} />
               </div>
             </>
           );

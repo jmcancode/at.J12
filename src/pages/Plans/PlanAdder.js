@@ -18,6 +18,11 @@ import {
 class PlanAdder extends Component {
   state = {
     categorySelect: [
+      "None",
+      "NIL",
+      "COVID-19",
+      "Transitions",
+      "Race & Gender",
       "Social Justice",
       "Personal Development",
       "Pro Sports",
@@ -71,6 +76,10 @@ class PlanAdder extends Component {
                 id="categorySelect"
               >
                 <option>None</option>
+                <option>NIL</option>
+                <option>COVID-19</option>
+                <option>Transitions</option>
+                <option>Race & Gender</option>
                 <option>Social Justice</option>
                 <option>Personal Development</option>
                 <option>Pro Sports</option>
@@ -103,7 +112,17 @@ class PlanAdder extends Component {
             </Form>
             <Button
               color="primary"
-              size="sm"
+              size="xs"
+              className="mt-2"
+              type="submit"
+              block
+              style={{ backgroundColor: "#9E7E38", borderColor: "transparent" }}
+            >
+              Add Plan
+            </Button>
+            <Button
+              color="primary"
+              size="xs"
               className="mt-2"
               type="submit"
               block

@@ -13,7 +13,7 @@ const sideDrawer = (props) => {
       <ul>
       <hr className="top-line"/>
         <li>
-          <a href="/home">Home</a>
+          <a href="/">Home</a>
         </li>
         <li>
           <a href="/discover">Plans</a>

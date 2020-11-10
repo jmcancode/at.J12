@@ -2,11 +2,7 @@ import React, { Component } from "react";
 // custom css
 import "./App.css";
 // react-router dom
-import {
-  BrowserRouter,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 //react-redux-firebase
 import { ReactReduxFirebaseProvider, getFirebase } from "react-redux-firebase";
 import {
@@ -18,7 +14,7 @@ import rootReducer from "./Redux/store/reducers/rootReducer";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
-// firebase 
+// firebase
 import firebase from "./Firebase/Firebase.utils";
 import "firebase/firestore";
 //pages + components
@@ -27,10 +23,15 @@ import Navigation from "./Navigation";
 import DiscoverPage from "./pages/DiscoverPage";
 import Settings from "./pages/Settings";
 import MyPlans from "./pages/Plans/MyPlans";
-import PlanAdder from "./pages/PlanAdder";
+import PlanAdder from "./pages/Plans/PlanAdder";
+import VideoPlan from "./pages/Plans/VideoPlan";
+import MultiDay from "./pages/Plans/MultiDayPlan";
+import CompleteCongrats from "./pages/Plans/CompleteCongrats";
 import CompletedPlans from "./pages/CompletedPlans";
 import SavedPlans from "./pages/SavedPlans";
+import CatgegorySection from "./pages/Plans/CategorySection";
 import Journal from "./pages/Journal";
+import JournalAdder from "./pages/Journal/journalAdder";
 import Register from "./components/Auth/Register";
 import login from "./components/Auth/Login";
 import SinglePlan from "./pages/SinglePlan";
@@ -47,18 +48,16 @@ class App extends Component {
     sideDrawerOpen: false,
     showNav: false,
     currentUser: null,
-    posts:[],
+    posts: [],
   };
 
-
   componentDidMount() {
-    Axios.get('https://jsonplaceholder.typicode.com/posts')
-    .then(res => {
-      console.log(res)
+    Axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
+      console.log(res);
       this.setState({
-        posts: res.data.slice(0,10)
-      })
-    })
+        posts: res.data.slice(0, 10),
+      });
+    });
   }
 
   drawerToggleClickHandler = () => {
@@ -80,7 +79,7 @@ class App extends Component {
     const LoginContainer = () => (
       <>
         <Route path="/home" return={() => <Route to="/login" />} />
-        <Route exact path="/register" component={Register} />
+        <Route path="/register" component={Register} />
         <Route path="/login" component={login} />
       </>
     );
@@ -93,21 +92,26 @@ class App extends Component {
           <SideDrawer show={this.state.sideDrawerOpen} />
           {backdrop}
         </>
-        <Route path="/home" component={Home} />
+        <Route exact path="/home" component={Home} />
         <Route path="/discover" component={DiscoverPage} />
         <Route path="/settings" component={Settings} />
         <Route path="/journal" component={Journal} />
         <Route exact path="/:plan_id" component={SinglePlan} />
+        <Route path="/videoplayer" component={VideoPlan} />
+        <Route path="/multiday" component={MultiDay} />
         <Route path="/watchlater" component={MyPlans} />
         <Route path="/completedplans" component={CompletedPlans} />
+        <Route path="/catsection" component={CatgegorySection}/>
         <Route path="/savedplans" component={SavedPlans} />
         <Route path="/addplans" component={PlanAdder} />
-        <Route path="/profile" component={UserProfile}/>
+        <Route path="/congrats" component={CompleteCongrats} />
+        <Route path="/profile" component={UserProfile} />
+        <Route path="/addjournal" component={JournalAdder} />
       </>
     );
     return (
-      <div className="app" style={{ height: "100%" }}>
-        <BrowserRouter>
+      <BrowserRouter>
+        <div className="app" style={{ height: "100%" }}>
           <Provider store={store}>
             <ReactReduxFirebaseProvider {...rffProps}>
               <Switch>
@@ -116,8 +120,8 @@ class App extends Component {
               </Switch>
             </ReactReduxFirebaseProvider>
           </Provider>
-        </BrowserRouter>
-      </div>
+        </div>
+      </BrowserRouter>
     );
   }
 }

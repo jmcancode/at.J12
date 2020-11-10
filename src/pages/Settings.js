@@ -4,8 +4,6 @@ import ListGroup from "react-bootstrap/ListGroup";
 import Accordion from "react-bootstrap/Accordion";
 import Form from "react-bootstrap/Form";
 
-import Container from "react-bootstrap/Container";
-
 import { connect } from "react-redux";
 import { signOut } from "../Redux/actions/authActions";
 
@@ -17,9 +15,9 @@ const Settings = (props) => {
   return (
     <>
       <div style={{ backgroundColor: "transparent"}} className="container-sm-flex mt-lg-5 pt-lg-3 mb-3">
-        <Container>
+        <div style={{ height: "100%" }}>
           <div className="d-flex justify-content-center mt-2 mt-lg-5">
-            <Card style={{ width: "50rem", height: "100%" }}>
+            <Card>
               <Card.Header className="text-center" style={{ color: "#9E7E38" }}>
                 SETTINGS
               </Card.Header>
@@ -69,7 +67,7 @@ const Settings = (props) => {
               </ListGroup.Item>
             </Card>
           </div>
-        </Container>
+        </div>
       </div>
     </>
   );

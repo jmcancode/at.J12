@@ -1,14 +1,18 @@
-Athlete Talk Todo: 
+Athlete Talk Progressive Web App (PWA) Todo: 
 
-A. Routing 
-    1. User Register
-    2. User only: 
+Application Structure:
+Frontend: React, Redux
+Routing: React-router, React-router-dom
+Backend: Axios -> Firebase/Firestore || I was using Redux-thunk but I think Axios may be an easier conntection.
+
+A. Routing Adjustments
+    1. User Register needs to show up when a user clicks the "Sign-Up" link on the login page and visa versa for the signup page.
+    2. User only access: conditoinal rendering 
         2.1 Ability to see Administration posts
         2.2 Ability to see disver page 
-    3. Admin Only: 
-        3.1 Upload content to home feed
-        3.2 Upload plans by category, each plan should have the abllity to upload single or muliday plans 
-
+    3. Admin Only access: conditoinal rendering
+        3.1 Upload posts to home feed
+        3.2 Upload plans by category, each plan should have the abllity to upload single or multiday plans, images and video linkable to the company youtube page. 
 B. Redux Thunk, Sessions: Session storage and user state management 
     Session storage ex. Show an increament on the homepage evertime the user logs in to the app
     Saved Plans, Completed Plans, plans watching 
@@ -18,3 +22,7 @@ C. Axios to connect to the firebase database
     1. connect users, plans, journals and user inforamation
 D. Frontend adjustments 
     1. Navbar onscroll for mobile + ipad, transition from "transparent" to "gradiant: see Index.css for color details"
+    2. Any adjustments James sees fit.
+E.ServiceWorker connection for PWA
+F. Deploy to firebase hositing, you will need an account to deploy.
+

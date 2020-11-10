@@ -17,7 +17,7 @@ export const routesData = [
     label: "Plans",
   },
   {
-    route: "/journal",
+    route: "/addjournal",
     icon: faStickyNote,
     label: "Journal",
   },

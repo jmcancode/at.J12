@@ -1,10 +1,13 @@
 import React from "react";
-import { Card, CardHeader, CardBody } from "reactstrap";
-
-import { BsArrow90DegLeft } from "react-icons/bs";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+} from "reactstrap";
 import PlanCard from "../../components/Plans/PlanCard";
+import { BsArrow90DegLeft } from "react-icons/bs";
 
-class MyPlans extends React.Component {
+class CatgegorySection extends React.Component {
   render() {
     return (
       <>
@@ -16,12 +19,21 @@ class MyPlans extends React.Component {
             <CardHeader className="d-flex justify-content-start mt-3">
               <BsArrow90DegLeft style={{ color: "#9E7E38" }} />
               <h6 style={{ fontFamily: "Graduate", color: "black" }}>
-                MY PLANS
+                WELLNESS TECHNIQUES
               </h6>
             </CardHeader>
             <CardBody>
               <div className="container">
                 <div className="row">
+                  <div>
+                    <PlanCard />
+                  </div>
+                  <div>
+                    <PlanCard />
+                  </div>
+                  <div>
+                    <PlanCard />
+                  </div>
                   <div>
                     <PlanCard />
                   </div>
@@ -41,4 +53,4 @@ class MyPlans extends React.Component {
   }
 }
 
-export default MyPlans;
+export default CatgegorySection;

@@ -2,12 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-// import { connect } from "react-redux";
-// import { firestoreConnect } from "react-redux-firebase";
-// import { compose } from "redux";
 import Button from "react-bootstrap/Button";
 import LikeButton from "../components/Buttons/LikeButton";
-import LoadingSpinner from "../components/Spinner";
+
 import "../components/Buttons/LikeButton.css";
 import Axios from "axios";
 
@@ -18,14 +15,12 @@ class SinglePlan extends Component {
 
   componentDidMount() {
     let id = this.props.match.params.post_id;
-    Axios.get('https://firestore.googleapis.com/v1/projects/athlete-talk-aa550/databases/(default)/documents/plans/' + id).then(
-      (res) => {
-        this.setState({
-          plan: res.data
-        });
-        console.log(res.data);
-      }
-    );
+    Axios.get().then((res) => {
+      this.setState({
+        plan: res.data,
+      });
+      console.log(res.data);
+    });
   }
   render() {
     const plan = this.state.plan ? (
@@ -97,14 +92,10 @@ class SinglePlan extends Component {
         </div>
       </Container>
     ) : (
-      <div>
-        <LoadingSpinner />
-      </div>
+      <div></div>
     );
 
-    return (
-      <div className="container">{plan}</div>
-      );
+    return <div className="container">{plan}</div>;
   }
 }
 
